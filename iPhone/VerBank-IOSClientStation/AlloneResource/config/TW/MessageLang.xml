@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <item name="Default">操作失敗</item>
+    
+    <!-- 側滑菜單欄-->
+    <item name="left_0">報價</item>
+    <item name="left_1">開倉單</item>
+    <item name="left_2">掛單</item>
+    <item name="left_3">掛單歷史</item>
+    <item name="left_4">平倉記錄</item>
+    <item name="left_5">部位匯總</item>
+    <item name="left_6">價格提示</item>
+    <item name="left_7">外匯資訊</item>
+    <item name="left_8">保證金查詢</item>
+    <item name="left_9">公告資訊</item>
+    <item name="left_10">系統設定</item>
+    <item name="left_11">聯絡我們</item>
+    <item name="left_12">登出</item>
+    
+    <!-- 報價list top view-->
+    <item name="CCY">貨幣對</item>
+    <item name="SellPrice">賣出價格</item>
+    <item name="BuyPrice">買入價格</item>
+    <item name="Highest">最高</item>
+    <item name="Lowest">最低</item>
+    <item name="UpDown">漲跌</item>
+    <item name="UpDownPercent">漲跌幅</item>
+    <item name="UpdateTime">更新時間</item>
+    <item name="Update">更新</item>
+    <item name="time">時間</item>
+    <item name="NotEnough">不足</item>
+    <item name="MarginCallNotEnough">保證金不足</item>
+    
+    <!-- login-->
+    <item name="SaveIdentifyNumber">記住身分證字號</item>
+    <item name="IdentifyNumber">身分證字號</item>
+    <item name="UserName">使用者代號</item>
+    <item name="Password">密碼</item>
+    <item name="LangTW">語言 | 繁體中文 </item>
+    <item name="LangCN">語言 | 簡體中文 </item>
+    <item name="Login">登入</item>
+    <item name="LiveAccount">網際網路交易</item>
+    <item name="DemoAccount">模擬測試帳號</item>
+    <item name="Help">注意事項</item>
+    
+    <item name="EconomicData">經濟數據</item>
+    <!--alert-->
+    <item name="InitDocFailed">初始化Doc失敗</item>
+    <item name="ReconnectSuccess">網路重連成功!</item>
+    <item name="SystemNotice">系統提示</item>
+    <item name="SystemInitDocFailed">加載配置文件失敗，請重啟APP再試!</item>
+    <item name="IsLogin">正在登入...</item>
+    <item name="LoginFailed">登入失敗</item>
+    <item name="PwdOrUserNameisNill">用戶名和密碼不能為空，請輸入!</item>
+    <item name="IsInitDoc">正在初始化數據...</item>
+    <item name="NetReconnect">網路重連</item>
+    <item name="YES">確定</item>
+    
+    <item name="ForecastsValue">預估值</item>
+    <item name="BeforeTheValue">前值</item>
+    
+    <!--title-->
+    <item name="QuoteList">報價</item>
+    <item name="AccountChoose">選擇帳號</item>
+    <item name="OpenPosition">開倉單</item>
+    
+    <!-- floatbar -->
+    <item name="TradeableMargin">可交易保證金</item>
+    <item name="FloatPL">浮動損益</item>
+    
+    <!--openPosition-->
+    <item name="Ticket">單號</item>
+    
+    
+    <item name="StopMovePrice">移動止損</item>
+    <item name="Hedging">對沖</item>
+    
+    <item name="StopMoveInvalied">移動止損數值錯誤</item>
+    
+    <!---closePosition-->
+    <item name="ClosePositionHis">平倉記錄</item>
+    <item name="Week">週</item>
+    <item name="OpenPrice">開倉價</item>
+    <item name="SUM">合計</item>
+    <item name="IsQuery">正在查詢</item>
+    
+    <!--positionSum-->
+    <item name="PositionSum">部位匯總</item>
+    <item name="NetSell">淨賣出</item>
+    <item name="NetBuy">淨買入</item>
+    
+    <item name="RssDeleteWarning">Rss新聞源刪除提示</item>
+    <!--
+     <item name="Sell">賣出</item>
+     <item name="Buy">買入</item>
+     -->
+    
+    <!--orderHis-->
+    <item name="OrderHis">掛單歷史</item>
+    
+    <item name="ORDERCLOSEREASON_SUCCEED_QUOTESCAN">行情掃描</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_USERTRADE">使用者交易</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_PHONEORDERTRADE">PHONEORDERTRADE</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_DEALERTRADE">dealer交易</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_DEALERAFFIRM">DEALERAFFIRM</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_FUNDTRADE">FUNDTRADE</item>
+    <item name="ORDERCLOSEREASON_MODIFY_ByUSER">用戶修改</item>
+    <item name="ORDERCLOSEREASON_MODIFY_ByPHONEORDER">MODIFY_ByPHONEORDER</item>
+    <item name="ORDERCLOSEREASON_MODIFY_ByDEALER">dealer修改</item>
+    <item name="ORDERCLOSEREASON_MODIFY_ByFUND">MODIFY_ByFUND</item>
+    <item name="ORDERCLOSEREASON_CANCEL_ByUser">用戶刪除</item>
+    <item name="ORDERCLOSEREASON_CANCEL_ByPHONEORDER">CANCEL_ByPHONEORDER</item>
+    <item name="ORDERCLOSEREASON_CANCEL_ByDEALER">dealer刪除</item>
+    <item name="ORDERCLOSEREASON_CANCEL_ByTimeOut">到期刪除</item>
+    <item name="ORDERCLOSEREASON_CANCEL_corPositionClosed">保證金不足</item>
+    <item name="ORDERCLOSEREASON_CANCEL_ByFund">CANCEL_ByFund</item>
+    <item name="ORDERCLOSEREASON_FAILED_OUTOFNOPL">OUTOFNOPL</item>
+    <item name="ORDERCLOSEREASON_FAILED_OUTOFPOSITIONLIMIT">OUTOFPOSITIONLIMIT</item>
+    <item name="ORDERCLOSEREASON_FAILED_MARGINNOTENOUGH">保證金不足</item>
+    <item name="ORDERCLOSEREASON_FAILED_OTHER">其他</item>
+    <item name="ORDERCLOSEREASON_FAILED_PRESELLERR">PRESELLERR</item>
+    <item name="ORDERCLOSEREASON_FAILED_CUTLOSS">超過限額</item>
+    <item name="ORDERCLOSEREASON_MODIFY_MoveStop">編輯移動止損</item>
+    
+    <item name="CorrespondingTicket">指定平倉單號</item>
+    
+    <item name="1Hour">一小時</item>
+    <item name="2Hour">二小時</item>
+    <item name="4Hour">四小時</item>
+    <item name="8Hour">八小時</item>
+    <item name="12Hour">十二小時</item>
+    <item name="16Hour">十六小時</item>
+    
+    <item name="ORDER_EXPIRE_TYPE_DAY">當日有效</item>
+    <item name="ORDER_EXPIRE_TYPE_WEEK">當週有效</item>
+    <item name="ORDER_EXPIRE_TYPE_USER_DEFINED">指定任何時間</item>
+    <item name="ORDER_EXPIRE_TYPE_GTC">一直有效</item>
+    
+    <!--MarginCallHis-->
+    <item name="MarginCallHis">保證金查詢</item>
+    
+    <!--orderPosition-->
+    <item name="OrderPosition">掛單</item>
+    <item name="DefaultInstrumentIsNull">默认选择货币对为空</item>
+    
+    
+    <!--marketTrade-->
+    <item name="MarketTrade">市價交易</item>
+    <item name="Account">帳號</item>
+    
+    <item name="OccupyMargin">佔用保證金</item>
+    <item name="TradeCommit">交易執行</item>
+    
+    <item name="OpenTradeSucceed">已開倉成功</item>
+    <item name="OpenTradeFaild">開倉失敗</item>
+    <item name="Comfirm">確認</item>
+    <item name="OperatorFaild">操作失敗</item>
+    <item name="IsTrading">正在交易</item>
+    <item name="IsLoading">正在載入</item>
+    <item name="LoadingFailed">加載失敗</item>
+    <item name="CALoading">憑證下載中</item>
+    <item name="RightQuery">憑證下載中</item>
+    <item name="RequestCA">憑證下載中</item>
+    <item name="InstallCA">憑證下載中</item>
+    <!--
+     <item name="RightQuery">權限檢查中</item>
+     <item name="RequestCA">憑證請求中</item>
+     <item name="InstallCA">憑證安裝中</item>
+     -->
+    
+    
+    <!--hedging-->
+    <item name="ConfirmHedging">確認對沖</item>
+    <item name="ErrNotice">錯誤提示</item>
+    <item name="PriceNotice">價格提示</item>
+    <item name="SuccessNotice">成功提示</item>
+    <item name="Notice">提示</item>
+    <item name="PleaseSelectHedgingTicket">請選擇需要對沖的單子</item>
+    <item name="SellBuyNotSame">買入金額和賣出金額不一致</item>
+    <item name="AmountErr">請輸入正確的金額</item>
+    <item name="AmountNill">請輸入金額</item>
+    <item name="CheckCode_CloseAmtMoreThanOrderAmt">平倉金額大於開倉金額</item>
+    <item name="CheckCode_BuySellAmtNotMatch">買入金額跟賣出金額不一致</item>
+    <item name="HedgingSuccess">對沖交易成功</item>
+    <item name="HedgingFaild">對沖交易失敗</item>
+    
+    <item name="CustomAmountNotice">自訂金額必須大於200,000 小於3,000,000</item>
+    
+    <!--marginCall-->
+    <item name="MarginCallStatus">保證金狀態</item>
+    <item name="CertificatePwdStatus">交易密碼狀態</item>
+    <item name="CertificateBecomingDue">憑證即將到期</item>
+    <item name="Reinput">待重新輸入</item>
+    <item name="InputAlready">已驗證</item>
+    
+    <item name="Deposit">存款</item>
+    <item name="Withdraw">取款</item>
+    <item name="CHARGE">CHARGE</item>
+    <item name="FixSurvival(deposit)">活存調整(存款)</item>
+    <item name="FixSurvival(adjust)">活存調整(調整)</item>
+    <item name="FixSurvival()">活存調整</item>
+    <item name="Rollerover">換匯損益</item>
+    <item name="COMMISION">COMMISION</item>
+    <item name="Trade">平倉盈虧</item>
+    <item name="IBCHARGE">IBCHARGE</item>
+    <item name="Liquidation">砍倉</item>
+    <item name="MARGIN2">MARGIN2</item>
+    <item name="PROMPT">PROMPT</item>
+    <item name="FIXDEPOSIT">定存餘額</item>
+    <item name="HalfannualInterest">半年息</item>
+    <item name="FixDeposit(deposit)">定存調整(存款)</item>
+    <item name="FixDeposit(adjust)">定存調整(調整)</item>
+    <item name="FixDeposit()">定存調整</item>
+    <item name="Interest">銷戶息</item>
+    
+    <item name="PhonePingStateChecking">交易密碼狀態檢查</item>
+    <!--ordermodify-->
+    <item name="OrderModify">掛單修改</item>
+    <item name="OrderTrade">掛單交易</item>
+    <item name="CommfirmAdd">確認送出</item>
+    <item name="OrderLocked">該掛單不能修改，請聯絡交易員。交易室電話：0809-085818</item>
+    
+    <!--closePosition-->
+    <item name="ConfirmClosePosition">確認平倉</item>
+    <item name="ClosePositionTrade">平倉交易</item>
+    
+    <!--priceWarning-->
+    <item name="PriceWarning">價格提示</item>
+    <item name="AddPriceWarning">新增價格提示</item>
+    <item name="ModifyPriceWarning">修改價格提示</item>
+    <item name="PirceTouch">碰觸</item>
+    <item name="Value">價位</item>
+    <item name="PriceErr">請輸入正確的價位</item>
+    <item name="ConfirmSend">確認送出</item>
+    <item name="InstrumentChoose">商品選擇</item>
+    <item name="TouchTypeErr">該方向上已經存在價格提示</item>
+    <item name="AddPriceWarningFailed">提交失敗，該商品已經存在兩個價格預警，請確認</item>
+    <item name="AddPriceWarningSuccess">新增價格提示成功</item>
+    <item name="ModifyPriceWarningFailed">修改價格提示失敗</item>
+    <item name="ModifyPriceWarningSuccess">修改價格提示成功</item>
+    
+    <item name="IsDealing">正在處理</item>
+    <item name="AmountPassed">價格已過期</item>
+    
+    <item name="WarningPrice">通知價位</item>
+    <item name="PleaseInputWarningPrice">請輸入通知價格</item>
+    
+    <!--openPositionResultView-->
+    <item name="Confirm">確認</item>
+    <item name="UpTradeFailed">不可修改不拋補委託單</item>
+    <item name="CannotClosePosition"> 該部位無法自行平倉，請聯絡交易員。交易室電話：0809-085818</item>
+    
+    
+    <!--Notice information-->
+    <item name="NoticeInformation">公告資訊</item>
+    <item name="PushInformation">推播通知</item>
+    
+    <!--ForexNews-->
+    <item name="ForexNews">外匯資訊</item>
+    <item name="News">新聞</item>
+    <item name="EconomicData">經濟數據</item>
+    <item name="Review">評論</item>
+    <item name="NewsReview">新聞評論</item>
+    
+    <item name="ForexDailyReview">外匯每日評論</item>
+    
+    <item name="L">低</item>
+    <item name="H">高</item>
+    <item name="M">中</item>
+    
+    <!--about-->
+    <item name="About">聯絡我們</item>
+    <item name="BankCode">遠東國際商業銀行</item>
+    <item name="SystemCode">外匯保證金交易</item>
+    <item name="PhoneNumberName">交易專線</item>
+    <item name="PhoneNumber">0809-085818</item>
+    
+    <item name="EmailAddress">FxMarginTrading@feib.com.tw</item>
+    <!--    <item name="EmailAddress">137756738@qq.com</item>     -->
+    <item name="FacebookName">外匯領航員 遠東商銀外匯保證金交易</item>
+    <item name="FacebookURL">https://www.facebook.com/FEIBMARGINTRADING</item>
+    
+    <!--systemConfig-->
+    <item name="SystemConfig">系統設定</item>
+    <item name="CurrencyChoose">貨幣對選擇</item>
+    <item name="PasswordChange">密碼修改</item>
+    <item name="LoginPasswordChange">登入密碼修改</item>
+    <item name="UserNameSet">使用者代碼設定</item>
+    <item name="CertificateChange">電話下單密碼修改</item>
+    <item name="ColumnNotice">報價欄位提示</item>
+    
+    <item name="Currency">貨幣對</item>
+    <item name="OpenPositionPrice">開倉價</item>
+    <item name="TradeTime">成交時間</item>
+    
+    <item name="PriceDESC">價位 高到低</item>
+    <item name="PriceACS">價位 低到高</item>
+    
+    <item name="OpenPositionSort">開倉單排序</item>
+    <item name="OrderSort">掛單排序</item>
+    <item name="PositionSumSort">部位匯總排序</item>
+    <item name="AmountCustom">自訂輸入金額</item>
+    
+    <item name="SelectAll">全部選擇</item>
+    <item name="Unselect">反選</item>
+    <item name="DefaultSelect">默認預設</item>
+    
+    <item name="DeselectAll">取消選擇</item>
+    
+    <item name="CustomAmount">自訂輸入金額</item>
+    
+    
+    <item name="NoticeTitle">注意事項</item>
+    
+    <item name="CurrentPassword">請輸入當前密碼</item>
+    <item name="NewPassword">請輸入新密碼</item>
+    <item name="NewPasswordAgain">請再次確認密碼</item>
+    
+    <item name="CurrentPin">請輸入當前密碼</item>
+    <item name="NewPin">請輸入新密碼</item>
+    <item name="NewPinAgain">請再次確認密碼</item>
+    
+    <item name="UserNameInput">請輸入使用者代碼</item>
+    
+    <item name="NewPasswordChangeSuccess">密碼修改成功</item>
+    <item name="PasswordIllegal">密碼不符合規範</item>
+    <item name="PasswordUnsame">密碼不一致</item>
+    
+    <item name="RssModify">修改RSS源</item>
+    <item name="RssAdd">新增RSS源</item>
+    <item name="RssURL">RSS源</item>
+    <item name="RSS">新聞RSS</item>
+    
+    <item name="AeidIsNill">身分證字號不能為空</item>
+    <item name="UserNameIsNill">使用者代號不能為空</item>
+    <item name="PwdIsNill">密碼不能為空</item>
+    
+    
+    <!--castate-->
+    <item name="CA_0">有效憑證</item>
+    <item name="CA_10">憑證申請成功，等待CA傳回憑證</item>
+    <item name="CA_11">申請發生錯誤</item>
+    <item name="CA_12">憑證申請成功，CA已傳回憑證，但使用者尚未下載過憑證...</item>
+    <item name="CA_13">等待核准</item>
+    <item name="CA_20">憑證已撤銷</item>
+    <item name="CA_30">憑證已過期</item>
+    <item name="CA_31">憑證即將過期</item>
+    <item name="CA_40">找不到憑證</item>
+    <item name="CA_50">憑證暫禁</item>
+    <item name="CA_60">憑證已線上登記</item>
+    <item name="CA_61">憑證已臨櫃登記</item>
+    <item name="CA_62">憑證已取消登記</item>
+    <item name="CA_63">憑證登記過期</item>
+    <item name="CA_﹣100">憑證安裝異常</item>
+    
+    
+    <item name="CertificateCanNotNull">憑證密碼不能為空</item>
+    <item name="Requestdonot">不可申請</item>
+    <item name="MakeCSRFailed">CSR製作失敗</item>
+    <item name="CertificateStateCode">憑證狀態代碼</item>
+    <item name="CertificateBeginDate">憑證效期起</item>
+    <item name="CertificateEndDate">憑證效期迄</item>
+    <item name="CaDownloadTimeErr">超過憑證下載次數，請聯繫交易員</item>
+    <item name="CARightQueryFailed">權限請求失敗</item>
+    <item name="CannotConnectToCertificateServer">無法連接到憑證伺服器</item>
+    <item name="NetErr">網絡錯誤</item>
+    <item name="CertificateErr">憑證異常</item>
+    
+    
+    <!--refresh-->
+    <item name="PushRefresh">下拉刷新</item>
+    <item name="RefreshRightNow">釋放立即刷新</item>
+    <item name="Refreshing">正在刷新</item>
+    
+    <!--certificate-->
+    <item name="CertificateManagement">憑證管理</item>
+    <item name="IphoneOrderPassword">電話下單密碼</item>
+    <item name="Next">下一步</item>
+    <item name="CertificatePasswordSet">設定憑證密碼</item>
+    <item name="Download">下載</item>
+    <item name="Loaded">已下載</item>
+    <item name="SignFailed">簽名失敗</item>
+    <item name="CANotLoaded">憑證未申請</item>
+    <item name="PhonePinErr">電話下單密碼錯誤</item>
+    <item name="PhonePinIsNil">電話下單密碼不能為空</item>
+    <item name="PhonePinInput">輸入電話下單密碼</item>
+    <item name="PhonePin">電話下單密碼</item>
+    <item name="NewPinChangeSuccess">電話下單密碼修改成功</item>
+    
+    <item name="CertificateImportFailed">導入憑證失敗</item>
+    <item name="CertificateImportSuccess">導入憑證成功</item>
+    <item name="CertificateApplyFailed">申請憑證失敗</item>
+    <item name="CertificateApplySuccess">申請憑證成功</item>
+    
+    
+    
+    <item name="301">1分鐘</item>
+    <item name="302">5分鐘</item>
+    <item name="303">10分鐘</item>
+    <item name="304">15分鐘</item>
+    <item name="305">30分鐘</item>
+    <item name="306">60分鐘</item>
+    <item name="307">90分鐘</item>
+    <item name="308">180分鐘</item>
+    <item name="309">日線</item>
+    <item name="310">周線</item>
+    <item name="311">月線</item>
+    <item name="312">年線</item>
+    <item name="313">2小時</item>
+    <item name="314">4小時</item>
+    <item name="315">6小時</item>
+    <item name="316">8小時</item>
+    
+    
+    
+    <item name="ma">MA (移動平均線)</item>
+    <item name="bollingerBand">Bollinger Band
+        (布林通道)</item>
+    <item name="ao">AO (動量震動指標)</item>
+    <item name="arBr">ARBR (人氣意願指標)</item>
+    <item name="atr">ATR (真實波幅)</item>
+    <item name="bias">BIAS (乖離率)</item>
+    <item name="biasAB">A-B BIAS (A-B乖離率)</item>
+    <item name="cci">CCI (順勢指標)</item>
+    <item name="dmi">DMI (趨向指標)</item>
+    <item name="kdj">KDJ (人氣意願指標)</item>
+    <item name="macd">MACD
+        (指數平滑異同平均線)</item>
+    <item name="mtm">MTM (動量指標)</item>
+    <item name="obv">OBV (能量潮)</item>
+    <item name="psy">PSY (心理線)</item>
+    <item name="roc">ROC (變動率)</item>
+    <item name="rsi">RSI (相對強弱指標)</item>
+    <item name="rsiSmooth">RSI Smooth
+        (平滑相對強弱指標)</item>
+    <item name="volume">Volume (交易量)</item>
+    <item name="vr">VR (容量指標)</item>
+    <item name="wr">WR (威廉指標)</item>
+    <item name="osma">OSMA
+        (移動振動平均震蕩器指標)</item>
+    <item name="sar">SAR
+        (停損點轉向操作系統)</item>
+    
+    <item name="QueryHistoricDataFailed">查詢歷史行情失敗</item>
+    <item name="QueryInstrumentIsNil">查詢商品不能為空</item>
+    <item name="QueryCycleIsNil">查詢週期不能為空</item>
+    
+    <item name="Line">直線</item>
+    <item name="HorizontalLine">水平線</item>
+    <item name="PriceTangent">價位切線</item>
+    <item name="Channel">通道線</item>
+    <item name="GoldenSection">黃金分割線</item>
+    <item name="GoldenBands">黃金波段</item>
+    <item name="GoldenCircle">黃金分割圓</item>
+    <item name="GannFan">甘式扇形</item>
+    <item name="LinearRegression">線性回歸線</item>
+    
+    <item name="bar">柱狀圖(平均足)</item>
+    <item name="candleStick">Candlestick Charts
+        (蠟燭圖)</item>
+    
+    <!-- tiArgument -->
+    <item name="Back">返回</item>
+    <item name="Commit">提交</item>
+    
+    <item name="LineWidth">線寬</item>
+    <item name="ShortWidth">短線寬</item>
+    <item name="LongWidth">長線寬</item>
+    
+    
+    <item name="Period">週期</item>
+    <item name="ShortPeriod">短週期</item>
+    <item name="LongPeriod">長週期</item>
+    
+    <item name="ColorPick">顏色選擇</item>
+    <item name="LineColor">線條色彩</item>
+    <item name="ShortColor">短線色彩</item>
+    <item name="LongColor">長線色彩</item>
+    
+    <item name="K">標準差倍率</item>
+    <item name="EdgeLineWidth">邊界線寬</item>
+    <item name="EdgeLineColor">邊界線色彩</item>
+    <item name="FillColor">填充色彩</item>
+    
+    <item name="PeriodSignal">信號週期</item>
+    
+    <item name="ResetArgument">參數重置</item>
+    <!--comm-->
+    <item name="Buy">買入</item>
+    <item name="Sell">賣出</item>
+    <item name="Middle">中間價</item>
+    <item name="LimitPrice">限價</item>
+    <item name="StopPrice">停損</item>
+    <item name="Amount">金額</item>
+    <item name="Limit">止盈</item>
+    <item name="Stop">止損</item>
+    <item name="ValidDate">有效日期</item>
+    <item name="ValidDateTo">有效日期至</item>
+    <item name="Modify">修改</item>
+    <item name="Delete">刪除</item>
+    <item name="Cancel">取消</item>
+    <item name="Price">價格</item>
+    <item name="PriceErr">價格錯誤</item>
+    
+    <item name="TurnOver">成交</item>
+    <item name="MktPrice">市價</item>
+    <item name="Failed">失敗</item>
+    <item name="InstrumentIsNull">商品為空</item>
+    
+    <item name="DeleteSuccess">刪除成功</item>
+    <item name="DeleteFailed">刪除失敗</item>
+    <item name="TradeSuccess">交易成功</item>
+    
+    <item name="OrderSuccess">掛單成功</item>
+    
+    <item name="OrderNotExsit">掛單不存在</item>
+    <item name="TradeNotExsit">單子不存在</item>
+    <item name="ClosePositionSuccess">平倉成功</item>
+    <item name="Failed">失敗</item>
+    
+    <item name="Failed(MARGINNOTENOUGH)">失敗(保證金不足)</item>
+    <item name="Cancel(PositionClose)">取消(部位已平倉)</item>
+    <item name="KickOut">可能有重複登入或您先前的登入沒有登出</item>
+    <item name="KickOutBySys">網絡已斷開，請重新登入！</item>
+    
+    <item name="InputIsNull">輸入不能為空</item>
+    
+    <item name="MGW_RESULT_200">參數錯誤</item>
+    <item name="MGW_RESULT_-1">系統錯誤說明</item>
+    <item name="MGW_RESULT_4106">憑證重複申請</item>
+    <item name="MGW_RESULT_5001">沒有憑證請求,無法進行憑證申請</item>
+    <item name="MGW_RESULT_5002">憑證請求檔格式錯誤,無法進行憑證申請</item>
+    <item name="MGW_RESULT_5004">執行憑證申請失敗,CA回覆錯誤訊息</item>
+    <item name="MGW_RESULT_5005">執行憑證申請失敗,不支援的憑證種類</item>
+    <item name="MGW_RESULT_5006">執行憑證申請錯誤,該憑證已經存在</item>
+    <item name="MGW_RESULT_5104">憑證使用中,未到更新時間</item>
+    <item name="MGW_RESULT_8072">憑證查詢失敗</item>
+    <item name="MGW_RESULT_9020">憑證申請失敗</item>
+    <item name="MGW_RESULT_9021">憑證已註銷</item>
+    <item name="MGW_RESULT_9214">憑證已過期</item>
+    
+    <item name="ERR_NetErr">網絡錯誤</item>
+    
+    <item name="AppStoreUrl">https://itunes.apple.com/tw/app/yuan-yinmargin/id1072689077?l=zh&amp;mt=8</item>
+    
+    
+    <item name="TWCA_ERROR_28673">指定金鑰長度錯誤</item>
+    <item name="TWCA_ERROR_28674">指定CN錯誤</item>
+    <item name="TWCA_ERROR_28675">指定PIN码錯誤</item>
+    <item name="TWCA_ERROR_28676">金鑰資料錯誤</item>
+    <item name="TWCA_ERROR_28677">憑證資料錯誤</item>
+    <item name="TWCA_ERROR_28678">簽章本文錯誤</item>
+    <item name="TWCA_ERROR_28679">加解密金鑰錯誤</item>
+    <item name="TWCA_ERROR_28680">加解密金鑰長度錯誤</item>
+    <item name="TWCA_ERROR_28681">加解密本文錯誤</item>
+    <item name="TWCA_ERROR_28682">加解密本文長度錯誤</item>
+    <item name="TWCA_ERROR_28683">加解密密文錯誤</item>
+    <item name="TWCA_ERROR_28684">加解密密文長度錯誤</item>
+    <item name="TWCA_ERROR_28685">加解密 BUFFER SIZE 不足</item>
+    <item name="TWCA_ERROR_28686">指定新PIN碼錯誤</item>
+    <item name="TWCA_ERROR_28687">指定新PIN碼與舊碼相同</item>
+    <item name="TWCA_ERROR_28688">簽章 BUFFER 錯誤</item>
+    <item name="TWCA_ERROR_28689">簽章值錯誤</item>
+    <item name="TWCA_ERROR_32769">產生金鑰失敗</item>
+    <item name="TWCA_ERROR_32770">產生 CSR 失敗</item>
+    <item name="TWCA_ERROR_32771">載入金鑰檔失敗</item>
+    <item name="TWCA_ERROR_32772">簽章失敗</item>
+    <item name="TWCA_ERROR_32773">沒有簽章資料</item>
+    <item name="TWCA_ERROR_32774">匯入憑證失敗</item>
+    <item name="TWCA_ERROR_32775">沒有憑證資訊</item>
+    <item name="TWCA_ERROR_32776">沒有宣告記憶體</item>
+    <item name="TWCA_ERROR_32779">修改密碼錯誤</item>
+    <item name="TWCA_ERROR_32780">P1 驗章失敗</item>
+    <item name="TWCA_ERROR_36865">沒把 libtwcajni.so 放至 assets</item>
+    <item name="TWCA_ERROR_36866">其他錯誤</item>
+    <item name="TWCA_ERROR_36867">寫入 jni 檔失敗</item>
+    <item name="TWCA_ERROR_36868">載入 jni 檔失敗</item>
+    
+    <item name="Login_Result_-100">網絡錯誤</item>
+    
+    <item name="DefaultConfig">{\"style\":{\"backgroundColorRgba\":[20,20,20,255],\"timeScaleLabelFontSize\":14,\"timeScaleFontSize\":{\"0\":12,\"1\":12,\"2\":13,\"3\":13,\"4\":14},\"timeScaleFontName\":{\"0\":\"customFont\",\"1\":\"customFont\",\"2\":\"customFont\",\"3\":\"customFont\",\"4\":\"customFont\"},\"timeScaleFontBold\":{\"0\":false,\"1\":false,\"2\":false,\"3\":false,\"4\":false},\"timeScaleTextColorRgba\":{\"0\":[140,140,140,255],\"1\":[160,160,160,255],\"2\":[180,180,180,255],\"3\":[200,200,200,255],\"4\":[220,220,220,255]},\"timeScaleGridLineWidth\":{\"0\":1,\"1\":1,\"2\":1,\"3\":1,\"4\":1},\"timeScaleGridLineColorRgba\":{\"0\":[32,32,32,255],\"1\":[48,48,48,255],\"2\":[64,64,64,255],\"3\":[80,80,80,255],\"4\":[96,96,96,255]},\"vauleScaleWidth\":120,\"valueScaleGridLineColorRgba\":[32,32,32,255],\"valueScaleLabelBackgroundColorRgba\":[40,36,48,255],\"valueScaleLabelFontSize\":16,\"valueScaleLabelFontName\":\"customFont\",\"valueScaleLabelFontBold\":false,\"valueScaleLabelTextColorRgba\":[255,255,255,255],\"focusLineWidth\":1,\"focusLineColorRgba\":[192,220,255,140],\"focusLineVisibleWhenDrawing\":true,\"areaBorderColorRgba\":[64,64,64,255],\"areaBorderLineWidth\":1,\"chartCaptionInfoFontSize\":13,\"chartCaptionInfoFontName\":\"customFont\",\"chartCaptionTextColorRgba\":[255,255,255,255],\"chartCaptionValueTextColorRgba\":[128,192,255,255],\"initialized\":true,\"marginLeft\":10,\"marginRight\":0,\"marginTop\":10,\"marginBottom\":10,\"heightOfTimeScale\":20,\"minHeightRatioOfTiAreas\":0.3,\"maxHeightRatioOfTiAreas\":0.65,\"paddingHeightOfAreas\":5,\"valueScaleFontSize\":12,\"valueScaleFontName\":\"customFont\",\"valueScaleFontBold\":false,\"valueScaleColorRgba\":[255,255,255,255]},\"tiMap\":{\"ohlc\":{\"tiType\":1,\"index\":null,\"tiConfig\":{\"name\":\"OHLC\",\"params\":{\"ohlcType\":{\"valueType\":3,\"value\":0,\"visible\":false,\"enumList\":[0,1]},\"ohlcBarType\":{\"valueType\":3,\"visible\":false,\"enumList\":[0,1]},\"candlestickRisingColorRgba\":{\"valueType\":1,\"value\":[64,255,64,76],\"visible\":false},\"candlestickFallingColorRgba\":{\"valueType\":1,\"value\":[255,64,64,76],\"visible\":false},\"barRisingColorRgba\":{\"valueType\":1,\"value\":[32,205,32,255],\"visible\":false},\"barFallingColorRgba\":{\"valueType\":1,\"value\":[215,32,32,255],\"visible\":false}}},\"mainArea\":true},\"timeScale\":{\"tiType\":0,\"index\":null,\"mainArea\":false},\"ma1\":{\"tiType\":11,\"index\":1,\"tiConfig\":{\"name\":\"MA\",\"params\":{\"period\":{\"valueType\":0,\"value\":\"5\",\"visible\":true},\"maLineWidth\":{\"valueType\":0,\"value\":\"2\",\"visible\":false},\"maLineColorRgba\":{\"valueType\":1,\"value\":[\"64\",\"128\",\"255\",\"200\"],\"visible\":false}}},\"mainArea\":true},\"ma2\":{\"tiType\":11,\"index\":2,\"tiConfig\":{\"name\":\"MA\",\"params\":{\"period\":{\"valueType\":0,\"value\":\"10\",\"visible\":true},\"maLineWidth\":{\"valueType\":0,\"value\":\"2\",\"visible\":false},\"maLineColorRgba\":{\"valueType\":1,\"value\":[\"3\",\"255\",\"0\",\"200\"],\"visible\":false}}},\"mainArea\":true},\"ma3\":{\"tiType\":11,\"index\":3,\"tiConfig\":{\"name\":\"MA\",\"params\":{\"period\":{\"valueType\":0,\"value\":\"20\",\"visible\":true},\"maLineWidth\":{\"valueType\":0,\"value\":\"2\",\"visible\":false},\"maLineColorRgba\":{\"valueType\":1,\"value\":[\"255\",\"208\",\"0\",\"200\"],\"visible\":false}}},\"mainArea\":true},\"ma4\":{\"tiType\":11,\"index\":4,\"tiConfig\":{\"name\":\"MA\",\"params\":{\"period\":{\"valueType\":0,\"value\":\"50\",\"visible\":true},\"maLineWidth\":{\"valueType\":0,\"value\":\"2\",\"visible\":false},\"maLineColorRgba\":{\"valueType\":1,\"value\":[\"255\",\"0\",\"39\",\"200\"],\"visible\":false}}},\"mainArea\":true},\"ma5\":{\"tiType\":11,\"index\":5,\"tiConfig\":{\"name\":\"MA\",\"params\":{\"period\":{\"valueType\":0,\"value\":\"200\",\"visible\":true},\"maLineWidth\":{\"valueType\":0,\"value\":\"2\",\"visible\":false},\"maLineColorRgba\":{\"valueType\":1,\"value\":[\"250\",\"0\",\"255\",\"200\"],\"visible\":false}}},\"mainArea\":true}},\"drawerMap\":{}}</item>
+    
+    <item name="TTTest">{"style":{"backgroundColorRgba":[20,20,20,255],"timeScaleLabelFontSize":14,"timeScaleFontSize":{"0":12,"1":12,"2":13,"3":13,"4":14},"timeScaleFontName":{"0":"customFont","1":"customFont","2":"customFont","3":"customFont","4":"customFont"},"timeScaleFontBold":{"0":false,"1":false,"2":false,"3":false,"4":false},"timeScaleTextColorRgba":{"0":[140,140,140,255],"1":[160,160,160,255],"2":[180,180,180,255],"3":[200,200,200,255],"4":[220,220,220,255]},"timeScaleGridLineWidth":{"0":1,"1":1,"2":1,"3":1,"4":1},"timeScaleGridLineColorRgba":{"0":[32,32,32,255],"1":[48,48,48,255],"2":[64,64,64,255],"3":[80,80,80,255],"4":[96,96,96,255]},"vauleScaleWidth":120,"valueScaleGridLineColorRgba":[32,32,32,255],"valueScaleLabelBackgroundColorRgba":[40,36,48,255],"valueScaleLabelFontSize":16,"valueScaleLabelFontName":"customFont","valueScaleLabelFontBold":false,"valueScaleLabelTextColorRgba":[255,255,255,255],"focusLineWidth":1,"focusLineColorRgba":[192,220,255,140],"focusLineVisibleWhenDrawing":true,"areaBorderColorRgba":[64,64,64,255],"areaBorderLineWidth":1,"chartCaptionInfoFontSize":13,"chartCaptionInfoFontName":"customFont","chartCaptionTextColorRgba":[255,255,255,255],"chartCaptionValueTextColorRgba":[128,192,255,255],"initialized":true,"marginLeft":10,"marginRight":0,"marginTop":10,"marginBottom":10,"heightOfTimeScale":20,"minHeightRatioOfTiAreas":0.3,"maxHeightRatioOfTiAreas":0.65,"paddingHeightOfAreas":5,"valueScaleFontSize":12,"valueScaleFontName":"customFont","valueScaleFontBold":false,"valueScaleColorRgba":[255,255,255,255]},"tiMap":{"ohlc":{"tiType":1,"index":null,"tiConfig":{"name":"OHLC","params":{"ohlcType":{"valueType":3,"value":0,"visible":false,"enumList":[0,1]},"ohlcBarType":{"valueType":3,"value":1,"visible":false,"enumList":[0,1]},"candlestickRisingColorRgba":{"valueType":1,"value":[64,255,64,76],"visible":false},"candlestickFallingColorRgba":{"valueType":1,"value":[255,64,64,76],"visible":false},"barRisingColorRgba":{"valueType":1,"value":[32,205,32,255],"visible":false},"barFallingColorRgba":{"valueType":1,"value":[215,32,32,255],"visible":false}}}},"timeScale":{"tiType":1,"index":null,"tiConfig":{"name":"OHLC","params":{"ohlcType":{"valueType":3,"value":0,"visible":false,"enumList":[0,1]},"ohlcBarType":{"valueType":3,"value":1,"visible":false,"enumList":[0,1]},"candlestickRisingColorRgba":{"valueType":1,"value":[64,255,64,76],"visible":false},"candlestickFallingColorRgba":{"valueType":1,"value":[255,64,64,76],"visible":false},"barRisingColorRgba":{"valueType":1,"value":[32,205,32,255],"visible":false},"barFallingColorRgba":{"valueType":1,"value":[215,32,32,255],"visible":false}}}}},"drawerMap":{}}</item>
+    
+    <item name="CertificatePasswordChangeTextView">*憑證密碼設定規則
+        一、密碼不可少於6位，最多12位。
+        二、採英數混合使用。且包含大
+        .......小寫英文字母或符號
+        三、密碼不可訂為相同的3個英數
+        .......字，且不可訂為連續3個英文
+        .......字或連號數字。
+        如: 符合: aBc、cBa、!@#
+        不符合: 666、123、321、aaa、abc、cba</item>
+    
+    <item name="PasswordChangeTextView">*密碼設定規則
+        一、密碼不可少於6位，最多12位
+        二、採英數字混合使用，且包含大
+        .......小寫英文字母或符號
+        三、密碼不可訂為相同的3個英
+        .......數字，且不可訂為連續3個
+        .......英文或連號數字
+        如：符合：aBc、cBa、@!#
+        不符合：666、123、321、aaa、abc、cba</item>
+    
+    <item name="CertificateChangeTextView">*注意事項
+        一、必須為六位數字
+        二、避免使用相鄰之重複數字
+        三、避免使用連號等易於猜測之數
+        .......字
+        四、勿使用生日、統一編號或電話
+        .......號碼等較易遭破解的數字</item>
+    
+    <item name="UserNameTextView">*使用者代碼設定規則
+        一、使用者代碼設定規則同密碼設
+        .......定規則，但不得與密碼相同
+    </item>
+    
+    <item name="NoticeContent">
+        一、為確保您的權益，進行交易前，應先查閱
+        .......本銀行各項最新通知、公告及系統狀
+        .......況。
+        二、外匯保證金網際網路交易如遇資金額度或
+        .......其他相關法令規章等之限制，銀行得拒絕
+        .......該項交易。
+        三、透過外匯保證金網際網路交易平臺買賣外
+        .......匯，銀行會預設每一帳戶交易最高額度及
+        .......每筆最大交易金額限制，應依本銀行規定
+        .......辦理。
+        四、本銀行外匯保證金網際網路交易係經電腦
+        .......主機接收並傳送到其他銀行撮合交易，俟
+        .......接獲成交報回後，該筆交易始算完成，每
+        .......筆交易完成後，您應查詢確定交易完成，
+        .......並隨時注意帳戶內之情形。
+        五、您進行外匯保證金網際網路交易，縱使預
+        .......留停損掛單，成交的價格可能遠超過您設
+        .......定的價位，甚或可能因市場行情劇烈變動
+        .......或其他因素而無法執行該掛單，致使外匯
+        .......保證金交易專戶產生透支，損失甚至超過
+        .......您已存繳之保證金範圍，其超過之範圍，
+        .......您仍須負擔。
+        六、辦理外匯保證金網際網路交易，必須符合
+        .......銀行的交易平臺配置需求，且可能因其他
+        .......天然災害或不可抗力事由(包括但不限於
+        .......斷線、斷電、網路壅塞或其他不可歸責於
+        .......銀行等因素)，致下單交易、更改或取消
+        .......掛單遲延、無法接收、傳送或成交。
+        七、進行外匯保證金網際網路交易，如遇成交
+        .......回報時間過長，可能為傳輸或接收異常，
+        .......應立刻聯絡銀行交易室確認交易。
+        八、遇網路壅塞、電信連線中斷、停電造成系
+        .......統失效或意外天災等不可抗力之因素，致
+        .......報價發生錯誤、延遲更新或中斷等異常狀
+        .......況，或與實際成交資料不相同時，應立刻
+        .......與銀行交易室聯絡。
+        九、電子式下單〈網際網路交易〉因天然災害
+        .......等不可抗力事由(包括但不限於斷線、斷
+        .......電、網路壅塞等因素)，致下單交易、更
+        .......改或取消掛單遲延、無法接收或傳送時，
+        .......應立即打電話與交易室聯絡，改以電話人
+        .......工下單。
+        
+        交易室專線：0809-085818
+    </item>
+    
+    <item name="JBNoticeContent">
+        行動裝置疑似遭破解，請勿使用行動下單APP，以免相關個人帳戶資料遭竊取或外洩。
+    </item>
+    
+    <item name="SandBoxNoticeContent">
+        提醒您可於行動裝置上安裝防毒軟體，以提升使用上之安全。
+    </item>
+    <item name="SubNotice">以上注意事項係依主管機關金管會規定提供。
+    </item>
+    
+    <item name="PrivateContent">
+        .......親愛的客戶，歡迎您使用遠東國際商業銀行所提供之應用程式(以下簡稱APP)，為了讓您能夠安心的使用本APP為您所提供的各項服務，並允許本網站在必要時記錄、使用您個人所提供的相關資訊以提供您更貼心的服務，我們在此先向您說明我們網站的隱私權保護政策，以及我們對您所提供的任何資料的絕對保護及尊重。
+        一、遠銀為提供金融服務內容，請客戶提供公
+        .......司/個人資料，如：公司名稱、姓名、統一
+        .......編號、身分證編號、出生年月日、住址以
+        .......及任何客戶辨識等資料，因服務之提供而
+        .......獲得有關客戶的帳務、信用、投資或保險
+        .......等資料，如非經過客戶的同意、授權或其
+        .......他法律上的規定，遠銀不會將客戶非公開
+        .......之資料透露給無關之第三者知悉。
+        二、遠銀在蒐集客戶的資料後，會將客戶個人
+        .......資料嚴密地保存在遠銀資料庫中，任何人
+        .......必須在符合遠銀資料授權管理規範，始可
+        .......進行資料之取得與使用。
+        三、當遠銀為了必要之信用調查、風險控管等
+        .......用途，與信譽良好的徵信查詢機構或票據
+        .......交換所交換資料時，將會以審慎及嚴謹的
+        .......態度來處理您個人資料。
+        四、遠銀行員均接受公司完整的資訊保密教
+        .......育，並充分瞭解客戶資料之保密是行員的
+        .......基本責任，若遠銀行員違反客戶資料保密
+        .......承諾，遠銀將依相關法令及內部規範予以
+        .......處分。
+        五、除法令有特別規定或經客戶同意的前提
+        .......下，遠銀對客戶個人資料的蒐集、電腦處
+        .......理與利用，將只限於為提供良好服務、營
+        .......業登記項目或章程所定業務之需要、其他
+        .......業務相關機構及受遠銀委託處理相關業務
+        .......之機構等特定目的之必要範圍內。
+        六、有關於客戶的個人資料分類，包括基本資
+        .......料、帳務資料、信用資料、投資資料及保
+        .......險資料，遠銀會依據客戶與遠銀簽訂之申
+        .......請書或相關契約上所勾選同意提供之資料
+        .......範疇內，進行共同行銷的運用與揭露。
+        七、客戶隨時得以書面方式及電話通知遠銀單
+        .......位服務中心，停止使用客戶的個人資料從
+        .......事於共同業務推廣之行為。
+        八、遠銀將盡全力維護客戶個人資料的完整、
+        .......正確性，如果客戶個人資料有所變更，可
+        .......以直接向往來營業據點申請變更；除法令
+        .......另有限制外，在身份確認無誤後，亦可透
+        .......過遠銀的網站、電話服務等方式申請變更
+        .......客戶個人資料。
+        九、本APP於登入時提供「記住身分證」功能
+        .......供客戶選擇使用，客戶同意使用本功能
+        .......後，於下次進入本APP登入頁面時會自動
+        .......顯示已遮蔽的身分證字號，客戶僅需輸
+        .......入使用者代號及網銀密碼即可完成登入。
+        .......客戶身分證字號資料加密採用對稱式演
+        .......算法(AES 256 bits)儲存於本APP暫存
+        .......資料區保障客戶資料安全。
+    </item>
+    <item name="PrivateTitle">遠東國際商業銀行網站隱私權保護政策</item>
+    <item name="Private">隱私保護政策</item>
+    
+</resources>

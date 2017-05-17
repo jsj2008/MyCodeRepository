@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2PE-hv-4TZ" customClass="MarginCallHisView">
+            <rect key="frame" x="0.0" y="0.0" width="395" height="515"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7gs-Jd-etQ">
+                    <rect key="frame" x="0.0" y="40" width="395" height="475"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ijc-16-deI" customClass="SelectSliderView">
+                    <rect key="frame" x="0.0" y="0.0" width="395" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="gQg-XZ-p1v"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7gs-Jd-etQ" firstAttribute="top" secondItem="Ijc-16-deI" secondAttribute="bottom" id="0FF-Wr-Gz4"/>
+                <constraint firstAttribute="bottom" secondItem="7gs-Jd-etQ" secondAttribute="bottom" id="PyL-kU-bFt"/>
+                <constraint firstItem="7gs-Jd-etQ" firstAttribute="leading" secondItem="2PE-hv-4TZ" secondAttribute="leading" id="RPg-CM-RUw"/>
+                <constraint firstAttribute="trailing" secondItem="Ijc-16-deI" secondAttribute="trailing" id="VMb-JY-HwI"/>
+                <constraint firstAttribute="trailing" secondItem="7gs-Jd-etQ" secondAttribute="trailing" id="g9k-Sr-Tc3"/>
+                <constraint firstItem="Ijc-16-deI" firstAttribute="top" secondItem="2PE-hv-4TZ" secondAttribute="top" id="hgJ-Pc-SiF"/>
+                <constraint firstItem="Ijc-16-deI" firstAttribute="leading" secondItem="2PE-hv-4TZ" secondAttribute="leading" id="tOb-ld-ezQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentTableView" destination="7gs-Jd-etQ" id="LNR-jR-z11"/>
+                <outlet property="selectSliderView" destination="Ijc-16-deI" id="VtO-g0-DjA"/>
+            </connections>
+            <point key="canvasLocation" x="406.5" y="331.5"/>
+        </view>
+    </objects>
+</document>

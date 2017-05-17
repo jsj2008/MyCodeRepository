@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EEE782D5-3A4C-4CE9-9384-D9CA7FE75622</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VerBank-IOSClientStation</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5dd530e8-55de-dd4a-bf18-f9cd127627fd++8518</key>
+		<string>svn://192.168.0.196/feib/trunk/server</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VerBank-IOSClientStation/VerBank-IOSClientStation.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5dd530e8-55de-dd4a-bf18-f9cd127627fd++8518</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>5dd530e8-55de-dd4a-bf18-f9cd127627fd++8518</key>
+		<string>svn://192.168.0.196/feib</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>svn://192.168.0.196/feib/trunk/server/VerBank-IOSClientStation/VerBank-IOSClientStation.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5dd530e8-55de-dd4a-bf18-f9cd127627fd++8518</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5dd530e8-55de-dd4a-bf18-f9cd127627fd++8518</string>
+			<key>IDESourceControlWCCName</key>
+			<string>work-svn-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

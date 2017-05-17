@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickPanel">
+            <connections>
+                <outlet property="dateTypePickMainView" destination="4e4-L9-G8Z" id="ojS-LB-a3N"/>
+                <outlet property="dateTypePickView" destination="deg-vH-xC5" id="vVO-hb-Xa1"/>
+                <outlet property="dateValuePickMainView" destination="Iiz-D7-vTk" id="2og-DM-aa8"/>
+                <outlet property="dateValuePicker" destination="Kwy-Zh-TNg" id="VxT-5q-kkI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Iiz-D7-vTk">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="151"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-Zh-TNg">
+                    <rect key="frame" x="0.0" y="0.0" width="438" height="151"/>
+                    <date key="date" timeIntervalSinceReferenceDate="482050804.13377798">
+                        <!--2016-04-11 07:00:04 +0000-->
+                    </date>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Kwy-Zh-TNg" firstAttribute="top" secondItem="Iiz-D7-vTk" secondAttribute="top" id="9R2-sM-5Gs"/>
+                <constraint firstAttribute="bottom" secondItem="Kwy-Zh-TNg" secondAttribute="bottom" id="exr-Wd-WNT"/>
+                <constraint firstAttribute="trailing" secondItem="Kwy-Zh-TNg" secondAttribute="trailing" id="iQN-6X-nHF"/>
+                <constraint firstItem="Kwy-Zh-TNg" firstAttribute="leading" secondItem="Iiz-D7-vTk" secondAttribute="leading" id="z2H-hT-99U"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="357" y="-233.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="4e4-L9-G8Z">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="182"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deg-vH-xC5">
+                    <rect key="frame" x="0.0" y="0.0" width="438" height="182"/>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="deg-vH-xC5" firstAttribute="leading" secondItem="4e4-L9-G8Z" secondAttribute="leading" id="NpW-Xc-Btu"/>
+                <constraint firstAttribute="bottom" secondItem="deg-vH-xC5" secondAttribute="bottom" id="dKl-z1-duj"/>
+                <constraint firstItem="deg-vH-xC5" firstAttribute="top" secondItem="4e4-L9-G8Z" secondAttribute="top" id="eWv-Lc-KyM"/>
+                <constraint firstAttribute="trailing" secondItem="deg-vH-xC5" secondAttribute="trailing" id="fgn-fR-jpG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="357" y="18"/>
+        </view>
+    </objects>
+</document>

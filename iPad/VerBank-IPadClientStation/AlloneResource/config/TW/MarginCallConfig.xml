@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <item name="CashBalance">活存餘額</item>
+    <item name="FixedDeposit">定存</item>
+    <item name="C_Equity">有效保證金</item>
+    <item name="Magin_Open_4Positions">必須保證金</item>
+    <item name="Tradeable_amount">可交易金额</item>
+    <item name="CallWithdraw">可提取保證金</item>
+    <item name="Equity2MaginOpen">現有比例</item>
+    <item name="BackTaxMargin">追缴保證金</item>
+    <item name="TotalTBS">保留盈虧及換匯損益</item>
+    <item name="FloatPL">浮動損益</item>
+    <!--
+     <item name="OwnBalance">自有餘額</item>
+     <item name="TotalBalance">總餘額</item>
+     <item name="OwnEquity">自有淨資產</item>
+     <item name="TotalEquity">總淨資產</item>
+     <item name="Margin2">信用額</item>
+     <item name="Pledge">质押</item>
+     <item name="Magin_Open">必須保證金</item> -->
+    <!-- <item name="ActiveCapital4Margin">可交易金额</item> -->
+    
+</resources>

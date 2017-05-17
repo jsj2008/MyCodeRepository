@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="VWX-Dd-ZRv" customClass="OpenOrderPositionView">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6z-bX-0qF">
+                    <rect key="frame" x="10" y="10" width="214" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="wl3-AJ-9hR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wy0-lO-4Sg">
+                    <rect key="frame" x="107" y="10" width="214" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="LJ0-hI-dfc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWN-yu-unQ">
+                    <rect key="frame" x="204" y="10" width="214" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="WIm-cP-YrX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqw-ub-7Aq" customClass="QuoteView">
+                    <rect key="frame" x="12" y="40" width="404" height="93"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="kqw-ub-7Aq" secondAttribute="height" multiplier="13:3" id="t5t-pf-OEM"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncy-hm-YEP" customClass="CustomSegmentControl">
+                    <rect key="frame" x="12" y="143" width="404" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="qoC-Dd-PKz"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4S-Zw-BaL" customClass="OpenOrderOCOPageView">
+                    <rect key="frame" x="12" y="181" width="404" height="407"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="y6z-bX-0qF" firstAttribute="leading" secondItem="VWX-Dd-ZRv" secondAttribute="leading" constant="10" id="0sS-w9-P35"/>
+                <constraint firstItem="AWN-yu-unQ" firstAttribute="width" secondItem="VWX-Dd-ZRv" secondAttribute="width" multiplier="1:2" id="33Q-tE-Vn6"/>
+                <constraint firstItem="AWN-yu-unQ" firstAttribute="top" secondItem="VWX-Dd-ZRv" secondAttribute="top" constant="10" id="4o5-IV-laW"/>
+                <constraint firstItem="Wy0-lO-4Sg" firstAttribute="centerX" secondItem="VWX-Dd-ZRv" secondAttribute="centerX" id="7iA-bS-3iB"/>
+                <constraint firstItem="Ncy-hm-YEP" firstAttribute="leading" secondItem="VWX-Dd-ZRv" secondAttribute="leading" constant="12" id="Ij9-K1-I5H"/>
+                <constraint firstAttribute="trailing" secondItem="kqw-ub-7Aq" secondAttribute="trailing" constant="12" id="JAj-9m-Ipd"/>
+                <constraint firstItem="kqw-ub-7Aq" firstAttribute="top" secondItem="AWN-yu-unQ" secondAttribute="bottom" constant="5" id="KIT-zr-4vt"/>
+                <constraint firstAttribute="trailing" secondItem="AWN-yu-unQ" secondAttribute="trailing" constant="10" id="Qdu-V1-b8T"/>
+                <constraint firstItem="Wy0-lO-4Sg" firstAttribute="top" secondItem="VWX-Dd-ZRv" secondAttribute="top" constant="10" id="Qsv-ee-cVS"/>
+                <constraint firstAttribute="trailing" secondItem="Ncy-hm-YEP" secondAttribute="trailing" constant="12" id="WOo-gM-4WS"/>
+                <constraint firstItem="l4S-Zw-BaL" firstAttribute="top" secondItem="Ncy-hm-YEP" secondAttribute="bottom" constant="8" id="XE1-Ym-Igj"/>
+                <constraint firstItem="y6z-bX-0qF" firstAttribute="width" secondItem="VWX-Dd-ZRv" secondAttribute="width" multiplier="1/2" id="YNH-jr-dlb"/>
+                <constraint firstItem="Ncy-hm-YEP" firstAttribute="top" secondItem="kqw-ub-7Aq" secondAttribute="bottom" constant="10" id="ZME-gY-TPc"/>
+                <constraint firstItem="Wy0-lO-4Sg" firstAttribute="width" secondItem="VWX-Dd-ZRv" secondAttribute="width" multiplier="1/2" id="ZPE-9E-3H6"/>
+                <constraint firstItem="kqw-ub-7Aq" firstAttribute="leading" secondItem="VWX-Dd-ZRv" secondAttribute="leading" constant="12" id="al0-T2-DDs"/>
+                <constraint firstItem="l4S-Zw-BaL" firstAttribute="leading" secondItem="VWX-Dd-ZRv" secondAttribute="leading" constant="12" id="mPd-Ks-I20"/>
+                <constraint firstItem="y6z-bX-0qF" firstAttribute="top" secondItem="VWX-Dd-ZRv" secondAttribute="top" constant="10" id="qZo-gp-RDb"/>
+                <constraint firstAttribute="trailing" secondItem="l4S-Zw-BaL" secondAttribute="trailing" constant="12" id="raL-1A-VEK"/>
+                <constraint firstAttribute="bottom" secondItem="l4S-Zw-BaL" secondAttribute="bottom" constant="12" id="vnu-m3-dDI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="accountLabel" destination="y6z-bX-0qF" id="ytC-8O-ehy"/>
+                <outlet property="instrumentLabel" destination="Wy0-lO-4Sg" id="YjR-1d-DHB"/>
+                <outlet property="ocoPageView" destination="l4S-Zw-BaL" id="Ru1-7Q-eUY"/>
+                <outlet property="quoteView" destination="kqw-ub-7Aq" id="kc3-L5-N3c"/>
+                <outlet property="segmentControl" destination="Ncy-hm-YEP" id="rc5-Sf-r7P"/>
+                <outlet property="timeLabel" destination="AWN-yu-unQ" id="lhp-hj-WEb"/>
+            </connections>
+            <point key="canvasLocation" x="393" y="-284"/>
+        </view>
+    </objects>
+</document>

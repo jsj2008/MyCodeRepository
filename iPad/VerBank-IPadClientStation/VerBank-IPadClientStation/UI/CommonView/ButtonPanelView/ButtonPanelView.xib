@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ButtonPanelView">
+            <connections>
+                <outlet property="addButtonPanel" destination="qkc-jX-oT3" id="rLg-vx-CVc"/>
+                <outlet property="addCancelButton" destination="jvA-9O-Kuf" id="J4U-sM-qfQ"/>
+                <outlet property="addCommitButton" destination="1Wm-9g-Lzz" id="cv3-9v-2Ak"/>
+                <outlet property="modifyButtonPanel" destination="frt-RC-wpm" id="8hN-he-vUX"/>
+                <outlet property="modifyCancelButton" destination="ud5-vf-g1V" id="GeB-c0-VQ9"/>
+                <outlet property="modifyCommitButton" destination="SNx-sV-tZ4" id="Vlt-5z-cOv"/>
+                <outlet property="modifyDeleteButton" destination="er4-P9-5bW" id="Ml0-9m-RsI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="qkc-jX-oT3">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" tag="501" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wm-9g-Lzz" customClass="ColorFullButton">
+                    <rect key="frame" x="0.0" y="0.0" width="218" height="45"/>
+                    <state key="normal" title="Commit"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvA-9O-Kuf" customClass="ColorFullButton">
+                    <rect key="frame" x="220" y="0.0" width="218" height="45"/>
+                    <state key="normal" title="Cancel"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.3073286851" green="0.5399535459" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="1Wm-9g-Lzz" secondAttribute="bottom" id="75O-vK-OzP"/>
+                <constraint firstItem="1Wm-9g-Lzz" firstAttribute="leading" secondItem="qkc-jX-oT3" secondAttribute="leading" id="Szc-ry-cR0"/>
+                <constraint firstItem="jvA-9O-Kuf" firstAttribute="width" secondItem="1Wm-9g-Lzz" secondAttribute="width" id="aGR-jD-eCZ"/>
+                <constraint firstItem="1Wm-9g-Lzz" firstAttribute="top" secondItem="qkc-jX-oT3" secondAttribute="top" id="bON-VH-7Ow"/>
+                <constraint firstItem="jvA-9O-Kuf" firstAttribute="top" secondItem="qkc-jX-oT3" secondAttribute="top" id="ktt-uV-RhZ"/>
+                <constraint firstAttribute="bottom" secondItem="jvA-9O-Kuf" secondAttribute="bottom" id="vUm-Eq-F5C"/>
+                <constraint firstAttribute="trailing" secondItem="jvA-9O-Kuf" secondAttribute="trailing" id="xFz-2H-oIh"/>
+                <constraint firstItem="1Wm-9g-Lzz" firstAttribute="width" secondItem="qkc-jX-oT3" secondAttribute="width" multiplier="1/2" constant="-1" id="yWu-ia-WBS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="615" y="-286.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="frt-RC-wpm">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="42"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ud5-vf-g1V" customClass="ColorFullButton">
+                    <rect key="frame" x="296" y="0.0" width="142" height="42"/>
+                    <state key="normal" title="Cancel"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" tag="500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNx-sV-tZ4" customClass="ColorFullButton">
+                    <rect key="frame" x="0.0" y="0.0" width="142" height="42"/>
+                    <state key="normal" title="Commit"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="er4-P9-5bW" customClass="ColorFullButton">
+                    <rect key="frame" x="148" y="0.0" width="142" height="42"/>
+                    <state key="normal" title="Delete"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.3073286851" green="0.5399535459" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="SNx-sV-tZ4" secondAttribute="bottom" id="14J-ZF-v9P"/>
+                <constraint firstAttribute="bottom" secondItem="ud5-vf-g1V" secondAttribute="bottom" id="75a-ns-iR5"/>
+                <constraint firstAttribute="trailing" secondItem="ud5-vf-g1V" secondAttribute="trailing" id="KdY-ec-u1e"/>
+                <constraint firstAttribute="bottom" secondItem="er4-P9-5bW" secondAttribute="bottom" id="Q3G-ow-yCG"/>
+                <constraint firstItem="ud5-vf-g1V" firstAttribute="top" secondItem="frt-RC-wpm" secondAttribute="top" id="bqO-g5-4NB"/>
+                <constraint firstItem="SNx-sV-tZ4" firstAttribute="width" secondItem="er4-P9-5bW" secondAttribute="width" id="eOS-wQ-z7P"/>
+                <constraint firstItem="er4-P9-5bW" firstAttribute="centerX" secondItem="frt-RC-wpm" secondAttribute="centerX" id="iBY-3A-eoa"/>
+                <constraint firstItem="SNx-sV-tZ4" firstAttribute="leading" secondItem="frt-RC-wpm" secondAttribute="leading" id="j4H-sm-0Lb"/>
+                <constraint firstItem="er4-P9-5bW" firstAttribute="width" secondItem="frt-RC-wpm" secondAttribute="width" multiplier="1/3" constant="-4" id="p5P-12-IMY"/>
+                <constraint firstItem="ud5-vf-g1V" firstAttribute="width" secondItem="er4-P9-5bW" secondAttribute="width" id="pQi-X7-KpC"/>
+                <constraint firstItem="SNx-sV-tZ4" firstAttribute="top" secondItem="frt-RC-wpm" secondAttribute="top" id="yOo-N5-N7g"/>
+                <constraint firstItem="er4-P9-5bW" firstAttribute="top" secondItem="frt-RC-wpm" secondAttribute="top" id="yYh-T6-WvV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="615" y="-167"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,1221 @@
+<!--
+	※ 新版K線圖與舊版在設計上的不同：
+	
+		● 源代碼改寫成Typescript。
+		● 將tick數據(Context類)與圖形分離。
+		● tick數據可以不管該tick的時間是否離散，皆可直接透過Context類的addTicks與mergeTicks加入。
+		● 增加API可設置的選項，包含邊距、字體、字型大小、色彩等。
+		● 儲存/讀取功能支援存取技術分析的繪圖狀態。
+		● 加入I18N支援。
+		● 效能優化。
+ -->
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="Candlestick Chart">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<!-- Android web as app (fullscreen) -->
+<meta name="google" value="notranslate" />
+<meta name="renderer" content="webkit">
+<!-- Browser core desc for 360 browser -->
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<!-- Compatible for IE -->
+
+<title>Candlestick Chart</title>
+
+<!--  jquery and Jquery UI -->
+<!-- http://jqueryui.com/ -->
+<link id="css-jquery" rel="stylesheet"
+	href="jquery-ui-1.10.3/themes/dark/minified/jquery-ui.min.css" />
+<script src="jquery-ui-1.10.3/jquery-1.9.1.min.js"></script>
+<script src="jquery-ui-1.10.3/ui/minified/jquery-ui.min.js"></script>
+<script src="jquery-ui-1.10.3/external/jquery.mousewheel.js"></script>
+
+<!-- http://labs.abeautifulsite.net/jquery-minicolors/ -->
+<link rel="stylesheet" href="jquery.minicolors/jquery.minicolors.css" />
+<script src="jquery.minicolors/jquery.minicolors.js"></script>
+<script src="app.js"></script>
+
+<!-- document.fonts polyfill. -->
+<script src="fontloader.js"></script>
+
+<style>
+html {
+	height: 100%;
+}
+
+body {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	height: 100%;
+	margin: 0px;
+	background-color: rgb(32, 32, 32);
+	color: white;
+	overflow: hidden;
+	font-size: 14px;
+}
+
+input {
+	border: 1px solid rgb(96, 128, 215);
+	box-shadow: 0px 0px 1px 1px rgb(128, 128, 128);
+	background: rgb(32, 32, 32);
+	border-radius: 6px;
+	color: white;
+}
+
+input.ti {
+	border: 1px solid rgb(240, 215, 92);
+}
+
+input.addTi {
+	width: 100%;
+}
+
+td {
+	white-space: nowrap;
+}
+
+#mainCanvas {
+	width: 100%;
+	height: 100%;
+	cursor: crosshair;
+}
+
+.noAntiAliaisCanvas {
+	/* http://stackoverflow.com/questions/7615009/disable-interpolation-when-scaling-a-canvas */
+	image-rendering: optimizeSpeed; /* Older versions of FF          */
+	image-rendering: -moz-crisp-edges; /* FF 6.0+                       */
+	image-rendering: -webkit-optimize-contrast;
+	/* Safari                        */
+	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
+	image-rendering: pixelated; /* Awesome future-browsers       */
+	-ms-interpolation-mode: nearest-neighbor;
+	/* IE                            */
+	-webkit-font-smoothing: none;
+}
+
+.ui-dialog {
+	overflow: visible !important;
+}
+
+.ui-widget-overlay {
+	background: black;
+	opacity: 0.5;
+}
+
+.ui-dialog .ui-dialog-content {
+	overflow: visible !important;
+}
+
+@font-face {
+	font-family: 'customFont';
+	src: url( 'AvenirLTStd-Roman_0.otf');
+}
+</style>
+
+<style>
+body {
+	scrollbar-base-color: rgb(140, 140, 148);
+	scrollbar-3dlight-color: rgb(64, 64, 64);
+	scrollbar-highlight-color: rgb(168, 168, 168);
+	scrollbar-track-color: rgb(32, 32, 32);
+	scrollbar-arrow-color: rgb(192, 192, 192);
+	scrollbar-shadow-color: rgb(32, 32, 32);
+	scrollbar-darkshadow-color: rgb(16, 16, 16);
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+::-webkit-scrollbar-button {
+	
+}
+
+::-webkit-scrollbar-track {
+	border: 2px solid rgba(48, 48, 48, 0.5);
+	border-radius: 3px;
+	background-color: rgba(16, 24, 48, 0.75);
+}
+
+::-webkit-scrollbar-track-piece {
+	
+}
+
+::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+	border-radius: 4px;
+	background-color: rgb(150, 150, 160);
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+::-webkit-resizer {
+	
+}
+</style>
+
+<script>
+	// 全局變量。
+	var defaultPriceForMockTicks = 103.68;
+	var candlestickChartFacade = null;
+	var candlestickChartContext = null;
+	var useTickOrQuote = false; // 使否使用已經調整為特定週期時間的模擬數據。true: tick, false: quote。 
+
+	// 若頁面有錯誤時主動alert。 
+	/*
+	window.onerror = function( msg) {
+		alert( msg);
+	};
+	 */
+
+	window.onerror = function(message, url, linenumber, column, err) {
+		alert('error\n\n' + message + '\n\n' + url + ':' + linenumber);
+
+		if (err != null && err.stack) {
+			alert('stack\n\n' + err.stack);
+		}
+	}
+
+	// 防止右鍵選單。
+	window.oncontextmenu = function() {
+		return false;
+	}
+
+	function chooseOhlcBarType(barType) {
+		switch (barType) {
+		case 'bar':
+			candlestickChartFacade.setTiArg('ohlc', 'ohlcBarType',
+					CscApi.OhlcBarType.BAR);
+			break;
+		case 'candleStick':
+			candlestickChartFacade.setTiArg('ohlc', 'ohlcBarType',
+					CscApi.OhlcBarType.Line);
+			break;
+		default:
+			break;
+		}
+		candlestickChartFacade.present();
+	}
+
+	function addTiAction(ti) {
+		switch (ti) {
+		case 'ma':
+			candlestickChartFacade.addTiMa(ti);
+			break;
+		case 'bollingerBand':
+			candlestickChartFacade.addTiBollingerBand(ti);
+			break;
+		case 'ao':
+			candlestickChartFacade.addTiAo(ti);
+			break;
+		case 'arBr':
+			candlestickChartFacade.addTiArBr(ti);
+			break;
+		case 'atr':
+			candlestickChartFacade.addTiAtr(ti);
+			break;
+		case 'bias':
+			candlestickChartFacade.addTiBias(ti);
+			break;
+		case 'biasAB':
+			candlestickChartFacade.addTiBiasAB(ti);
+			break;
+		case 'cci':
+			candlestickChartFacade.addTiCci(ti);
+			break;
+		case 'dmi':
+			candlestickChartFacade.addTiDmi(ti);
+			break;
+		case 'kdj':
+			candlestickChartFacade.addTiKdj(ti);
+			break;
+		case 'macd':
+			candlestickChartFacade.addTiMacd(ti);
+			break;
+		case 'mtm':
+			candlestickChartFacade.addTiMtm(ti);
+			break;
+		case 'obv':
+			candlestickChartFacade.addTiObv(ti);
+			break;
+		case 'psy':
+			candlestickChartFacade.addTiPsy(ti);
+			break;
+		case 'roc':
+			candlestickChartFacade.addTiRoc(ti);
+			break;
+		case 'rsi':
+			candlestickChartFacade.addTiRsi(ti);
+			break;
+		case 'rsiSmooth':
+			candlestickChartFacade.addTiRsiSmooth(ti);
+			break;
+		case 'volume':
+			candlestickChartFacade.addTiVolume(ti);
+			break;
+		case 'vr':
+			candlestickChartFacade.addTiVr(ti);
+			break;
+		case 'wr':
+			candlestickChartFacade.addTiWr(ti);
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	function removeAllTiAction() {
+		candlestickChartFacade.removeAllTi();
+	}
+
+	// 這裡是頁面載入完成後會執行的地方。
+	$(function() {
+		// 加載字體。
+		document.fonts.load('1em customFont').then(function() {
+			init();
+		});
+	});
+
+	function resetMockTicks(historicDatas, timeSpanInMinutes,
+			optMergeSpanTimeInMinutes) {
+		// 讓時間對齊跨度。
+
+		var timeSpanInMsec = timeSpanInMinutes * 60 * 1000;
+		// 開始產生tick。
+
+		var tempTickList = [];
+		for (var i = 0; i < historicDatas.length; ++i) {
+			var tick = {
+				high : historicDatas[i]["4"],
+				low : historicDatas[i]["5"],
+				open : historicDatas[i]["3"],
+				close : historicDatas[i]["6"],
+				volume : historicDatas[i]["7"],
+				timestamp : historicDatas[i]["1"],
+			}
+			tempTickList.push(tick);
+		}
+
+		if (optMergeSpanTimeInMinutes != null) {
+
+			// 透過mergeTicks方法可以將指定tick列表內的tick數據合併至現有的線圖當中。
+			var optMergeSpanTimeInMsec = optMergeSpanTimeInMinutes * 60 * 1000;
+			//candlestickChartContext.mergeTicks( tempTickList, optMergeSpanTimeInMsec); // mergeTicks會把新的tick跟舊的合併。
+			candlestickChartContext.clearTicks();
+			candlestickChartContext.emplaceTicks(tempTickList,
+					optMergeSpanTimeInMsec); // emplaceTicks會完全取代舊的tick。
+		} else {
+			// 直接在線圖中加入tick列表中的所有tick數據。這是一般不會採用的方法，因為K線中的tick基本上都需要依時間合併。
+			candlestickChartContext.addTicks(tempTickList);
+		}
+		resize();
+		candlestickChartFacade.present();
+
+		// tick數據與畫面大小都確認後，讓K線圖的view靠最右邊。
+		candlestickChartFacade.setViewStartXCoordToRight();
+	}
+
+	function addMockTicks(quoteData, mergeSpanTimeInMinutes) {
+
+		var tempTickList = [];
+		var tick = {
+			close : quoteData["6"],
+			timestamp : quoteData["1"],
+		}
+		tempTickList.push(tick);
+        if(tempTickList.length != 0) {
+            var optMergeSpanTimeInMsec = mergeSpanTimeInMinutes * 60 * 1000;
+        if(candlestickChartContext! = null){
+                candlestickChartContext.mergeTicks(tempTickList, optMergeSpanTimeInMsec);
+            }
+        }
+	}
+
+	// 頁面重設大小時要執行的動作。
+	function resize() {
+		if (candlestickChartFacade == null) {
+			return;
+		}
+
+		var domMainCanvas = document.getElementById('mainCanvas');
+		if (domMainCanvas != null) {
+			// 如果我們希望線圖大小改變後也同步的修正圖形像素層級的大小時，
+			// 直接讓線圖的width與height設定為畫面當前的大小。
+			// 在考慮裝置繪圖效能的狀況下，我們也可以不重設像素解析度。
+			// 或是給定一個最大的極限。
+			var resolutionSelected = $('#resolution').val();
+			if (resolutionSelected == '') { // 調整到canvas大小。
+				domMainCanvas.width = domMainCanvas.clientWidth;
+				domMainCanvas.height = domMainCanvas.clientHeight;
+				$('#mainCanvas').addClass('noAntiAliaisCanvas');
+			} else { // 指定的像素分辨率。
+				var arr = resolutionSelected.split(':');
+				var width = arr[0];
+				var height = arr[1];
+				domMainCanvas.width = parseInt(width);
+				domMainCanvas.height = parseInt(height);
+				$('#mainCanvas').removeClass('noAntiAliaisCanvas');
+			}
+
+			// 然後我們只需要調用resize即可。
+			candlestickChartFacade.resize();
+		}
+	}
+
+	function hideMenu() {
+		$(' #menu').hide();
+	}
+
+	function showMenu() {
+		$('#menu').show();
+	}
+
+	function init() {
+		// 取得canvas元素。
+		var domMainCanvas = document.getElementById('mainCanvas');
+
+		// 初始化context。
+		candlestickChartContext = new CscImpl.Context();
+
+		$('#timeSpan').on('change', function() {
+			var timeSpanInMin = parseInt($(this).val());
+			var numberOfTicks = Math.floor(6000 / Math.sqrt(timeSpanInMin));
+			candlestickChartContext.clearTicks();
+
+			if (useTickOrQuote) {
+				//putMockTicks( candlestickChartContext, defaultPriceForMockTicks, numberOfTicks, timeSpanInMin);
+			} else {
+				//putMockQuotePrices( candlestickChartContext, defaultPriceForMockTicks, numberOfTicks, timeSpanInMin);
+			}
+		}).trigger('change');
+        
+		hideMenu();
+		// 初始化線圖facade。
+		candlestickChartFacade = new CscFacade.CandlestickChartFacade();
+		candlestickChartFacade.init(domMainCanvas);
+		candlestickChartFacade.setContext(candlestickChartContext);
+
+		// 設置OHLC小數位數。
+		candlestickChartFacade.setDecimalDigits(4);
+
+		// 更改字體。
+		var fontName = 'customFont';// 'monospace';
+		var candlestickChartFacadeStyle = candlestickChartFacade.getStyle();
+
+		// 時間軸字體。
+		candlestickChartFacadeStyle.setTimeScaleFontName(
+				CscApi.SpanTypeEnum.MINUTE, fontName);
+		candlestickChartFacadeStyle.setTimeScaleFontName(
+				CscApi.SpanTypeEnum.HOUR, fontName);
+		candlestickChartFacadeStyle.setTimeScaleFontName(
+				CscApi.SpanTypeEnum.DAY, fontName);
+		candlestickChartFacadeStyle.setTimeScaleFontName(
+				CscApi.SpanTypeEnum.MONTH, fontName);
+		candlestickChartFacadeStyle.setTimeScaleFontName(
+				CscApi.SpanTypeEnum.YEAR, fontName);
+
+		// 數值軸字體。
+		candlestickChartFacadeStyle.setVauleScaleFontName(fontName);
+		candlestickChartFacadeStyle.setValueScaleLabelFontName(fontName);
+
+		// 圖表字體。
+		candlestickChartFacadeStyle.setChartCaptionInfoFontName(fontName);
+
+		// 將漲跌色彩設置為漲綠跌紅。
+		candlestickChartFacade.setTiArg('ohlc', 'candlestickRisingColorRgba', [
+				64, 255, 64, 76 ]);
+		candlestickChartFacade.setTiArg('ohlc', 'candlestickFallingColorRgba',
+				[ 255, 64, 64, 76 ]);
+		candlestickChartFacade.setTiArg('ohlc', 'barRisingColorRgba', [ 32,
+				205, 32, 255 ]);
+		candlestickChartFacade.setTiArg('ohlc', 'barFallingColorRgba', [ 215,
+				32, 32, 255 ]);
+
+		// 替線圖設置style。
+		//var style = candlestickChartFacade.getStyle();
+		//style.setValueScaleWidth( 80);
+
+		// 新增技術指標。
+		/*
+		candlestickChartFacade.addTiMa( 'ma1');
+		candlestickChartFacade.addTiMa( 'ma2');
+		candlestickChartFacade.addTiAo( 'ao1');
+		candlestickChartFacade.addTiArBr( 'arbr1');
+		candlestickChartFacade.addTiAtr( 'atr1');
+		candlestickChartFacade.addTiBias( 'bias1');
+		candlestickChartFacade.addTiBiasAB( 'biasAB1');
+		candlestickChartFacade.addTiBollingerBand( 'bollingerBand1');
+		candlestickChartFacade.addTiCci( 'cci1');
+		candlestickChartFacade.addTiDmi( 'dmi1');
+		candlestickChartFacade.addTiKdj( 'kdj1');
+		candlestickChartFacade.addTiMacd( 'macd1');
+		candlestickChartFacade.addTiMacd( 'macd2');
+		candlestickChartFacade.addTiMtm( 'mtm1');
+		candlestickChartFacade.addTiObv( 'obv1');
+		candlestickChartFacade.addTiPsy( 'psy1');
+		candlestickChartFacade.addTiRoc( 'roc1');
+		candlestickChartFacade.addTiRsi( 'rsi1');
+		candlestickChartFacade.addTiRsiSmooth( 'rsiSmooth1');
+		candlestickChartFacade.addTiVolume( 'volume1');
+		candlestickChartFacade.addTiVr( 'vr1');
+		candlestickChartFacade.addTiWr( 'wr1');
+		
+		// 移除ID為macd2的技術指標。
+		candlestickChartFacade.removeTi( 'macd2');
+		
+		// 設置技術指標參數。
+		candlestickChartFacade.setTiArg( 'ma1', 'period', 5);
+		candlestickChartFacade.setTiArg( 'ma1', 'maLineColorRgba', [64, 255, 255, 255]);
+		
+		candlestickChartFacade.setTiArg( 'ma2', 'period', 12);
+		candlestickChartFacade.setTiArg( 'ma2', 'maLineColorRgba', [255, 255, 64, 255]);
+		 */
+
+		// 由於不同browser觸發onresize事件的時機並無法確定，所以在此主動調用。
+		resize();
+
+		// tick數據與畫面大小都確認後，讓K線圖的view靠最右邊。
+		candlestickChartFacade.setViewStartXCoordToRight();
+
+		// 模擬收到新行情實時更新tick的動作。
+		/*setInterval(
+		 function() {
+		 var numberOfTicks = 1;//Math.floor( Math.random() * 1000);
+		 var timeSpanInMinutes = parseInt( $( '#timeSpan').val()); // 產生N分鐘線的tick。
+		 var optMergeSpanTimeInMsec = timeSpanInMinutes; // 以相同時間跨度合併(此K線圖保留了可以決定是否合併的特性，但是一般來說都是需要合併的)。  
+		 // 合併新的tick進去。
+		 var orderedTickList = candlestickChartContext.getOrderedTickList();
+		 var defaultPrice; // 起始價格。
+		 if (orderedTickList.length > 1) {
+		 // 使用最後倒數第二個tick的價格來模擬新的行情跳動。(最後一個tick可能就是現在正在更新的，不能用它的價格)。
+		 var lastTick = orderedTickList[orderedTickList.length - 2];
+		 defaultPrice = lastTick.getClose();
+		 }
+		 else {
+		 defaultPrice = defaultPriceForMockTicks;
+		 }
+		
+		 if (useTickOrQuote) {
+		 putMockTicks( candlestickChartContext, defaultPrice, numberOfTicks, timeSpanInMinutes, optMergeSpanTimeInMsec);
+		 }
+		 else {
+		 putMockQuotePrices( candlestickChartContext, defaultPriceForMockTicks, numberOfTicks, timeSpanInMinutes);	
+		 }
+		 },
+		 1000
+		 );*/
+
+		// 攔截body元素的touchmove行為以避免讓頁面捲動。
+		document.body.addEventListener('touchmove', function(event) {
+			event.preventDefault();
+		}, false);
+
+		// 分辨率改變UI事件。
+		$('#resolution').on('change', resize);
+
+		// 鼠標觸碰選單觸發邊界事件。
+		$('#menuTrigger').on('mousemove', function(e) {
+			showMenu();
+			e.stopPropagation();
+		});
+
+		// 鼠標重新進入到canvas的UI事件。
+		$('#mainCanvas').on('mouseenter', function(e) {
+			setTimeout(function() {
+				hideMenu();
+			}, 500);
+		});
+
+		var timezone = candlestickChartFacade.getTimezone();
+		$('#timezone').on('change', function() {
+			var timezone = parseFloat($(this).val());
+			candlestickChartFacade.setTimezone(timezone);
+		});
+		$('#timezone').val(timezone);
+
+		// 建立切換字形大小的UI清單。
+		var arrOfGlobalFontSize = [];
+		for (var i = 12; i < 48; i += 2) {
+			var minFontSize = i;
+			var maxFontSize = Math.floor(i * 1.2);
+			maxFontSize += (maxFontSize % 2); // 保持偶數。
+			var value = minFontSize + '~' + maxFontSize;
+			arrOfGlobalFontSize.push('<option value="' + value + '">' + value
+					+ '</option>');
+		}
+		$('#globalFontSize').html(arrOfGlobalFontSize.join(''));
+
+		// 切換字形大小UI事件。
+		$('#globalFontSize').on(
+				'change',
+				function() {
+					var value = $(this).val();
+					var arr = value.split('~');
+					var minFontSize = parseInt(arr[0]);
+					var maxFontSize = parseInt(arr[1]);
+					var autoAdjustStyles = true;
+					var style = candlestickChartFacade.getStyle();
+					style.adjustGlobalFontSize(minFontSize, maxFontSize,
+							autoAdjustStyles);
+				}).trigger('change');
+
+		$('.ui-dialog').dialog({
+			'modal' : true,
+			'dialogClass' : '',
+			'closeOnEscape' : true,
+			'autoResize' : false,
+			'autoOpen' : false,
+			'draggable' : true,
+			'resizable' : false,
+			'width' : 'auto',
+			'height' : 'auto',
+			'close' : function(IN_event, IN_ui) {
+				//$( '#fullscreen_mask').hide();
+			},
+			'open' : function(IN_event, IN_ui) {
+				//$( this).find( '[tabindex=0]:first').focus();
+				//$( this).css( 'overflow', 'hidden');
+			}
+		});
+	};
+
+	// 移除所有繪圖。
+	function removeAllDrawers() {
+		candlestickChartFacade.removeAllDrawers();
+	}
+
+	// 取得可用的繪圖名稱。
+	function getDrawerName() {
+		var currentTime = Date.now();
+		while (candlestickChartFacade.isDrawerExisting(currentTime)) {
+			--currentTime;
+		}
+		return currentTime;
+	}
+
+	// 畫直線。
+	function drawLine() {
+		var sn = getDrawerName();
+		candlestickChartFacade.startToDraw(sn.toString(),
+				CscApi.DrawerType.LINE);
+		hideMenu();
+	}
+
+	// 畫水平線。
+	function drawHorizontalLine() {
+		var sn = getDrawerName();
+		candlestickChartFacade.startToDraw(sn.toString(),
+				CscApi.DrawerType.HORIZONTAL_LINE);
+		hideMenu();
+	}
+
+	// 畫價位切線。
+	function drawPriceTangent() {
+		var sn = getDrawerName();
+		candlestickChartFacade.startToDraw(sn.toString(),
+				CscApi.DrawerType.PRICE_TANGENT);
+		hideMenu();
+	}
+
+	// 畫通道線。
+	function drawChannel() {
+		var sn = getDrawerName();
+		candlestickChartFacade.startToDraw(sn.toString(),
+				CscApi.DrawerType.CHANNEL);
+		hideMenu();
+	}
+
+	// 畫黃金分割線。
+	function drawGoldenSection() {
+		var sn = getDrawerName();
+		candlestickChartFacade.startToDraw(sn.toString(),
+				CscApi.DrawerType.GOLDEN_SECTION);
+		hideMenu();
+	}
+
+	// 畫黃金波段。
+	function drawGoldenBands() {
+		var sn = getDrawerName();
+		candlestickChartFacade.startToDraw(sn.toString(),
+				CscApi.DrawerType.GOLDEN_BANDS);
+		hideMenu();
+	}
+
+	// 畫黃金分割圓。
+	function drawGoldenCircle() {
+		var sn = getDrawerName();
+		candlestickChartFacade.startToDraw(sn.toString(),
+				CscApi.DrawerType.GOLDEN_CIRCLE);
+		hideMenu();
+	}
+
+	// 甘式扇形。
+	function drawGannFan() {
+		var sn = getDrawerName();
+		candlestickChartFacade.startToDraw(sn.toString(),
+				CscApi.DrawerType.GANN_FAN);
+		hideMenu();
+	}
+
+	// 線性回歸線。
+	function drawLinearRegression() {
+		var sn = getDrawerName();
+		candlestickChartFacade.startToDraw(sn.toString(),
+				CscApi.DrawerType.LINEAR_REGRESSION);
+		hideMenu();
+	}
+
+	// 加入技術指標。
+	function addTi(methodName, tiName) {
+		// 產生ID。
+		var currentTime = Date.now();
+		var tiId;
+		while (candlestickChartFacade.isTiExisting(tiId = tiName + '_'
+				+ currentTime)) {
+			--currentTime;
+		}
+
+		// 用該ID加入技術指標。
+		candlestickChartFacade[methodName](tiId);
+
+		// 加入該技術指標的UI按鈕。
+		addTiUi(tiId, tiName);
+	}
+
+	// 移除技術指標。
+	function removeTi(tiId) {
+		candlestickChartFacade.removeTi(tiId);
+		$('#tiButton_' + tiId).remove();
+	}
+
+	// 加入技術指標UI物件。
+	function addTiUi(tiId, tiName) {
+		var arr = tiId.split('_');
+		var tiSn = arr[1];
+
+		// 產生UI對象。
+		var domId = '#' + tiName + 'TiList';
+		var jqueryTiButton = $(
+				'<input id="tiButton_' + tiId
+						+ '" type="button" class="ti" value="' + tiSn
+						+ '" onclick="showTiConfig( \'' + tiId + '\');" />')
+				.appendTo($(domId));
+		jqueryTiButton.on('contextmenu', function() {
+			removeTi(tiId);
+		});
+	}
+
+	// 移除所有的技術指標UI物件。
+	function removeAllTiUi() {
+		$('.ti').remove();
+	}
+
+	// 替某一張委託單加入價位水平線。
+	function addHorizontalForOrder() {
+		var sn = getDrawerName();
+		candlestickChartFacade.startToDraw('order001', // drawer name基本上是用來識別繪圖用的。欲刪除時指定相同drawer name即可。
+		CscApi.DrawerType.HORIZONTAL_LINE, [ {
+			index : 0, // 水平線的話index都無所謂，重點在於vaule。
+			value : defaultPriceForMockTicks, // value是價位。
+		} ]);
+	}
+
+	// 替某一張委託單移除曾經加入過的價位水平線。
+	function removeHorizontalForOrder() {
+		candlestickChartFacade.removeDrawer('order001');
+	}
+
+	// 顯示技術指標設置dialog。
+	function showTiConfig(tiId) {
+		var jqueryDialog = $('#dialogTi');
+
+		// 取得語言介面。
+		var lang = candlestickChartFacade.getLang();
+		if (lang == null) {
+			return;
+		}
+
+		// 取出圖表的設置。
+		var chartConfig = candlestickChartFacade.getTiConfig(tiId);
+		if (chartConfig == null) {
+			return;
+		}
+
+		var params = chartConfig.params;
+
+		// 清除原先Dialog中的UI.
+		jqueryDialog.empty();
+		jqueryDialog.data('tiId', tiId);
+
+		// 設置標題。
+		var tiChartType = candlestickChartFacade.getTiType(tiId);
+		var caption = lang.getChartCaption(tiChartType);
+		jqueryDialog.dialog('option', 'title', caption);
+
+		var jqueryTable = $('<table></table>').appendTo(jqueryDialog);
+		for ( var paramName in params) {
+			var param = params[paramName];
+
+			// 建立欄位。
+			var jqueryRow = $('<tr></tr>').appendTo(jqueryTable);
+			var jqueryColumnOfDisplayName = $('<td></td>').appendTo(jqueryRow);
+			var jqueryColumnOfValue = $('<td></td>').appendTo(jqueryRow);
+
+			// 設置欄位。
+			var paramNameDisplayName = lang.getChartParamName(tiChartType,
+					paramName);
+			jqueryColumnOfDisplayName.text(paramNameDisplayName);
+
+			// 依照欄位數值類型建立欄位輸入框。
+			var jqueryValue;
+			switch (param.valueType) {
+			case CscApi.ConfigParameterValueType.NUMBER:
+				jqueryValue = $('<input />').appendTo(jqueryColumnOfValue);
+				jqueryValue.val(param.value);
+				jqueryValue.spinner({
+					'min' : 0,
+					'max' : 100
+				});
+
+				jqueryValue.data('reset', function(defaultValue) {
+					return function(self) {
+						self.val(defaultValue);
+					};
+				}(param.value));
+				break;
+
+			case CscApi.ConfigParameterValueType.ENUM:
+				jqueryValue = $('<select></select>').appendTo(
+						jqueryColumnOfValue);
+				var html = '';
+				var valueEnumList = param.enumList;
+				for ( var i in valueEnumList) {
+					var valueEnum = valueEnumList[i];
+					var valueDisplayName = lang.getChartParamEnum(tiChartType,
+							paramName, valueEnum);
+					html += '<option value="' + valueEnum + '">'
+							+ valueDisplayName + '</option>';
+				}
+
+				jqueryValue.html(html);
+				jqueryValue.val(param.value);
+				jqueryValue.data('reset', function(defaultValue) {
+					return function(self) {
+						self.val(defaultValue);
+					};
+				}(param.value));
+				break;
+
+			case CscApi.ConfigParameterValueType.COLOR_RGBA:
+			case CscApi.ConfigParameterValueType.COLOR_RGB:
+				jqueryValue = $('<input />').appendTo(jqueryColumnOfValue);
+				var colorArr = param.value;
+				var hasAlpha = colorArr.length >= 4;
+				var colorRgbHexStr = CscApi.Utility.rgbArrayToHexStr(colorArr);
+				jqueryValue.minicolors({
+					'control' : 'hue',
+					'defaultValue' : colorRgbHexStr,
+					'inline' : false,
+					'letterCase' : 'lowercase',
+					'opacity' : hasAlpha,
+					'position' : 'bottom left',
+					'theme' : 'default',
+				});
+
+				if (hasAlpha) { // 設置不透明度。
+					jqueryValue.minicolors('opacity', colorArr[3] / 255); // 注意！這裡的opacity是方法(method)，不是預設值的那個opacity選項(boolean).
+				}
+
+				jqueryValue.addClass('ui-widget-content');
+				jqueryValue.data('reset', function(defaultValue) {
+					var hasAlpha = colorArr.length >= 4;
+					var colorStr = hasAlpha ? CscApi.Utility
+							.rgbArrayToHexStr(colorArr)
+							: CscApi.Utility.rgbArrayToStr;
+					return function(self) {
+						if (hasAlpha) { // 設置不透明度。
+							self.minicolors('opacity', defaultValue[3] / 255); // 注意！這裡的opacity是方法(method)，不是預設值的那個opacity選項(boolean).
+						}
+						self.minicolors('value', colorStr);
+					};
+				}(param.value));
+				break;
+			}
+
+			// 將參數的重要信息保留在該數值UI欄位上。
+			jqueryValue.data('cscParamType', param.valueType);
+			jqueryValue.data('cscParamName', paramName);
+			jqueryValue.addClass('cscTiValue');
+			jqueryValue.prop('tabindex', -1);
+		}
+
+		$('<br/><hr/>').appendTo(jqueryDialog);
+		var jqueryLeftDiv = $('<div style="float: left;"></div>').appendTo(
+				jqueryDialog);
+		var jqueryRightDiv = $('<div style="float: right;"></div>').appendTo(
+				jqueryDialog);
+		var jqueryResetButton = $('<input type="button" value="Reset" />')
+				.appendTo(jqueryLeftDiv);
+		var jqueryRemoveButton = $('<input type="button" value="Remove" />')
+				.appendTo(jqueryLeftDiv);
+		var jqueryOkButton = $('<input type="button" value="OK" />').appendTo(
+				jqueryRightDiv);
+		var jqueryCancelButton = $(
+				'<input type="button" value="Cancel" tabindex=0 />').appendTo(
+				jqueryRightDiv);
+
+		// Bind events.
+		jqueryOkButton.on('click', function() {
+			var tiId = jqueryDialog.data('tiId');
+			jqueryTable.find('.cscTiValue').each(function() {
+				var self = $(this);
+				var paramType = self.data('cscParamType');
+				var paramName = self.data('cscParamName');
+				var value;
+
+				switch (paramType) {
+				case CscApi.ConfigParameterValueType.NUMBER:
+					value = parseFloat(self.val());
+					break;
+
+				case CscApi.ConfigParameterValueType.ENUM:
+					value = parseInt(self.val());
+					break;
+
+				case CscApi.ConfigParameterValueType.COLOR_RGBA:
+					value = self.minicolors('rgbaString');
+					value = CscApi.Utility.rgbaStringToArray(value);
+					break;
+
+				case CscApi.ConfigParameterValueType.COLOR_RGB:
+					value = self.minicolors('rgbString');
+					value = CscApi.Utility.rgbStringToArray(value);
+					break;
+				}
+
+				console.log('Set param "' + paramName + '" to ' + value);
+				candlestickChartFacade.setTiArg(tiId, paramName, value);
+			});
+			jqueryDialog.dialog('close');
+		});
+
+		if (tiId === 'ohlc') {
+			jqueryRemoveButton.remove();
+		} else {
+			jqueryRemoveButton.on('click', function() {
+				var tiId = jqueryDialog.data('tiId');
+				removeTi(tiId);
+				jqueryDialog.dialog('close');
+			});
+		}
+
+		jqueryCancelButton.on('click', function() {
+			jqueryDialog.dialog('close');
+		});
+
+		jqueryResetButton.on('click', function() {
+			jqueryTable.find('*').each(function() {
+				var self = $(this);
+				var reset = self.data('reset');
+				if (reset != null) {
+					reset(self);
+				}
+			});
+		});
+		jqueryDialog.dialog('open');
+	}
+
+	// 儲存。
+	function save() {
+		var recordList = getRecordList();
+		var msg = recordList.length > 0 ? '● 已存在的紀錄名稱：\n\n'
+				+ recordList.join('\n') : '';
+		var name = prompt(msg + '\n\n●儲存：');
+		if (name != null) {
+			localStorage['csc_' + name] = candlestickChartFacade.saveToJson();
+		}
+	}
+
+	// 還原(載入)。
+	function restore() {
+		var recordList = getRecordList();
+		var msg = recordList.length > 0 ? '● 已存在的紀錄名稱：\n\n'
+				+ recordList.join('\n') : '';
+		var name = prompt(msg + '\n\n●讀取：');
+		if (name != null) {
+			var json = localStorage['csc_' + name];
+			if (json != null) {
+				candlestickChartFacade.restoreFromJson(null, json);
+			}
+		}
+
+		// 重新建立技術指標的UI按鈕。
+		removeAllTiUi();
+		var tiList = candlestickChartFacade.getTiList();
+		var numberOfTi = tiList.length;
+		for (var i = 0; i < numberOfTi; ++i) {
+			var tiId = tiList[i];
+			if (tiId != 'ohlc' && tiId != 'timeScale') {
+				var arr = tiId.split('_');
+				var tiName = arr[0];
+				addTiUi(tiId, tiName);
+			}
+		}
+	}
+
+	function getRecordList() {
+		var regexp = new RegExp(/^csc_/);
+		var keyList = Object.keys(localStorage);
+		var numberOfKeys = keyList.length;
+		var recordList = [];
+		for (var i = 0; i < numberOfKeys; ++i) {
+			if (regexp.test(keyList[i])) {
+				recordList.push(keyList[i].substr(4));
+			}
+		}
+		return recordList;
+	}
+</script>
+</head>
+
+<body onResize="resize()">
+	<div style="font-family: customFont; display: none;">.</div>
+	<!-- 強制載入字體 -->
+
+	<div id="menuTrigger"
+		style="display: inline-block; position: absolute; width: 8px; height: 100%; background-color: rgb(16, 24, 48);">
+		<div id="menu"
+			style="display: inline-block; width: auto; height: 100%; overflow-y: scroll">
+			<table
+				style="width: 100%; height: 100%; background: rgba(16, 24, 48, 0.8);">
+				<tr>
+					<td colspan="2"><input type="button" value="關閉"
+						style="font-size: 120%; width: 100%;" onClick="hideMenu();" /></td>
+				</tr>
+				<tr>
+					<td>像素分辨率：</td>
+					<td><select id="resolution">
+							<option value="">調整到canvas大小</option>
+							<option value="640:480">640x480(4:3)</option>
+							<option value="800:600">800x600(4:3)</option>
+							<option value="1024:768">1024x768(4:3)</option>
+							<option value="1280:720">1280x720(16:9)</option>
+							<option value="1600:900">1600x900(16:9)</option>
+							<option value="1920:1080">1920x1080(16:9)</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>文字大小：</td>
+					<td><select id="globalFontSize"></select></td>
+				</tr>
+				<tr>
+					<td>時區：</td>
+					<td><select id="timezone">
+							<option value="-12">UTC-12</option>
+							<option value="-11">UTC-11</option>
+							<option value="-10">UTC-10</option>
+							<option value="-9">UTC-9</option>
+							<option value="-8">UTC-8</option>
+							<option value="-7">UTC-7</option>
+							<option value="-6">UTC-6</option>
+							<option value="-5">UTC-5</option>
+							<option value="-4">UTC-4</option>
+							<option value="-3">UTC-3</option>
+							<option value="-2">UTC-2</option>
+							<option value="-1">UTC-1</option>
+							<option value="0">UTC+0</option>
+							<option value="1">UTC+1</option>
+							<option value="2">UTC+2</option>
+							<option value="3">UTC+3</option>
+							<option value="4">UTC+4</option>
+							<option value="5">UTC+5</option>
+							<option value="6">UTC+6</option>
+							<option value="7">UTC+7</option>
+							<option value="8">UTC+8</option>
+							<option value="9">UTC+9</option>
+							<option value="10">UTC+10</option>
+							<option value="11">UTC+11</option>
+							<option value="12">UTC+12</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>線圖類型：</td>
+					<td><select id="timeSpan">
+							<option value="1" selected>1分鐘</option>
+							<option value="2">2分鐘</option>
+							<option value="5">5分鐘</option>
+							<option value="10">10分鐘</option>
+							<option value="15">15分鐘</option>
+							<option value="20">20分鐘</option>
+							<option value="30">30分鐘</option>
+							<option value="60">1小時</option>
+							<option value="120">2小時</option>
+							<option value="240">4小時</option>
+							<option value="1440">日</option>
+							<option value="10080">週</option>
+							<option value="43200">月</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>特殊需求演示：</td>
+					<td><input type="button" value="替Order加入價位水平線"
+						onClick="addHorizontalForOrder();" /> <input type="button"
+						value="替Order移除加入過的價位水平線" onClick="removeHorizontalForOrder();" />
+					</td>
+				</tr>
+				<tr>
+					<td>儲存/還原 (以下設置)</td>
+					<td><input type="button" value="儲存" onClick="save();" /> <input
+						type="button" value="還原" onClick="restore();" /></td>
+				</tr>
+				<tr>
+					<td>繪圖：</td>
+					<td><input type="button" value="移除所有"
+						onClick="removeAllDrawers();" /> <input type="button" value="直線"
+						onClick="drawLine();" /> <input type="button" value="水平線"
+						onClick="drawHorizontalLine();" /> <input type="button"
+						value="價位切線" onClick="drawPriceTangent();" /> <input
+						type="button" value="通道線" onClick="drawChannel();" /> <input
+						type="button" value="黃金分割" onClick="drawGoldenSection();" /> <input
+						type="button" value="黃金波段" onClick="drawGoldenBands();" /> <input
+						type="button" value="黃金分割圓" onClick="drawGoldenCircle();" /> <input
+						type="button" value="甘式扇形線(江恩角度線)" onClick="drawGannFan();" /> <input
+						type="button" value="線性回歸線" onClick="drawLinearRegression();" />
+					</td>
+				</tr>
+				<tr>
+					<td>OHLC圖表：</td>
+					<td><input type="button" value="設置"
+						onClick="showTiConfig( 'ohlc');" /></td>
+				</tr>
+				<tr>
+					<td>技術指標</td>
+					<td>
+						<table id="ti" class="width: 100%;">
+							<tr>
+								<td><input type="button" class="addTi" value="MA (移動平均線)"
+									onClick="addTi( 'addTiMa', 'ma');" /></td>
+								<td id="maTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi"
+									value="Bollinger Band (布林通道)"
+									onClick="addTi( 'addTiBollingerBand', 'bollingerBand');" /></td>
+								<td id="bollingerBandTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="AO (動量震動指標)"
+									onClick="addTi( 'addTiAo', 'ao');" /></td>
+								<td id="aoTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi"
+									value="ARBR (人氣意願指標)" onClick="addTi( 'addTiArBr', 'arBr');" /></td>
+								<td id="arBrTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="ATR (真實波幅)"
+									onClick="addTi( 'addTiAtr', 'atr');" /></td>
+								<td id="atrTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="BIAS (乖離率)"
+									onClick="addTi( 'addTiBias', 'bias');" /></td>
+								<td id="biasTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi"
+									value="A-B BIAS (A-B乖離率)"
+									onClick="addTi( 'addTiBiasAB', 'biasAB');" /></td>
+								<td id="biasABTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="CCI (順勢指標)"
+									onClick="addTi( 'addTiCci', 'cci');" /></td>
+								<td id="cciTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="DMI (趨向指標)"
+									onClick="addTi( 'addTiDmi', 'dmi');" /></td>
+								<td id="dmiTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="KDJ (人氣意願指標)"
+									onClick="addTi( 'addTiKdj', 'kdj');" /></td>
+								<td id="kdjTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi"
+									value="MACD (指數平滑異同平均線)" onClick="addTi( 'addTiMacd', 'macd');" /></td>
+								<td id="macdTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="MTM (動量指標)"
+									onClick="addTi( 'addTiMtm', 'mtm');" /></td>
+								<td id="mtmTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="OBV (能量潮)"
+									onClick="addTi( 'addTiObv', 'obv');" /></td>
+								<td id="obvTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="PSY (心理線)"
+									onClick="addTi( 'addTiPsy', 'psy');" /></td>
+								<td id="psyTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="ROC (變動率)"
+									onClick="addTi( 'addTiRoc', 'roc');" /></td>
+								<td id="rocTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="RSI (相對強弱指標)"
+									onClick="addTi( 'addTiRsi', 'rsi');" /></td>
+								<td id="rsiTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi"
+									value="RSI Smooth (平滑相對強弱指標)"
+									onClick="addTi( 'addTiRsiSmooth', 'rsiSmooth');" /></td>
+								<td id="rsiSmoothTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="Volume (交易量)"
+									onClick="addTi( 'addTiVolume', 'volume');" /></td>
+								<td id="volumeTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="VR (容量指標)"
+									onClick="addTi( 'addTiVr', 'vr');" /></td>
+								<td id="vrTiList"></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="addTi" value="WR (威廉指標)"
+									onClick="addTi( 'addTiWr', 'wr');" /></td>
+								<td id="wrTiList"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<canvas id="mainCanvas" width="1280" height="720" opaque moz-opaque></canvas>
+
+	<div id="dialogTi" class="ui-dialog">&nbsp;</div>
+</body>
+</html>

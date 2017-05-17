@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1uN-B6-frW" customClass="OrderHisBackContentView">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="601"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeD-HI-5OZ">
+                    <rect key="frame" x="0.0" y="0.0" width="438" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="9Wk-9v-nzW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQ6-Lr-Nrj" customClass="SelectSliderView">
+                    <rect key="frame" x="0.0" y="40" width="438" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="DkP-g1-32F"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYp-F3-1q2" customClass="ColorFullButton">
+                    <rect key="frame" x="169" y="566" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="CvX-Z5-dMS"/>
+                        <constraint firstAttribute="width" constant="100" id="Gij-SI-ghT"/>
+                    </constraints>
+                    <state key="normal" title="Back">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="style">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GP-HD-NDR">
+                    <rect key="frame" x="0.0" y="80" width="438" height="481"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.3073286851" green="0.5399535459" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="4GP-HD-NDR" firstAttribute="leading" secondItem="1uN-B6-frW" secondAttribute="leading" id="1mT-YW-Gii"/>
+                <constraint firstAttribute="trailing" secondItem="bQ6-Lr-Nrj" secondAttribute="trailing" id="7cl-Fr-88n"/>
+                <constraint firstItem="oYp-F3-1q2" firstAttribute="top" secondItem="4GP-HD-NDR" secondAttribute="bottom" constant="5" id="LIR-nQ-5Ao"/>
+                <constraint firstAttribute="trailing" secondItem="4GP-HD-NDR" secondAttribute="trailing" id="LW0-V5-35O"/>
+                <constraint firstItem="YeD-HI-5OZ" firstAttribute="leading" secondItem="1uN-B6-frW" secondAttribute="leading" id="Qeb-Lz-rbp"/>
+                <constraint firstItem="oYp-F3-1q2" firstAttribute="centerX" secondItem="1uN-B6-frW" secondAttribute="centerX" id="bKb-l1-wYz"/>
+                <constraint firstItem="bQ6-Lr-Nrj" firstAttribute="leading" secondItem="1uN-B6-frW" secondAttribute="leading" id="bt6-cm-7PN"/>
+                <constraint firstItem="YeD-HI-5OZ" firstAttribute="top" secondItem="1uN-B6-frW" secondAttribute="top" id="dAf-ph-MZP"/>
+                <constraint firstAttribute="bottom" secondItem="oYp-F3-1q2" secondAttribute="bottom" constant="5" id="frZ-y8-v42"/>
+                <constraint firstAttribute="trailing" secondItem="YeD-HI-5OZ" secondAttribute="trailing" id="rEi-cH-v5j"/>
+                <constraint firstItem="4GP-HD-NDR" firstAttribute="top" secondItem="bQ6-Lr-Nrj" secondAttribute="bottom" id="uEc-UJ-ECS"/>
+                <constraint firstItem="bQ6-Lr-Nrj" firstAttribute="top" secondItem="YeD-HI-5OZ" secondAttribute="bottom" id="um2-Ub-F1F"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backButton" destination="oYp-F3-1q2" id="ZYN-Cs-tfO"/>
+                <outlet property="orderHisTableView" destination="4GP-HD-NDR" id="xXb-me-jQa"/>
+                <outlet property="sliderView" destination="bQ6-Lr-Nrj" id="RSU-j6-phR"/>
+                <outlet property="titleLabel" destination="YeD-HI-5OZ" id="imX-a5-Gdo"/>
+            </connections>
+            <point key="canvasLocation" x="428" y="81.5"/>
+        </view>
+    </objects>
+</document>

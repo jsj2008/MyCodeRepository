@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <item name="Default">操作失败</item>
+    
+    <item name="Login_Result_-1">用戶不存在</item>
+    <item name="Login_Result_-2">密碼錯誤</item>
+    <item name="Login_Result_-3">用戶已鎖，請與管理員聯繫解鎖該用戶</item>
+    <item name="Login_Result_-4">密碼已經過期</item>
+    <item name="Login_Result_-5">您的IP地址與授權IP地址不匹配，請與管理員聯繫</item>
+    <item name="Login_Result_-6">使用者代號輸入錯誤</item>
+    <item name="Login_Result_-21">網絡錯誤</item>
+    <item name="Login_Result_-15">網絡錯誤</item>
+    <item name="Login_Result_-20">網絡錯誤</item>
+    <item name="Login_Result_-31">程式版本未更新，請至AppStore下載更新</item>
+    <item name="Login_Result_-100">網絡錯誤</item>
+    
+    <item name="RESULT_20011">帳號未找到</item>
+    <item name="RESULT_20012">價格無效，交易失敗</item>
+    <item name="RESULT_20013">系統已收盤</item>
+    <item name="RESULT_20021">商品不存在</item>
+    
+    <item name="RESULT_20111">交易量必須為1萬的整數倍</item>
+    
+    <item name="RESULT_20112">金額小於網路下單單筆最小金額//BasicCurrency// //MinTradeLot// </item>
+    
+    <item name="HEDGE_20112">金額小於網路下單單筆最小金額//BasicCurrency// //MinTradeLot// </item>
+    
+    <item name="RESULT_20113">0交易量  </item>
+    
+    <item name="RESULT_20114">交易量檢查錯誤  </item>
+    <item name="RESULT_20115">交易參數錯誤 </item>
+    <item name="RESULT_20116">價格錯誤 </item>
+    <item name="RESULT_20117">有效期錯誤</item>
+    <item name="RESULT_20153">不可修改不拋補委託單</item>
+    
+    <item name="OrderTrade_RESULT_20118">超過單筆最大交易金額//BasicCurrency// //MaxTradeLot//</item>
+    
+    <item name="RESULT_20118">超過單筆最大交易金額//BasicCurrency// //MaxTradeLot//</item>
+    <item name="RESULT_20121">交易金額超過帳戶限額</item>
+    <item name="RESULT_20122">交易金額超過用戶限額</item>
+    <item name="RESULT_20131">解鎖保證金不足 </item>
+    <item name="RESULT_20132">交易保證金不足 </item>
+    
+    <item name="RESULT_20141">交易者類型錯誤      </item>
+    
+    <item name="RESULT_20142">交易類型錯誤        </item>
+    
+    <item name="RESULT_20151">掛單檢查錯誤      </item>
+    
+    <item name="RESULT_20152">對應掛單不存在    </item>
+    <item name="RESULT_20154">掛單已到價，不可操作。請聯繫交易員    </item>
+    
+    <!--
+     <item name="RESULT_20191">使用者交易已被鎖定  </item>
+     -->
+    
+    <item name="RESULT_20191">使用者交易已被鎖定，請聯絡交易員。交易室電話：0809-085818</item>
+    
+    <item name="RESULT_20192">請求交易號失敗  </item>
+    
+    <item name="RESULT_20193">帳戶現有操作未結束  </item>
+    
+    <item name="RESULT_20194">交易異常</item>
+    
+    <item name="RESULT_20195">交易失敗  </item>
+    
+    <item name="RESULT_20014">組未找到 </item>
+    
+    <item name="RESULT_20015">帳戶未同步 </item>
+    
+    <!--    <item name="RESULT_20211">拋盤失敗</item>-->
+    
+    <!--    <item name="RESULT_20211">交易失敗</item>-->
+    <!--    <item name="RESULT_30011">交易行情錯誤</item>-->
+    <!--    <item name="RESULT_30012">交易價格錯誤</item>-->
+    <!--    <item name="RESULT_30111">交易系統錯誤</item>-->
+    <!--    <item name="RESULT_30121">交易超時</item>-->
+    
+    <item name="RESULT_20211">[20211]交易失敗</item>
+    <item name="RESULT_30011">[30011]交易失敗</item>
+    <item name="RESULT_30012">[30012]交易失敗</item>
+    <item name="RESULT_30111">[30111]交易失敗</item>
+    <item name="RESULT_30121">[30121]交易失敗</item>
+    <item name="RESULT_30131">[30131]交易失敗</item>
+    <item name="RESULT_30141">[30141]交易失敗</item>
+    
+    <!--    <item name="RESULT_30131">拋盤交易失敗</item>-->
+    
+    
+    <!--    <item name="RESULT_30141">拋盤連接失敗</item>-->
+    
+    
+    <item name="RESULT_ERR_MD5DigestDontMatch">帳戶未同步 </item>
+    
+    <item name="RESULT_NetLost">網路錯誤</item>
+    
+    <item name="RESULT_ERR_NetErr">網路錯誤</item>
+    
+    <item name="RESULT_ERR_SIGNATURE_CHECK_FAILURE">簽名失敗</item>
+    
+    <item name="RESULT_ERR_CADTS_TIMEOUT">交易超時</item>
+    <item name="RESULT_ERR_CADTS_OTHER">[CADTS]交易失敗</item>
+    <item name="RESULT_ERR_SERVNOTFIND:SERV_VERBANK_UPTRADE">[UPTRADE]交易失敗</item>
+    <item name="RESULT_ERR_UnKnown">網絡錯誤</item>
+    
+    
+    <item name="OrderTrade_RESULT_20112">低於單筆最小交易金額//BasicCurrency// //MinTradeLot// </item>
+    
+    <item name="OrderTrade_HEDGE_20112">低於單筆最小交易金額//BasicCurrency// //MinTradeLot// </item>
+    
+    <item name="ErrorCode_ChangePsd_Result_-1">用戶不存在</item>
+    <item name="ErrorCode_ChangePsd_Result_-2">密碼錯誤</item>
+    <item name="ErrorCode_ChangePsd_Result_-3">用戶已鎖，請與管理員聯繫解鎖該用戶</item>
+    <item name="ErrorCode_ChangePsd_Result_-4">密碼已經過期</item>
+    <item name="ErrorCode_ChangePsd_Result_-5">您的IP地址與授權IP地址不匹配，請與管理員聯繫</item>
+    <item name="ErrorCode_ChangePsd_Result_-15">新密碼與舊密碼不能一樣</item>
+    
+</resources>

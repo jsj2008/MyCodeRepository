@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ciB-st-jKY" customClass="OrderOCOView">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ValueTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YRO-Ea-Cmx">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMf-1E-orJ" customClass="BlackgroundTextField">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="l19-av-eRO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="inputStyle">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GF7-TS-zxV" customClass="BlackgroundTextField">
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="inputStyle">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pzd-DE-Wkg" customClass="BlackgroundTextField">
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="inputStyle">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGQ-vu-bfQ" customClass="ButtonPanelView">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Ge6-bw-XXs"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQY-zb-rJ8" customClass="ValueTimeButton">
+                    <state key="normal" title="ValueTimeButton">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LimitPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k2E-Yc-CDK">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="ppz-42-Nz4"/>
+                        <constraint firstAttribute="height" constant="25" id="wWh-hi-m2T"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StopPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uti-y7-3ZE">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="U2s-ht-p96">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVw-4u-evb" customClass="ValueTimeButton">
+                    <state key="normal" title="ShowTimeButton">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aVw-4u-evb" firstAttribute="top" secondItem="jQY-zb-rJ8" secondAttribute="bottom" constant="20" id="44P-Zq-UJJ"/>
+                <constraint firstItem="uti-y7-3ZE" firstAttribute="height" secondItem="k2E-Yc-CDK" secondAttribute="height" id="D0r-da-P5I"/>
+                <constraint firstItem="GF7-TS-zxV" firstAttribute="width" secondItem="Pzd-DE-Wkg" secondAttribute="width" id="Dre-CX-E1P"/>
+                <constraint firstItem="uti-y7-3ZE" firstAttribute="top" secondItem="k2E-Yc-CDK" secondAttribute="bottom" constant="20" id="Dz1-el-Sro"/>
+                <constraint firstItem="U2s-ht-p96" firstAttribute="height" secondItem="uti-y7-3ZE" secondAttribute="height" id="EDD-kx-fh7"/>
+                <constraint firstItem="jQY-zb-rJ8" firstAttribute="height" secondItem="GF7-TS-zxV" secondAttribute="height" id="EcL-XU-OWi"/>
+                <constraint firstItem="aVw-4u-evb" firstAttribute="centerX" secondItem="jQY-zb-rJ8" secondAttribute="centerX" id="Flv-VI-2GU"/>
+                <constraint firstItem="Pzd-DE-Wkg" firstAttribute="width" secondItem="UMf-1E-orJ" secondAttribute="width" id="G1c-7v-PrT"/>
+                <constraint firstItem="k2E-Yc-CDK" firstAttribute="leading" secondItem="ciB-st-jKY" secondAttribute="leading" id="HZ8-uN-HN3"/>
+                <constraint firstItem="GF7-TS-zxV" firstAttribute="centerX" secondItem="Pzd-DE-Wkg" secondAttribute="centerX" id="HaZ-Yo-pHN"/>
+                <constraint firstAttribute="trailing" secondItem="UMf-1E-orJ" secondAttribute="trailing" id="I1B-WK-h2z"/>
+                <constraint firstItem="YRO-Ea-Cmx" firstAttribute="height" secondItem="U2s-ht-p96" secondAttribute="height" id="LWL-bk-Qh3"/>
+                <constraint firstItem="k2E-Yc-CDK" firstAttribute="top" secondItem="ciB-st-jKY" secondAttribute="top" constant="5" id="Pq1-vc-b4B"/>
+                <constraint firstItem="U2s-ht-p96" firstAttribute="width" secondItem="uti-y7-3ZE" secondAttribute="width" id="T8U-2n-MPs"/>
+                <constraint firstItem="U2s-ht-p96" firstAttribute="leading" secondItem="ciB-st-jKY" secondAttribute="leading" id="UL6-vt-IQh"/>
+                <constraint firstItem="UMf-1E-orJ" firstAttribute="leading" secondItem="k2E-Yc-CDK" secondAttribute="trailing" id="X05-MM-F9l"/>
+                <constraint firstItem="aVw-4u-evb" firstAttribute="width" secondItem="jQY-zb-rJ8" secondAttribute="width" id="XFT-jZ-ceN"/>
+                <constraint firstItem="GF7-TS-zxV" firstAttribute="height" secondItem="Pzd-DE-Wkg" secondAttribute="height" id="Z2I-Lj-5Dn"/>
+                <constraint firstItem="YRO-Ea-Cmx" firstAttribute="width" secondItem="U2s-ht-p96" secondAttribute="width" id="aPu-1l-NuB"/>
+                <constraint firstItem="uti-y7-3ZE" firstAttribute="width" secondItem="k2E-Yc-CDK" secondAttribute="width" id="agB-P8-g2E"/>
+                <constraint firstItem="GF7-TS-zxV" firstAttribute="centerY" secondItem="U2s-ht-p96" secondAttribute="centerY" id="bop-IC-ji3"/>
+                <constraint firstItem="U2s-ht-p96" firstAttribute="top" secondItem="uti-y7-3ZE" secondAttribute="bottom" constant="20" id="cPk-rN-rNo"/>
+                <constraint firstItem="Pzd-DE-Wkg" firstAttribute="centerY" secondItem="uti-y7-3ZE" secondAttribute="centerY" id="f6x-zg-vtu"/>
+                <constraint firstAttribute="trailing" secondItem="vGQ-vu-bfQ" secondAttribute="trailing" id="gBU-zY-hb0"/>
+                <constraint firstItem="vGQ-vu-bfQ" firstAttribute="leading" secondItem="ciB-st-jKY" secondAttribute="leading" id="hiF-6E-P1p"/>
+                <constraint firstItem="YRO-Ea-Cmx" firstAttribute="top" secondItem="U2s-ht-p96" secondAttribute="bottom" constant="20" id="kdy-Qt-qGO"/>
+                <constraint firstItem="Pzd-DE-Wkg" firstAttribute="height" secondItem="UMf-1E-orJ" secondAttribute="height" id="mNT-O3-H3d"/>
+                <constraint firstItem="jQY-zb-rJ8" firstAttribute="centerX" secondItem="GF7-TS-zxV" secondAttribute="centerX" id="myV-hw-fZU"/>
+                <constraint firstItem="jQY-zb-rJ8" firstAttribute="width" secondItem="GF7-TS-zxV" secondAttribute="width" id="qnL-so-iVL"/>
+                <constraint firstItem="Pzd-DE-Wkg" firstAttribute="centerX" secondItem="UMf-1E-orJ" secondAttribute="centerX" id="tfe-pS-Jri"/>
+                <constraint firstItem="vGQ-vu-bfQ" firstAttribute="top" secondItem="aVw-4u-evb" secondAttribute="bottom" constant="30" id="tu7-QV-f6r"/>
+                <constraint firstItem="jQY-zb-rJ8" firstAttribute="centerY" secondItem="YRO-Ea-Cmx" secondAttribute="centerY" id="vGd-nV-dj5"/>
+                <constraint firstItem="uti-y7-3ZE" firstAttribute="leading" secondItem="ciB-st-jKY" secondAttribute="leading" id="vcJ-2H-FRi"/>
+                <constraint firstItem="UMf-1E-orJ" firstAttribute="centerY" secondItem="k2E-Yc-CDK" secondAttribute="centerY" id="xl8-wx-ta7"/>
+                <constraint firstItem="YRO-Ea-Cmx" firstAttribute="leading" secondItem="ciB-st-jKY" secondAttribute="leading" id="zN8-tb-cmZ"/>
+                <constraint firstItem="aVw-4u-evb" firstAttribute="height" secondItem="jQY-zb-rJ8" secondAttribute="height" id="zcr-AU-1KX"/>
+            </constraints>
+            <connections>
+                <outlet property="amountLabel" destination="U2s-ht-p96" id="Ofb-Ns-krL"/>
+                <outlet property="amountTextField" destination="GF7-TS-zxV" id="9SK-2H-luy"/>
+                <outlet property="buttonPanelView" destination="vGQ-vu-bfQ" id="Vyw-H9-wQY"/>
+                <outlet property="limitPriceLabel" destination="k2E-Yc-CDK" id="qZ6-gy-exY"/>
+                <outlet property="limitPriceTextField" destination="UMf-1E-orJ" id="vdK-dr-UXA"/>
+                <outlet property="showTimeButton" destination="aVw-4u-evb" id="Ndn-Ih-irz"/>
+                <outlet property="stopPriceLabel" destination="uti-y7-3ZE" id="ZSs-mh-3JJ"/>
+                <outlet property="stopPriceTextField" destination="Pzd-DE-Wkg" id="y2u-6H-BGQ"/>
+                <outlet property="valueTimeButton" destination="jQY-zb-rJ8" id="xk2-hs-4nP"/>
+                <outlet property="valueTimeLabel" destination="YRO-Ea-Cmx" id="qfi-5d-XIq"/>
+            </connections>
+            <point key="canvasLocation" x="393.5" y="69"/>
+        </view>
+    </objects>
+</document>

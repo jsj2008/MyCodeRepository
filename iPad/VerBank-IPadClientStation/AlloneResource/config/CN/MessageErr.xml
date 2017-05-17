@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <item name="Default">操作失败</item>
+    
+    <item name="ERR_MarketPriceChanged">商品价格已变动</item>
+    <item name="ERR_LotsErr">请输入正确的交易量</item>
+    <item name="ERR_TradeIDNotFind">交易代号不正确</item>
+    <item name="ERR_Timeout">交易超时</item>
+    <item name="ERR_NetErr">网络错误</item>
+    <item name="ERR_ServerNotFind">交易服务断开，请稍候</item>
+    <item name="ERR_HighFrequency">您的操作过于频繁，请稍后重试</item>
+    <item name="ERR_DateError">输入日期错误</item>
+    <item name="ERR_System_is_Close">系统已收盘</item>
+    <item name="ERR_TradeDisabled">暂时不可交易，请稍候重试！</item>
+    <item name="ERR_PriceErr">价格错误</item>
+    <item name="ERR_QueryNewIDFailed">申请单号失败</item>
+    <item name="ERR_TooManyOrders">您的委托指令数已经达到系统允许最大值</item>
+    <item name="ERR_TooManyPositions">您的订货单数已经达到系统允许最大值</item>
+    <item name="ERR_OutofNOPL">您的总订货量已经达到系统允许最大值</item>
+    <item name="ERR_PreSellErr">该商品不可以卖空</item>
+    <item name="ERR_UserDisabled">用户已失效</item>
+    <item name="ERR_UserNotFound">用户不存在</item>
+    <item name="ERR_AccountNotFound">账户不存在</item>
+    <item name="ERR_InstrumentNotValid">该商品不可交易</item>
+    <item name="ERR_TradeFailed">交易可能失败，建议重新登录或稍后重试！</item>
+    <item name="ERR_CaculateIfOrderTradeFailed">计算委托单成交结果失败</item>
+    <item name="ERR_MarginIsNotEnoughToTrade">您的可用预付款不足，无法交易</item>
+    <item name="ERR_MD5DigestDontMatch">正在同步您的账户数据，请重新交易</item>
+    <item name="ERR_PasswordStore_Error">密码存储错误</item>
+    <item name="ERR_Password_is_Used">您近期曾使用过改密码，请选用其它密码</item>
+    <item name="ERR_Password_Locked">密码已被锁定，请与交易员联系，解锁密码</item>
+    <item name="ERR_Password_Disabled">密码已经失效</item>
+    <item name="ERR_PasswordErr">密码错误</item>
+    
+    <item name="Login_Result_-1">用户不存在</item>
+    <item name="Login_Result_-2">密码错误</item>
+    <item name="Login_Result_-3">用户已锁，请与管理员联系解锁该用户</item>
+    <item name="Login_Result_-4">密码已经过期</item>
+    <item name="Login_Result_-5">您的IP地址与授权IP地址不匹配，请与管理员联系</item>
+    <item name="Login_Result_-20">网络错误</item>
+    <item name="Login_Result_-21">网络错误</item>
+    <item name="Login_Result_-100">网络错误</item>
+    
+    <item name="BeginDateFormat">起始时间格式错误</item>
+    <item name="DelOrderFailed"> 删除委托单失败</item>
+    <item name="EndDateFormat"> 终止时间格式错误</item>
+    <item name="ExpireTimeFormat">有效时间设置错误</item>
+    <item name="FloatGapFormat">浮动点数输入错误</item>
+    <item name="InitFailed">初始化失败</item>
+    <item name="InstrumentNotExist">您要查看的商品不存在</item>
+    <item name="KickOut">可能有重名用户登录或您先前的登录没有退出</item>
+    <item name="KickOutBySys">系统管理员将你踢出，请联系管理员！</item>
+    <item name="LimitGapFormat">止盈距离点数设置错误！</item>
+    <item name="LimitPriceFormat">止盈输入错误！</item>
+    <item name="NeedInputAeid">请输入用户名</item>
+    <item name="NeedInputPassword">请输入密码</item>
+    <item name="NetLost">网络断开，请稍后再试。</item>
+    <item name="OpenPositionNotExist">该市价单不存在，可能已经平仓</item>
+    <item name="OrderNotExist">该委托单不存在，可能已经执行或取消</item>
+    <item name="OrderPriceFormat">价格设置错误</item>
+    <item name="QueryAccountSummaryFalied">查询账户明细失败！</item>
+    <item name="SetConfigFalied">设置失败</item>
+    <item name="StopGapFormat">止损距离点数设置错误！</item>
+    <item name="StopPriceFormat">止损价输入错误</item>
+    <item name="TradeUnitsFormat">交易量输入错误！</item>
+    <item name="initDocFailed">初始化Doc失败</item>
+    
+</resources>

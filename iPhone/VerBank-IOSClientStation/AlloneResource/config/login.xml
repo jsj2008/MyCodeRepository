@@ -1,0 +1,87 @@
+
+<Address>
+    <DEMO PREMARK="">
+        <!--
+         <NODE NAME="BGP1" IP="192.168.40.55" PORT="27236">
+         </NODE>
+         -->
+        <NODE NAME="BGP1" IP="feibra.feib.com.tw" PORT="27000">
+            
+        </NODE>
+        
+        
+        <!--
+         <NODE NAME="BGP1" IP="10.48.16.133" PORT="27000">
+         </NODE>
+         
+         
+         <NODE NAME="BGP1" IP="feibra.feib.com.tw" PORT="27000">
+         </NODE>
+         
+         <NODE NAME="BGP1" IP="10.48.16.133" PORT="27000">
+         </NODE>
+         -->
+        
+        
+    </DEMO>
+    
+    <LIVE PREMARK="">
+        <!--
+         <NODE NAME="BGP1" IP="192.168.40.55" PORT="27236">
+         </NODE>
+         
+         <NODE NAME="BGP1" IP="192.168.40.55" PORT="27236">
+         </NODE>
+         
+         
+         
+         <NODE NAME="BGP1" IP="fetp1.feib.com.tw" PORT="27055">
+         </NODE>
+         <NODE NAME="BGP1" IP="fetp2.feib.com.tw" PORT="27055">
+         </NODE>
+         
+         -->
+        
+        <NODE NAME="BGP1" IP="feibra.feib.com.tw" PORT="27055">
+        </NODE>
+        <!--
+         <NODE NAME="BGP1" IP="192.168.40.24" PORT="27236">
+         </NODE>
+         
+         
+         
+         -->
+        <!--
+         -->
+        <!--
+         <NODE NAME="BGP1" IP="10.48.16.133" PORT="27055">
+         </NODE>
+         
+         
+         <NODE NAME="BGP1" IP="10.48.16.144" PORT="27055">
+         </NODE>-->
+        
+        
+    </LIVE>
+    <PROXY>
+    </PROXY>
+</Address>
+<!--
+ <Address>
+ <DEMO PREMARK="">
+ <NODE NAME="BGP1" IP="feibra.feib.com.tw" PORT="27055">
+ </NODE>
+ 
+ </DEMO>
+ 
+ <LIVE PREMARK="">
+ <NODE NAME="BGP1" IP="feibra.feib.com.tw" PORT="27055">
+ </NODE>
+ </LIVE>
+ <PROXY>
+ </PROXY>
+ </Address>
+ 
+ 
+ -->
+

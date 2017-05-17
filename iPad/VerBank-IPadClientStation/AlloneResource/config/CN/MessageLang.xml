@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <item name="Default">操作失败</item>
+    
+    <!-- 侧滑菜单栏-->
+    <item name="left_0">报价</item>
+    <item name="left_1">开仓单</item>
+    <item name="left_2">挂单</item>
+    <item name="left_3">挂单历史</item>
+    <item name="left_4">平仓记录</item>
+    <item name="left_5">部位汇总</item>
+    <item name="left_6">价格提示</item>
+    <item name="left_7">外汇资讯</item>
+    <item name="left_8">保证金查询</item>
+    <item name="left_9">公告资讯</item>
+    <item name="left_10">系统设定</item>
+    <item name="left_11">联络我们</item>
+    <item name="left_12">登出</item>
+    
+    <!-- 报价list top view-->
+    <item name="CCY">货币对</item>
+    <item name="SellPrice">卖出价格</item>
+    <item name="BuyPrice">买入价格</item>
+    <item name="Highest">最高</item>
+    <item name="Lowest">最低</item>
+    <item name="UpDown">涨跌</item>
+    <item name="UpdateTime">更新时间</item>
+    
+    <!-- login-->
+    <item name="SaveIdentifyNumber">记住身份证字号</item>
+    <item name="IdentifyNumber">身份证字号</item>
+    <item name="UserName">使用者代号</item>
+    <item name="Password">密码</item>
+    <item name="LangTW">语言|繁体中文</item>
+    <item name="LangCN">语言|简体中文</item>
+    <item name="Login">登入</item>
+    <item name="LiveAccount">网际网路交易</item>
+    <item name="DemoAccount">模拟测试帐护</item>
+    <item name="Help">注意事项</item>
+    
+    <!--alert-->
+    <item name="InitDocFailed">初始化Doc失败</item>
+    <item name="ReconnectSuccess">网酪重连成功!</item>
+    <item name="SystemNotice">系统提示</item>
+    <item name="SystemInitDocFailed">加载配置文件失败，请重启软件再试!</item>
+    <item name="IsLogin">正在登录...</item>
+    <item name="LoginFailed">登录错误</item>
+    <item name="PwdOrUserNameisNill">用户名和密码不能为空，请输入!</item>
+    <item name="IsInitDoc">正在初始化数据...</item>
+    <item name="NetReconnect">网酪重连</item>
+    <item name="YES">确定</item>
+    
+    <!--title-->
+    <item name="QuoteList">报价</item>
+    <item name="AccountChoose">帐护选择</item>
+    <item name="OpenPosition">开仓单</item>
+    
+    <!-- floatbar -->
+    <item name="TradeableMargin">可交易保证金:</item>
+    <item name="FloatPL">浮动损益:</item>
+    
+    <!--openPosition-->
+    <item name="Ticket">单号</item>
+    <item name="LimitPrice">限价</item>
+    <item name="StopPrice">停损</item>
+    <item name="StopMovePrice">移动止损</item>
+    <item name="Hedging">对冲</item>
+    
+    <!---closePosition-->
+    <item name="ClosePosition">平仓记录</item>
+    <item name="Week">周</item>
+    <item name="OpenPrice">开仓价</item>
+    <item name="SUM">合计</item>
+    <item name="IsQuery">正在查询</item>
+    
+    <!--positionSum-->
+    <item name="PositionSum">部位彙总</item>
+    <item name="NetSell">净卖出</item>
+    <item name="NetBuy">净买入</item>
+    
+    <!--orderHis-->
+    <item name="OrderHis">挂单历史</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_QUOTESCAN">行情扫描</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_USERTRADE">使用者交易</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_PHONEORDERTRADE">PHONEORDERTRADE</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_DEALERTRADE">dealer交易</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_DEALERAFFIRM">DEALERAFFIRM</item>
+    <item name="ORDERCLOSEREASON_SUCCEED_FUNDTRADE">FUNDTRADE</item>
+    <item name="ORDERCLOSEREASON_MODIFY_ByUSER">用护修改</item>
+    <item name="ORDERCLOSEREASON_MODIFY_ByPHONEORDER">MODIFY_ByPHONEORDER</item>
+    <item name="ORDERCLOSEREASON_MODIFY_ByDEALER">dealer修改</item>
+    <item name="ORDERCLOSEREASON_MODIFY_ByFUND">MODIFY_ByFUND</item>
+    <item name="ORDERCLOSEREASON_CANCEL_ByUser">用护删除</item>
+    <item name="ORDERCLOSEREASON_CANCEL_ByPHONEORDER">CANCEL_ByPHONEORDER</item>
+    <item name="ORDERCLOSEREASON_CANCEL_ByDEALER">dealer删除</item>
+    <item name="ORDERCLOSEREASON_CANCEL_ByTimeOut">到期删除</item>
+    <item name="ORDERCLOSEREASON_CANCEL_corPositionClosed">保证金不足</item>
+    <item name="ORDERCLOSEREASON_CANCEL_ByFund">CANCEL_ByFund</item>
+    <item name="ORDERCLOSEREASON_FAILED_OUTOFNOPL">OUTOFNOPL</item>
+    <item name="ORDERCLOSEREASON_FAILED_OUTOFPOSITIONLIMIT">OUTOFPOSITIONLIMIT</item>
+    <item name="ORDERCLOSEREASON_FAILED_MARGINNOTENOUGH">保证金不足</item>
+    <item name="ORDERCLOSEREASON_FAILED_OTHER">其他</item>
+    <item name="ORDERCLOSEREASON_FAILED_PRESELLERR">PRESELLERR</item>
+    <item name="ORDERCLOSEREASON_FAILED_CUTLOSS">超过限额</item>
+    <item name="ORDERCLOSEREASON_MODIFY_MoveStop">编辑移动止损</item>
+    <item name="CorrespondingTicket">指定平仓单号</item>
+    <item name="ValidDate">有效日期</item>
+    <item name="ORDER_EXPIRE_TYPE_DAY">当日有效</item>
+    <item name="ORDER_EXPIRE_TYPE_WEEK">当週有效</item>
+    <item name="ORDER_EXPIRE_TYPE_USER_DEFINED">other</item>
+    <item name="ORDER_EXPIRE_TYPE_GTC">GTC</item>
+    
+    <!--orderPosition-->
+    <item name="OrderPosition">挂单</item>
+    
+    <!--marketTrade-->
+    <item name="MarketTrade">市价交易</item>
+    <item name="Account">账号</item>
+    <item name="Amount">金额</item>
+    <item name="OccupyMargin">占用保证金</item>
+    <item name="TradeCommit">交易执行</item>
+    <item name="Cancel">取消</item>
+    <item name="OpenTradeSucceed">已经开仓成功</item>
+    <item name="OpenTradeFaild">开仓失败</item>
+    <item name="Comfirm">确认</item>
+    <item name="OperatorFaild">操作失败</item>
+    <item name="IsTrading">正在交易</item>
+    
+    <!--hedging-->
+    <item name="ConfirmHedging">确认对冲</item>
+    <item name="ErrNotice">错误提示</item>
+    <item name="SuccessNotice">成功提示</item>
+    <item name="PleaseSelectHedgingTicket">请选择需要对冲的单子</item>
+    <item name="SellBuyNotSame">买入金额和卖出金额不一致</item>
+    <item name="AmountErr">请输入正确的金额</item>
+    <item name="CheckCode_CloseAmtMoreThanOrderAmt">平仓金额大于开仓金额</item>
+    <item name="CheckCode_BuySellAmtNotMatch">买入金额跟卖出金额不一致</item>
+    <item name="HedgingSuccess">对冲交易成功</item>
+    <item name="HedgingFaild">对冲交易失败</item>
+    
+    <!--marginCall-->
+    <item name="MarginCallStatus">保证金状态</item>
+    <item name="CertificatePwdStatus">凭证密码状态</item>
+    <item name="Reinput">待重新输入</item>
+    
+    <!--comm-->
+    <item name="Buy">买入</item>
+    <item name="Sell">卖出</item>
+    
+</resources>

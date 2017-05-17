@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5dd530e8-55de-dd4a-bf18-f9cd127627fd++8518",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "5dd530e8-55de-dd4a-bf18-f9cd127627fd++8518" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5dd530e8-55de-dd4a-bf18-f9cd127627fd++8518" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EEE782D5-3A4C-4CE9-9384-D9CA7FE75622",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5dd530e8-55de-dd4a-bf18-f9cd127627fd++8518" : "work-svn-ios"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "VerBank-IOSClientStation",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "VerBank-IOSClientStation\/VerBank-IOSClientStation.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.0.196\/feib",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5dd530e8-55de-dd4a-bf18-f9cd127627fd++8518"
+    }
+  ]
+}

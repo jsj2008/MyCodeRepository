@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="8c4-Ld-WUg" customClass="ForexNewsCellView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Ns-Er-LiI"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="newsType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCc-Ht-hFh">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Fuh-Wq-URv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7r-3N-wDE">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="NDW-3J-Uyq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyW-df-02e">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="gsX-yR-Yvr"/>
+                        <constraint firstAttribute="width" constant="150" id="m9c-I7-V2E"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.3073286851" green="0.5399535459" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uCc-Ht-hFh" firstAttribute="leading" secondItem="8c4-Ld-WUg" secondAttribute="leading" constant="10" id="3r7-8h-DPS"/>
+                <constraint firstItem="F7r-3N-wDE" firstAttribute="leading" secondItem="8c4-Ld-WUg" secondAttribute="leading" constant="10" id="75H-Si-NLQ"/>
+                <constraint firstAttribute="trailing" secondItem="5Ns-Er-LiI" secondAttribute="trailing" id="G3E-fb-Ft3"/>
+                <constraint firstItem="5Ns-Er-LiI" firstAttribute="leading" secondItem="8c4-Ld-WUg" secondAttribute="leading" id="NMg-8P-EP5"/>
+                <constraint firstAttribute="trailing" secondItem="F7r-3N-wDE" secondAttribute="trailing" constant="10" id="V35-CA-Fzj"/>
+                <constraint firstItem="gyW-df-02e" firstAttribute="top" secondItem="8c4-Ld-WUg" secondAttribute="top" constant="5" id="Yfu-G0-1oe"/>
+                <constraint firstAttribute="trailing" secondItem="gyW-df-02e" secondAttribute="trailing" constant="10" id="c44-lX-0FK"/>
+                <constraint firstItem="gyW-df-02e" firstAttribute="leading" secondItem="uCc-Ht-hFh" secondAttribute="trailing" constant="10" id="gKx-DN-uCp"/>
+                <constraint firstItem="5Ns-Er-LiI" firstAttribute="top" secondItem="8c4-Ld-WUg" secondAttribute="top" id="h0d-qV-PRz"/>
+                <constraint firstAttribute="bottom" secondItem="5Ns-Er-LiI" secondAttribute="bottom" id="i3P-NE-xw5"/>
+                <constraint firstItem="uCc-Ht-hFh" firstAttribute="top" secondItem="8c4-Ld-WUg" secondAttribute="top" constant="5" id="tZf-d5-xj8"/>
+                <constraint firstAttribute="bottom" secondItem="F7r-3N-wDE" secondAttribute="bottom" constant="5" id="vnu-kM-cyb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="_backgroundView" destination="5Ns-Er-LiI" id="ctN-qC-dzL"/>
+                <outlet property="_newsTypeLabel" destination="uCc-Ht-hFh" id="lcJ-Yg-Ina"/>
+                <outlet property="_timeLabel" destination="gyW-df-02e" id="1cM-mD-tag"/>
+                <outlet property="_titleLabel" destination="F7r-3N-wDE" id="yWe-AP-dzz"/>
+            </connections>
+            <point key="canvasLocation" x="648" y="103"/>
+        </view>
+    </objects>
+</document>

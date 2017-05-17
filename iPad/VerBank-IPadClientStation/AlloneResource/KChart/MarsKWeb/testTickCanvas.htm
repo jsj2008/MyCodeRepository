@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta name="google" value="notranslate"/>
+    <meta name="renderer" content="webkit"> <!-- Browser core desc for 360 browser -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> <!-- Compatible for IE -->
+
+    <!-- http://blog.teamtreehouse.com/optimizing-mobile-web-apps-ios -->
+    <meta name="apple-mobile-web-app-title" content="MarsK">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+    
+    <!-- Reference: http://www.html5rocks.com/en/mobile/fullscreen/ -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/> <!-- iOS web as app (fullscreen) -->
+    <meta name="mobile-web-app-capable" content="yes"/> <!-- Android web as app (fullscreen) -->
+    
+    <title>MarsKWeb</title>
+    
+    <!-- http://jqueryui.com/ -->
+    <link id="css-jquery" rel="stylesheet" href="src/3rdParty/jquery-ui-1.10.3/themes/dark/minified/jquery-ui.min.css" />
+    <script src="src/3rdParty/jquery-ui-1.10.3/jquery-1.9.1.min.js"></script>
+    <script src="src/3rdParty/jquery-ui-1.10.3/ui/minified/jquery-ui.min.js"></script>
+    <script src="src/3rdParty/jquery-ui-1.10.3/external/jquery.mousewheel.js"></script>
+    
+    <!-- http://layout.jquery-dev.net/ -->
+    <script src="src/3rdParty/jquery.layout-1.3.0-rc30.79/jquery.layout-latest.min.js"></script>
+    
+    <!-- http://labs.abeautifulsite.net/jquery-minicolors/ -->
+    <link rel="stylesheet" href="src/3rdParty/jquery.minicolors/jquery.minicolors.css" />
+    <script src="src/3rdParty/jquery.minicolors/jquery.minicolors.js"></script>
+    
+    <script src="src/3rdParty/decimalFormat.js"></script>
+    <script src="src/3rdParty/dateFormat.js"></script>
+    <script src="src/3rdParty/roundedRectangle.js"></script>
+
+    <!-- MarsK -->
+    <script src="src/i18n/lang_en-US.js"></script>
+    <script src="src/utility/utility.js"></script>
+    <script src="src/ktick.js"></script>
+    <script src="src/techElement.js"></script>
+    <script src="src/marsK.js"></script>
+    <script src="src/area.js"></script>
+    <script src="src/areaXY.js"></script>
+    <script src="src/areaXYTicks.js"></script>
+    <script src="src/areaXYTech.js"></script>
+    <script src="src/areaXYTechTicks.js"></script>
+    <script src="src/areaCorner.js"></script>
+    <script src="src/areaXScroll.js"></script>
+    <script src="src/areaXAxis.js"></script>
+    <script src="src/clientPC.js"></script>
+    <script src="src/techImpl/areaXYTechTicksMA.js"></script>
+    <script src="src/techImpl/areaXYTechTicksBollingerBand.js"></script>
+    <script src="src/techImpl/areaXYTechAO.js"></script>
+    <script src="src/techImpl/areaXYTechARBR.js"></script>
+    <script src="src/techImpl/areaXYTechATR.js"></script>
+    <script src="src/techImpl/areaXYTechBIAS.js"></script>
+    <script src="src/techImpl/areaXYTechBIAS36.js"></script>
+    <script src="src/techImpl/areaXYTechCCI.js"></script>
+    <script src="src/techImpl/areaXYTechDMI.js"></script>
+    <script src="src/techImpl/areaXYTechKDJ.js"></script>
+    <script src="src/techImpl/areaXYTechMACD.js"></script>
+    <script src="src/techImpl/areaXYTechMTM.js"></script>
+    <script src="src/techImpl/areaXYTechOBV.js"></script>
+    <script src="src/techImpl/areaXYTechPSY.js"></script>
+    <script src="src/techImpl/areaXYTechROC.js"></script>
+    <script src="src/techImpl/areaXYTechRSI.js"></script>
+    <script src="src/techImpl/areaXYTechRSISmooth.js"></script>
+    <script src="src/techImpl/areaXYTechVolume.js"></script>
+    <script src="src/techImpl/areaXYTechVR.js"></script>
+    <script src="src/techImpl/areaXYTechWR.js"></script>
+    <script src="src/drawer/line.js"></script>
+    <script src="src/drawer/point.js"></script>
+    <script src="src/drawer/rect.js"></script>
+    <script src="src/drawer/arc.js"></script>
+    <script src="src/drawer/drawer.js"></script>
+    <script src="src/drawer/drawerLine.js"></script>
+    <script src="src/drawer/drawerPriceTangent.js"></script>
+    <script src="src/drawer/drawerHorizontal.js"></script>
+    <script src="src/drawer/drawerChannel.js"></script>
+    <script src="src/drawer/drawerGoldenSection.js"></script>
+    <script src="src/drawer/drawerGoldenBands.js"></script>
+    <script src="src/drawer/drawerGoldenCircles.js"></script>
+
+    <!-- MarsK (minified) -->
+    <!--<script src="src/mars-k-min.js"></script>-->
+    
+    <script src="src/clientPC.js"></script>
+
+    <script>
+        function getMarsKInstance()
+        {
+            return client_pc._mars_k;
+        }
+        
+        function startDrawing( IN_mode)
+        {
+            getMarsKInstance().startDrawing( IN_mode);
+        }
+
+        function removeAllDrawns()
+        {
+            getMarsKInstance().removeAllDrawns();
+        }
+        
+        function toggleXScrollArea()
+        {
+            var L_mars_k = getMarsKInstance();
+            L_mars_k.setVisibledForAreaXScroll( ! L_mars_k.isVisibledForAreaXScroll());
+            L_mars_k.paint();
+        }
+        
+        function toggleTicksArea()
+        {
+            var L_mars_k = getMarsKInstance();
+            L_mars_k.setVisibledForAreaTicks( ! L_mars_k.isVisibledForAreaTicks());
+            L_mars_k.paint();
+        }
+        
+        function save()
+        {
+            var L_mars_k = getMarsKInstance();
+            var L_json = L_mars_k.saveToJson();
+            console.log( 'Save.');
+            console.log( L_json);
+            localStorage['states'] = L_json;
+            L_mars_k.paint();
+        }
+        
+        function restore()
+        {
+            var L_mars_k = getMarsKInstance();
+            var L_json = localStorage['states'];
+            //var L_json = prompt( 'JSON: ');
+            console.log( 'Restore.');
+            console.log( L_json);
+            L_mars_k.restoreFromJson( L_json);
+            L_mars_k.paint();
+        }
+
+        var client_pc;
+        $(
+            function()
+            {
+                client_pc = new ClientPC();
+                client_pc.initLayout();
+            }
+        );
+    </script>
+    <style>
+        html {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            font-size: 12px;
+            -webkit-text-size-adjust: none;
+        }
+        
+        .resource
+        {
+            visibility: hidden;
+            position: absolute;
+        }
+        
+        .ui-dialog {
+            overflow: visible !important;
+        }
+        
+        .ui-widget-overlay {
+            background: black;
+            opacity: 0.5;
+        }
+        
+        .ui-dialog .ui-dialog-content {
+            overflow: visible !important;
+        }
+        
+        .icon {
+            width: 28px;
+            height: 28px; 
+            border: 0px;
+            background-color: white;
+            box-shadow: inset 0px 0px 2px 2px rgb( 64, 64, 64);
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body style="background-color:#303030;">
+    <img id="img_close" src="src/img/icon_close.png" class="resource">
+    <img id="img_config" src="src/img/icon_config.png" class="resource">
+    <div class="ui-layout-north">
+        
+        <select id="sel_techs"></select><input id="btn_add_tech" type="button" value="+" />
+        <input type="button" value="Toogle x-scroll area" onclick="toggleXScrollArea();"/>
+        <input type="button" value="Toogle ticks area" onclick="toggleTicksArea();"/>
+        
+        <input id="btn_tick_style_candle" type="button" class="icon" style="background-image: url(src/img/kTickCandleSelected.png);" />
+        <input id="btn_tick_style_bar" type="button" class="icon" style="background-image: url(src/img/kTickBarSelected.png);" />
+        <input id="btn_tick_style_line" type="button" class="icon" style="background-image: url(src/img/kTickLineSelected.png);" />
+
+        <input type="button" value="隨意切線" onclick="startDrawing( Drawer.prototype.MODE_LINE);"/>
+        <input type="button" value="價位切線" onclick="startDrawing( Drawer.prototype.MODE_PRICE_TANGENT);"/>
+        <input type="button" value="水平線" onclick="startDrawing( Drawer.prototype.MODE_HORIZONTAL);"/>
+        <input type="button" value="軌道線" onclick="startDrawing( Drawer.prototype.MODE_CHANNEL);"/>
+        <input type="button" value="黃金分割" onclick="startDrawing( Drawer.prototype.MODE_GOLDEN_SECTION);"/>
+        <input type="button" value="黃金波段" onclick="startDrawing( Drawer.prototype.MODE_GOLDEN_BANDS);"/>
+        <input type="button" value="黃金分割弧" onclick="startDrawing( Drawer.prototype.MODE_GOLDEN_CIRCLES);"/>
+        <input type="button" value="全部清除" onclick="removeAllDrawns();"/>
+        <input type="button" value="Save" onclick="save();"/>
+        <input type="button" value="Restore" onclick="restore();"/>
+
+    </div>
+    <div class="ui-layout-west">
+        &nbsp;
+    </div>
+    <div class="ui-layout-center" style="background-color: #262626;">
+        <canvas id="tc01" width="256" height="256" style="width: 100%; height: 100%;" tabindex="0">
+        <!--<canvas id="tc01" width="256" height="256" style="background-color:#ffffff; width: 100%; height: 100%;" tabindex="0">-->
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+    </div>
+    <div class="ui-layout-east">
+        &nbsp;
+    </div>
+    <div class="ui-layout-south">
+        &nbsp;
+    </div>
+    
+    <div id="dlg_tech_index_config" class="ui-dialog">
+        $nbsp;
+    </div>
+</body>
+</html>

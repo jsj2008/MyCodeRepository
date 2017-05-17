@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="cX1-K3-1in" customClass="OpenOrderLimitView">
+            <rect key="frame" x="0.0" y="0.0" width="471" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LimitPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jqa-No-jUJ">
+                    <rect key="frame" x="0.0" y="5" width="120" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="KdB-OP-WF0"/>
+                        <constraint firstAttribute="width" constant="120" id="Thw-Is-cRk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-su-3Xo">
+                    <rect key="frame" x="0.0" y="50" width="120" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-5s-hxW" customClass="BlackgroundTextField">
+                    <rect key="frame" x="120" y="3" width="351" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="WiV-G6-Kyg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="inputStyle">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cOj-QT-76m" customClass="BlackgroundTextField">
+                    <rect key="frame" x="120" y="48" width="351" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="inputStyle">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ValueTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I1C-Na-oaI">
+                    <rect key="frame" x="0.0" y="95" width="120" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGf-Mi-jWu" customClass="ValueTimeButton">
+                    <rect key="frame" x="120" y="93" width="351" height="30"/>
+                    <state key="normal" title="ValueTimeButton">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02z-kb-7U5" customClass="ValueTimeButton">
+                    <rect key="frame" x="120" y="143" width="351" height="30"/>
+                    <state key="normal" title="ShowTimeButton">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6b-tH-vQt" customClass="ButtonPanelView">
+                    <rect key="frame" x="0.0" y="203" width="471" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="yaz-8k-vLV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="kGf-Mi-jWu" firstAttribute="centerX" secondItem="cOj-QT-76m" secondAttribute="centerX" id="1hf-Bf-USW"/>
+                <constraint firstItem="02z-kb-7U5" firstAttribute="top" secondItem="kGf-Mi-jWu" secondAttribute="bottom" constant="20" id="5Zd-fB-1ey"/>
+                <constraint firstItem="LHo-su-3Xo" firstAttribute="leading" secondItem="cX1-K3-1in" secondAttribute="leading" id="ArZ-Kv-tz5"/>
+                <constraint firstItem="e7j-5s-hxW" firstAttribute="leading" secondItem="jqa-No-jUJ" secondAttribute="trailing" id="Dws-gH-MiW"/>
+                <constraint firstItem="jqa-No-jUJ" firstAttribute="leading" secondItem="cX1-K3-1in" secondAttribute="leading" id="FOL-tE-BLc"/>
+                <constraint firstItem="02z-kb-7U5" firstAttribute="width" secondItem="kGf-Mi-jWu" secondAttribute="width" id="Fca-MR-Y8F"/>
+                <constraint firstItem="I1C-Na-oaI" firstAttribute="height" secondItem="LHo-su-3Xo" secondAttribute="height" id="IuD-s3-MvW"/>
+                <constraint firstItem="cOj-QT-76m" firstAttribute="centerY" secondItem="LHo-su-3Xo" secondAttribute="centerY" id="KPk-zc-qiw"/>
+                <constraint firstItem="LHo-su-3Xo" firstAttribute="height" secondItem="jqa-No-jUJ" secondAttribute="height" id="PiP-Iq-Ffl"/>
+                <constraint firstItem="jqa-No-jUJ" firstAttribute="top" secondItem="cX1-K3-1in" secondAttribute="top" constant="5" id="VXo-SX-wrl"/>
+                <constraint firstItem="LHo-su-3Xo" firstAttribute="top" secondItem="jqa-No-jUJ" secondAttribute="bottom" constant="20" id="WnB-YX-gqZ"/>
+                <constraint firstItem="I1C-Na-oaI" firstAttribute="leading" secondItem="cX1-K3-1in" secondAttribute="leading" id="Yby-pw-OgY"/>
+                <constraint firstItem="cOj-QT-76m" firstAttribute="centerX" secondItem="e7j-5s-hxW" secondAttribute="centerX" id="Z37-YM-tBM"/>
+                <constraint firstItem="02z-kb-7U5" firstAttribute="height" secondItem="kGf-Mi-jWu" secondAttribute="height" id="bhK-Th-fhf"/>
+                <constraint firstItem="b6b-tH-vQt" firstAttribute="top" secondItem="02z-kb-7U5" secondAttribute="bottom" constant="30" id="eYw-Hb-zhQ"/>
+                <constraint firstItem="kGf-Mi-jWu" firstAttribute="centerY" secondItem="I1C-Na-oaI" secondAttribute="centerY" id="hoO-7H-Dr2"/>
+                <constraint firstItem="I1C-Na-oaI" firstAttribute="top" secondItem="LHo-su-3Xo" secondAttribute="bottom" constant="20" id="j2Q-jl-nmO"/>
+                <constraint firstItem="cOj-QT-76m" firstAttribute="height" secondItem="e7j-5s-hxW" secondAttribute="height" id="k2n-Wz-knu"/>
+                <constraint firstItem="LHo-su-3Xo" firstAttribute="width" secondItem="jqa-No-jUJ" secondAttribute="width" id="kJW-ya-OuI"/>
+                <constraint firstItem="kGf-Mi-jWu" firstAttribute="height" secondItem="cOj-QT-76m" secondAttribute="height" id="l3z-2r-JLc"/>
+                <constraint firstAttribute="trailing" secondItem="e7j-5s-hxW" secondAttribute="trailing" id="lVr-st-PHZ"/>
+                <constraint firstItem="I1C-Na-oaI" firstAttribute="width" secondItem="LHo-su-3Xo" secondAttribute="width" id="nto-zD-TcJ"/>
+                <constraint firstItem="e7j-5s-hxW" firstAttribute="centerY" secondItem="jqa-No-jUJ" secondAttribute="centerY" id="pcG-fw-OcM"/>
+                <constraint firstItem="b6b-tH-vQt" firstAttribute="leading" secondItem="cX1-K3-1in" secondAttribute="leading" id="qni-g5-112"/>
+                <constraint firstAttribute="trailing" secondItem="b6b-tH-vQt" secondAttribute="trailing" id="scT-75-1O1"/>
+                <constraint firstItem="02z-kb-7U5" firstAttribute="centerX" secondItem="kGf-Mi-jWu" secondAttribute="centerX" id="wH7-Sv-RIF"/>
+                <constraint firstItem="cOj-QT-76m" firstAttribute="width" secondItem="e7j-5s-hxW" secondAttribute="width" id="wgm-4l-vJs"/>
+                <constraint firstItem="kGf-Mi-jWu" firstAttribute="width" secondItem="cOj-QT-76m" secondAttribute="width" id="zqY-NF-R6L"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="amountLabel" destination="LHo-su-3Xo" id="RIg-eP-aCv"/>
+                <outlet property="amountTextField" destination="cOj-QT-76m" id="gou-0o-U3o"/>
+                <outlet property="buttonPanelView" destination="b6b-tH-vQt" id="Y6B-fN-WWb"/>
+                <outlet property="limitPriceLabel" destination="jqa-No-jUJ" id="ysX-iZ-cSZ"/>
+                <outlet property="limitPriceTextField" destination="e7j-5s-hxW" id="4q9-eG-anW"/>
+                <outlet property="showTimeButton" destination="02z-kb-7U5" id="lFf-I3-u4s"/>
+                <outlet property="valueTimeButton" destination="kGf-Mi-jWu" id="oFf-pm-fX2"/>
+                <outlet property="valueTimeLabel" destination="I1C-Na-oaI" id="sVk-Ks-n1z"/>
+            </connections>
+            <point key="canvasLocation" x="-50.5" y="356"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon May 25 10:31:48 CST 2015
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=ServerFront.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<jar|Allone-EncryptUtil-2.0.jar>;<jar|bean-validator.jar>;<jar|javax.annotation.jar>;<jar|javax.ejb.jar>;<jar|javax.enterprise.deploy.jar>;<jar|javax.jms.jar>;<jar|javax.management.j2ee.jar>;<jar|javax.persistence.jar>;<jar|javax.resource.jar>;<jar|javax.security.auth.message.jar>;<jar|javax.security.jacc.jar>;<jar|javax.servlet.jar>;<jar|javax.servlet.jsp.jar>;<jar|jaxb-api-osgi.jar>;<jar|jsr311-api.jar>;<jar|mail.jar>;<jar|webservices-api-osgi.jar>;<jar|weld-osgi-bundle.jar>;<jar|annotations-api.jar>;<jar|catalina-ant.jar>;<jar|catalina-ha.jar>;<jar|catalina-tribes.jar>;<jar|catalina.jar>;<jar|el-api.jar>;<jar|jasper-el.jar>;<jar|jasper-jdt.jar>;<jar|jasper.jar>;<jar|jotm-allone.jar>;<jar|jsp-api.jar>;<jar|mysql-connector-java-5.1.5-bin.jar>;<jar|servlet-api.jar>;<jar|tomcat-coyote.jar>;<jar|tomcat-dbcp.jar>;<jar|tomcat-i18n-es.jar>;<jar|tomcat-i18n-fr.jar>;<jar|tomcat-i18n-ja.jar>
+includes=

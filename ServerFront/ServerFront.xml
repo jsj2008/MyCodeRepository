@@ -1,0 +1,9 @@
+<Context path="/ServerFront">
+	
+	<Resource auth="Container" name="jdbc/ServerFront" type="com.mysql.jdbc.Driver"
+		factory="org.objectweb.jotm.datasource.DataSourceFactory"
+		driverClassName="com.mysql.jdbc.Driver" 
+		url="jdbc:mysql://127.0.0.1:3306/userDataBase?characterEncoding=UTF-8"
+		username="root" password="888888"
+		max="50" maxWait="-1" testStmt="select 1" checkLevel="2" />
+</Context>

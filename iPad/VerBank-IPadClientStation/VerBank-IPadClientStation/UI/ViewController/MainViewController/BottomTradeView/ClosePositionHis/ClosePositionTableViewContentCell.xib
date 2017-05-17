@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ClosePositionTableViewContentCell">
+            <rect key="frame" x="0.0" y="0.0" width="890" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="890" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OpenPrice" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xaG-rX-QD5">
+                        <rect key="frame" x="0.0" y="0.0" width="94" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="94" id="gsO-2x-jEF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FloatPLOri" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FCK-tx-X37">
+                        <rect key="frame" x="94" y="0.0" width="135" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="135" id="dy9-5B-231"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FloatPLDollar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5d9-Qj-7PO">
+                        <rect key="frame" x="229" y="0.0" width="134" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="134" id="5Dk-Ic-LtT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CloseTime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j3d-OI-1ic">
+                        <rect key="frame" x="363" y="0.0" width="210" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="210" id="zOG-5d-AGm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OpenTime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nEl-8p-Sji">
+                        <rect key="frame" x="573" y="0.0" width="210" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="210" id="8yN-dd-JZe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Te6-60-1G5">
+                        <rect key="frame" x="783" y="0.0" width="99" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="99" id="auB-nW-D9B"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="j3d-OI-1ic" firstAttribute="leading" secondItem="5d9-Qj-7PO" secondAttribute="trailing" id="0O4-0M-Hvo"/>
+                    <constraint firstItem="j3d-OI-1ic" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="9Mx-dj-dfM"/>
+                    <constraint firstItem="5d9-Qj-7PO" firstAttribute="leading" secondItem="FCK-tx-X37" secondAttribute="trailing" id="9jK-Xc-7iz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xaG-rX-QD5" secondAttribute="bottom" id="ALI-pz-50v"/>
+                    <constraint firstItem="FCK-tx-X37" firstAttribute="leading" secondItem="xaG-rX-QD5" secondAttribute="trailing" id="DEF-BN-nFM"/>
+                    <constraint firstItem="nEl-8p-Sji" firstAttribute="leading" secondItem="j3d-OI-1ic" secondAttribute="trailing" id="FjM-ed-Ust"/>
+                    <constraint firstItem="FCK-tx-X37" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="IBd-hX-0X0"/>
+                    <constraint firstItem="Te6-60-1G5" firstAttribute="leading" secondItem="nEl-8p-Sji" secondAttribute="trailing" id="IhY-XB-iRk"/>
+                    <constraint firstItem="nEl-8p-Sji" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="P0R-7i-nrP"/>
+                    <constraint firstItem="xaG-rX-QD5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="QZn-2T-bd9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Te6-60-1G5" secondAttribute="trailing" id="Qx4-qc-1QW"/>
+                    <constraint firstItem="5d9-Qj-7PO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="V6v-dG-hND"/>
+                    <constraint firstItem="5d9-Qj-7PO" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="d4b-gO-4zW"/>
+                    <constraint firstItem="xaG-rX-QD5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ezz-6Z-1m4"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="nEl-8p-Sji" secondAttribute="bottom" id="jMV-P6-Q6R"/>
+                    <constraint firstItem="Te6-60-1G5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="jXi-jR-CEU"/>
+                    <constraint firstItem="j3d-OI-1ic" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="nIw-zO-uoA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Te6-60-1G5" secondAttribute="bottom" id="qTh-iT-n8Q"/>
+                    <constraint firstItem="FCK-tx-X37" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="we3-rb-F29"/>
+                </constraints>
+                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="8"/>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="closeTimeLabel" destination="j3d-OI-1ic" id="Gyz-wt-nk0"/>
+                <outlet property="floatPLDollarLabel" destination="5d9-Qj-7PO" id="q2E-bn-rHW"/>
+                <outlet property="floatPLOriLabel" destination="FCK-tx-X37" id="wpB-JV-wc7"/>
+                <outlet property="openPriceLabel" destination="xaG-rX-QD5" id="7EG-P6-hiM"/>
+                <outlet property="openTimeLabel" destination="nEl-8p-Sji" id="egu-17-RHK"/>
+                <outlet property="ticketLabel" destination="Te6-60-1G5" id="5CB-vZ-q8A"/>
+            </connections>
+            <point key="canvasLocation" x="479.5" y="263"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="c8D-lB-Hyx" customClass="RssResourceContentView">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="394"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TitleLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pd-vi-dTE">
+                    <rect key="frame" x="0.0" y="0.0" width="438" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="UJU-7m-l99"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWE-I7-md4">
+                    <rect key="frame" x="0.0" y="5" width="50" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Fq9-6z-x3O"/>
+                        <constraint firstAttribute="height" constant="30" id="enm-6a-DKj"/>
+                    </constraints>
+                    <state key="normal" title="Back">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mq6-xA-bta">
+                    <rect key="frame" x="254" y="5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="KCz-Ys-ixP"/>
+                        <constraint firstAttribute="width" constant="30" id="a28-J7-CVc"/>
+                    </constraints>
+                    <state key="normal" title="Add">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MJP-AQ-zII">
+                    <rect key="frame" x="0.0" y="40" width="438" height="354"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.3073286851" green="0.5399535459" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="NWE-I7-md4" firstAttribute="top" secondItem="c8D-lB-Hyx" secondAttribute="top" constant="5" id="8WU-kQ-xgJ"/>
+                <constraint firstAttribute="bottom" secondItem="MJP-AQ-zII" secondAttribute="bottom" id="CKN-PO-MY5"/>
+                <constraint firstItem="8pd-vi-dTE" firstAttribute="leading" secondItem="c8D-lB-Hyx" secondAttribute="leading" id="GXm-D7-y38"/>
+                <constraint firstAttribute="trailing" secondItem="MJP-AQ-zII" secondAttribute="trailing" id="Hy5-2B-5HN"/>
+                <constraint firstItem="8pd-vi-dTE" firstAttribute="top" secondItem="c8D-lB-Hyx" secondAttribute="top" id="InX-Zw-cAw"/>
+                <constraint firstAttribute="trailing" secondItem="8pd-vi-dTE" secondAttribute="trailing" id="MG9-he-FlQ"/>
+                <constraint firstItem="MJP-AQ-zII" firstAttribute="top" secondItem="8pd-vi-dTE" secondAttribute="bottom" id="UmL-2m-OAJ"/>
+                <constraint firstItem="NWE-I7-md4" firstAttribute="leading" secondItem="c8D-lB-Hyx" secondAttribute="leading" id="V5y-UQ-cwH"/>
+                <constraint firstItem="Mq6-xA-bta" firstAttribute="top" secondItem="c8D-lB-Hyx" secondAttribute="top" constant="5" id="cpY-wn-yJQ"/>
+                <constraint firstItem="MJP-AQ-zII" firstAttribute="leading" secondItem="c8D-lB-Hyx" secondAttribute="leading" id="dHV-Vw-ZOk"/>
+                <constraint firstItem="Mq6-xA-bta" firstAttribute="centerX" secondItem="c8D-lB-Hyx" secondAttribute="centerX" constant="50" id="eoQ-Yg-Pmd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addButton" destination="Mq6-xA-bta" id="uU7-hm-0x7"/>
+                <outlet property="backButton" destination="NWE-I7-md4" id="02e-dj-1wh"/>
+                <outlet property="mainTableView" destination="MJP-AQ-zII" id="xtB-OC-qWT"/>
+                <outlet property="titleLabel" destination="8pd-vi-dTE" id="N59-r8-fxa"/>
+            </connections>
+            <point key="canvasLocation" x="958" y="80"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="QoD-lN-7NW" customClass="OrderPositionView">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svl-MN-9ci">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="gg1-Xv-hHc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJl-84-XBS">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="ELK-vS-HbP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjp-Rv-nK6">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="H0b-a7-Y89"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0my-vn-rUu" customClass="QuoteView">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="0my-vn-rUu" secondAttribute="height" multiplier="13:3" id="TT0-xd-h86"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnL-82-wJy" customClass="CustomSegmentControl">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="2Wd-54-hcO"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TP6-0F-Bgs" customClass="OrderOCOPageView">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="svl-MN-9ci" firstAttribute="leading" secondItem="QoD-lN-7NW" secondAttribute="leading" constant="10" id="66u-e2-tbr"/>
+                <constraint firstItem="Rjp-Rv-nK6" firstAttribute="width" secondItem="QoD-lN-7NW" secondAttribute="width" multiplier="1:2" id="73O-eX-5ff"/>
+                <constraint firstItem="NnL-82-wJy" firstAttribute="top" secondItem="0my-vn-rUu" secondAttribute="bottom" constant="10" id="Aav-6x-4A5"/>
+                <constraint firstItem="TP6-0F-Bgs" firstAttribute="top" secondItem="NnL-82-wJy" secondAttribute="bottom" constant="8" id="Ifa-Cs-7Rc"/>
+                <constraint firstAttribute="trailing" secondItem="Rjp-Rv-nK6" secondAttribute="trailing" constant="10" id="Mcy-li-hql"/>
+                <constraint firstItem="svl-MN-9ci" firstAttribute="top" secondItem="QoD-lN-7NW" secondAttribute="top" constant="10" id="QlW-Sj-AD5"/>
+                <constraint firstItem="YJl-84-XBS" firstAttribute="centerX" secondItem="QoD-lN-7NW" secondAttribute="centerX" id="Rb7-na-XdR"/>
+                <constraint firstItem="0my-vn-rUu" firstAttribute="top" secondItem="Rjp-Rv-nK6" secondAttribute="bottom" constant="5" id="SIf-XE-qpl"/>
+                <constraint firstAttribute="trailing" secondItem="0my-vn-rUu" secondAttribute="trailing" constant="12" id="TnC-CP-LNF"/>
+                <constraint firstItem="svl-MN-9ci" firstAttribute="width" secondItem="QoD-lN-7NW" secondAttribute="width" multiplier="1/2" id="UxJ-n8-eiI"/>
+                <constraint firstItem="Rjp-Rv-nK6" firstAttribute="top" secondItem="QoD-lN-7NW" secondAttribute="top" constant="10" id="ex2-Ma-dce"/>
+                <constraint firstItem="YJl-84-XBS" firstAttribute="top" secondItem="QoD-lN-7NW" secondAttribute="top" constant="10" id="f7p-eP-Akt"/>
+                <constraint firstAttribute="trailing" secondItem="NnL-82-wJy" secondAttribute="trailing" constant="12" id="fyT-QW-47i"/>
+                <constraint firstItem="YJl-84-XBS" firstAttribute="width" secondItem="QoD-lN-7NW" secondAttribute="width" multiplier="1/2" id="gTD-do-lDF"/>
+                <constraint firstItem="TP6-0F-Bgs" firstAttribute="leading" secondItem="QoD-lN-7NW" secondAttribute="leading" constant="12" id="mmt-Lx-iPu"/>
+                <constraint firstItem="NnL-82-wJy" firstAttribute="leading" secondItem="QoD-lN-7NW" secondAttribute="leading" constant="12" id="qc2-Bt-RCu"/>
+                <constraint firstItem="0my-vn-rUu" firstAttribute="leading" secondItem="QoD-lN-7NW" secondAttribute="leading" constant="12" id="rg2-yc-dcS"/>
+                <constraint firstAttribute="bottom" secondItem="TP6-0F-Bgs" secondAttribute="bottom" constant="12" id="slx-4a-MIJ"/>
+                <constraint firstAttribute="trailing" secondItem="TP6-0F-Bgs" secondAttribute="trailing" constant="12" id="vxN-0B-tYn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="accountLabel" destination="svl-MN-9ci" id="h9o-ZL-HEN"/>
+                <outlet property="instrumentLabel" destination="YJl-84-XBS" id="FS2-xH-yCn"/>
+                <outlet property="ocoPageView" destination="TP6-0F-Bgs" id="B0h-ov-eg0"/>
+                <outlet property="quoteView" destination="0my-vn-rUu" id="gb3-0u-fbA"/>
+                <outlet property="segmentControl" destination="NnL-82-wJy" id="suc-u6-wpG"/>
+                <outlet property="timeLabel" destination="Rjp-Rv-nK6" id="OHx-ud-KUK"/>
+            </connections>
+            <point key="canvasLocation" x="254" y="-303"/>
+        </view>
+    </objects>
+</document>
