@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Ctrl"
+  id="myeclipse.1334201434380"
+  context-root="/VerBank-Ctrl"
+  j2ee-spec="5.0"
+  archive="Ctrl.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

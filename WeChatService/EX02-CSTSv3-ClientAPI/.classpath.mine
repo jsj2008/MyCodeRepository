@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/PU-EX02-CSTSv3-ClientAPI"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/EX02-Base"/>
+	<classpathentry kind="lib" path="/D-Code-AndrClientStation/libs/Dcode-CSTSv3-ClientAPI.jar"/>
+	<classpathentry kind="src" path="/EX02P-ExDS"/>
+	<classpathentry kind="lib" path="E:/work-svn/ex-listed/trunk/code/server/ex02-bank/JEDIv7-BankGWWEB/WebRoot/WEB-INF/lib/EX02-BankServer.jar"/>
+	<classpathentry kind="src" path="/EX02-MTP-BankClientAPI"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

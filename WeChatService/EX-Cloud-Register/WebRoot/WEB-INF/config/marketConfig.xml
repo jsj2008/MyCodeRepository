@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<marketConfig>
+	<marketId>2001</marketId>
+	<userGroup>Default</userGroup>
+	<!-- 下面的map暂时没用   -->
+	<marketMapping>
+		<!-- userGroup: value: 系统中的会员号 -->
+		<item userGroup="Default">2001</item>
+	</marketMapping>
+</marketConfig>

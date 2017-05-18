@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>  
+
+<project name="${project.name}" default="deploy" basedir=".">  
+    <taskdef resource="net/sf/antcontrib/antlib.xml"/>  
+    <taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask"/>
+    <tstamp/>
+    <property file="deploy.properties" /> 
+   
+    <target name="foreach-start-tomcat">  
+          <echo message="begin start!" />   
+       	  <exec executable="psexec.exe">
+       	      <arg value="${server.ip}"/>
+       	      <arg value="-u" />  
+       	      <arg value="${server.user}" />  
+       	      <arg value="-p" />  
+              <arg value="${server.pass}" />  
+              <arg value="${sub-startbat}" />  
+          </exec>
+           <sleep seconds="3"/>
+          <echo message="complete start!" />   
+    </target>
+           
+     <target name="start-tomcat">  
+        <foreach list="${server.start}" target="foreach-start-tomcat" param="sub-startbat" delimiter=",">  
+        </foreach>      
+    </target>  
+    
+     <target name="foreach-stop-tomcat">  
+          <echo message="begin stop!" />  
+       	  <exec executable="psexec.exe">
+       	      <arg value="${server.ip}"/>
+       	      <arg value="-u" />  
+       	      <arg value="${server.user}" />  
+       	      <arg value="-p" />  
+              <arg value="${server.pass}" />  
+              <arg value="${sub-stopbat}" />  
+          </exec>
+           <sleep seconds="3"/>
+          <echo message="complete stop!" />   
+    </target> 
+    
+    <target name="stop-tomcat">  
+        <foreach list="${server.stop}" target="foreach-stop-tomcat" param="sub-stopbat" delimiter=",">  
+        </foreach>      
+    </target> 
+         
+    <target name="copytobackup">      
+ 	<condition property="isbackdirexsit" value="true">
+	<and>
+	  <available file="${backup.path}/${DSTAMP}/${project.name}" type="dir" />
+ 	</and>
+	</condition>    
+	 
+	<if>
+	   <equals arg1="${isbackdirexsit}" arg2="true"/>
+	   <then>
+	   </then>
+	   <else>
+	
+	      <mkdir dir="${backup.path}/${DSTAMP}" />
+              <mkdir dir="${backup.path}/${DSTAMP}/${project.name}" />
+              <copy todir="${backup.path}/${DSTAMP}/${project.name}">  
+                 <fileset dir="${sub-deploypath}/webapps/${project.name}" excludes="/WEB-INF/config/"/>  
+              </copy>  
+              <copy todir="${backup.path}/${DSTAMP}/${project.name}">  
+                 <fileset dir="${build.home}" includes="/WEB-INF/config/"/>  
+              </copy> 
+	   </else>
+	  
+	</if>  
+    </target> 
+    
+     <target name="foreach_deploycopy">       
+       <echo>${sub-deploypath}</echo>  
+       <echo message="begin deploycopy!" />  
+       
+       <delete includeEmptyDirs="true">
+  	  <fileset dir="${sub-deploypath}/webapps/${project.name}" excludes="/WEB-INF/config/"/>
+       </delete> 
+       <delete dir="${sub-deploypath}/work/Catalina/localhost/${project.name}" />  
+       <echo message="Successful UnDeployment" />  
+
+       <mkdir dir="${sub-deploypath}/webapps/${project.name}" />  
+       
+      <copy todir="${sub-deploypath}/webapps/${project.name}">  
+          <fileset dir="${build.home}" excludes="/WEB-INF/config/"/>  
+      </copy>  
+      <echo message="Version=${DSTAMP}-${TSTAMP}" file="${sub-deploypath}/webapps/${project.name}/Version.txt" />
+      <echo message="Successful Deployment" />        
+      
+      <antcall target="copytobackup" /> 
+   
+    </target>  
+    
+    <target name="copy_tomcat" depends="">
+    	<delete dir="${backup.path}/${DSTAMP}/${project.name}" />  
+    	<echo message="delete ${backup.path}/${DSTAMP}/${project.name}" /> 
+        <foreach list="${deploy.list}" target="foreach_deploycopy" param="sub-deploypath" delimiter=",">  
+        </foreach>     
+    </target>    
+     
+    <target name="deploy" >
+       <subant target="compile">
+           <fileset dir="." includes="build-jar.xml"/>
+       </subant>
+      
+       <antcall target="stop-tomcat" /> 
+       <antcall target="copy_tomcat" /> 
+       <antcall target="start-tomcat" /> 
+       
+      <subant target="clean_compile">
+         <fileset dir="." includes="build-jar.xml"/>
+      </subant>
+    </target>         
+        
+</project> 

@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;GoTest&gt;">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Desktop/go/practice/goworkspace/src/gopkg.in" />
+      <root url="file://$USER_HOME$/Desktop/go/practice/goworkspace/src/hello" />
+      <root url="file://$USER_HOME$/Desktop/go/practice/goworkspace/src/packageName" />
+      <root url="file://$USER_HOME$/Desktop/go/practice/goworkspace/src/github.com" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Desktop/go/practice/goworkspace/src/gopkg.in" />
+      <root url="file://$USER_HOME$/Desktop/go/practice/goworkspace/src/hello" />
+      <root url="file://$USER_HOME$/Desktop/go/practice/goworkspace/src/packageName" />
+      <root url="file://$USER_HOME$/Desktop/go/practice/goworkspace/src/github.com" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>

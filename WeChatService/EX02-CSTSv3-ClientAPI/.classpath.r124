@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/PU-EX02-CSTSv3-ClientAPI"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/EX02-Base"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/D-Code-AndrClientStation"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/EX02-MTP-BankServer"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/EX02-Third-Server">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="/EX02P-ExDS"/>
+	<classpathentry kind="src" path="/EX02P-ExLP"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

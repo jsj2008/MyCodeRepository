@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>  
+
+<project name="build-jar" default="build-jar" basedir=".">  
+    <taskdef resource="net/sf/antcontrib/antlib.xml"/>  
+    <taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask"/>
+ 
+ 
+    <property file="compile.properties" /> 
+    <property name="lib.home" value="${basedir}" />  
+    <property environment="env" />  
+    
+    <property name="java.home" value="S{env.JAVA_HOME}" />  
+    <property name="ant.home" value="S{env.ANT_HOME}" />  
+    
+
+    
+    <path id="compile.classpath">  
+       <fileset dir="${tomcat.lib}">
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="${build.lib}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>  
+   
+    <target name="clean_compile" description="description">  
+        <if>  
+        <equals arg1="${src.preparedir}" arg2="${build.home}"/>  
+        <then> 
+        <delete includeEmptyDirs="true" failonerror="false">
+            <fileset dir="${basedir}/${build.home}">
+              <include name="**/*.jar" />
+              <include name="**/*.class" />
+           </fileset>
+	</delete> 
+	</then>  
+        <else>  
+             <delete dir="${basedir}/${build.home}" failonerror="false" />   
+        </else>  
+        </if> 
+           
+         <if>  
+        <equals arg1="${build.lib}" arg2="templib"/>  
+        <then> 
+            <delete dir="${build.lib}" failonerror="false" />   
+        </then>  
+        <else>        
+        </else>  
+        </if> 
+             
+              
+    </target>  
+    
+    <target name="init" >  
+        <antcall target="clean_compile" />  
+        <mkdir dir="${build.home}" />   
+    </target>  
+  
+    <target name="prepare" depends="init">  
+        <copy todir="${build.home}">  
+            <fileset dir="${src.preparedir}" />  
+        </copy>  
+        <foreach list="${userlib.librarys}" target="foreach_copy" param="sublibs" delimiter=",">  
+        </foreach>        
+    </target>   
+  
+    <target name="foreach_copy">      
+      <echo>${sublibs}</echo>  
+      <xmltask source="${userlib.config}">   
+      <call path="/eclipse-userlibraries/library[@name='${sublibs}']/archive"  buffer="servletDef" target="execute-copy">   	    
+	<param name="filepath" path="@path"/>  
+      </call>         
+    </xmltask>       
+   </target>  
+   
+   <target name="execute-copy">     
+        <copy todir="${build.lib}"  file="${filepath}" />      
+   </target>  
+   
+   
+    <target name="compile" depends="prepare">  
+        <echo message="start compile!" />  
+        <antcall target="copyexcludejava" /> 
+        <delete dir="${basedir}/${build.class}" failonerror="false" includes="*.class" /> 
+        <mkdir dir="${basedir}/${build.class}" /> 
+        <javac srcdir="${basedir}/${src.home}" destdir="${basedir}/${build.class}" debug="${compile.debug}" deprecation="${compile.deprecation}" optimize="$compile.optimize}" encoding="utf-8" >  
+            <classpath refid="compile.classpath" />         
+        </javac>        
+        <echo message="complete compile!" />  
+    </target>
+   
+    <target name="copyexcludejava">  
+        <copy todir="${basedir}/${build.class}">  
+          <fileset dir="${basedir}/${src.home}">
+            <exclude name="**/*.java" />
+          </fileset>
+         </copy>
+      </target>
+    
+    <target name="build-jar-noclean">
+    	<antcall target="compile" /> 
+    </target>        
+</project> 

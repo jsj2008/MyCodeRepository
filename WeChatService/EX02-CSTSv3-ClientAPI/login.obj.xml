@@ -1,0 +1,15 @@
+<Address>
+
+	<DEMO PREMARK="">
+		<NODE NAME="EX02P-A01" IP="192.168.40.55" PORT="3189">
+		</NODE>
+	</DEMO>
+
+	<LIVE PREMARK="">
+		<NODE NAME="EX02P-A01" IP="192.168.40.55" PORT="3189">
+		</NODE>
+	</LIVE>
+	
+	<PROXY>
+	</PROXY>
+</Address>

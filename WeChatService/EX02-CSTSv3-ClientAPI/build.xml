@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<project name="FatJar EX02-CSTSv3-ClientAPI.jar (experimental)" default="main" basedir=".">
+	<!-- this file was created by Fat-Jar Eclipse Plug-in -->
+	<!-- the ANT-Export is in a very early stage, so this -->
+	<!-- is only experimental, ANT 1.6 or above is        -->
+	<!-- required, feedback is always welcome:            -->
+	<!--       http://sourceforge.net/projects/fjep       -->
+	<!-- uncomment the following lines if using ANT outside Eclipse -->
+
+	<property name="fjepPath" value="reference:file:dropins/plugins/net.sf.fjep.fatjar_0.0.31.jarfatjar.jar" />
+	<taskdef name="fatjar.build" classname="net.sf.fjep.anttask.FJBuildTask" classpath="${fjepPath}" />
+	<typedef name="fatjar.manifest" classname="net.sf.fjep.anttask.FJManifestType" classpath="${fjepPath}" />
+	<typedef name="fatjar.exclude" classname="net.sf.fjep.anttask.FJExcludeType" classpath="${fjepPath}" />
+	<typedef name="fatjar.jarsource" classname="net.sf.fjep.anttask.FJJarSourceType" classpath="${fjepPath}" />
+	<typedef name="fatjar.filesource" classname="net.sf.fjep.anttask.FJFileSourceType" classpath="${fjepPath}" />
+
+	<!-- uncomment the above lines to use ANT outside of Eclipse -->
+	<target name="main">
+		<fatjar.build output="EX02-CSTSv3-ClientAPI.jar">
+			<fatjar.manifest />
+			<fatjar.filesource path="E:\work-svn\ex-listed\trunk\code\client\android\EX02-CSTSv3-ClientAPI\bin" relpath="">
+				<fatjar.exclude relpath="test/" />
+			</fatjar.filesource>
+			<fatjar.jarsource file="E:\work-svn\ex-listed\trunk\code\comm\libs\libs-jedi\EX02-MTP-CSTSv3-Json.jar" relpath="" />
+			<fatjar.jarsource file="E:\work-svn\ex-listed\trunk\code\comm\libs\libs-base\Allone-EncryptUtil-2.0.jar" relpath="" />
+			<fatjar.jarsource file="E:\work-svn\ex-listed\trunk\code\comm\libs\libs-base\Allone-SimpleXMLParser.jar" relpath="" />
+			<fatjar.jarsource file="E:\work-svn\ex-listed\trunk\code\comm\libs\libs-base\Allone-SocketAddressUtil.jar" relpath="" />
+			<fatjar.jarsource file="E:\work-svn\ex-listed\trunk\code\comm\libs\libs-ex02p-com\EX02P-ExDS.jar" relpath="" />
+			<fatjar.jarsource file="E:\work-svn\ex-listed\trunk\code\comm\libs\libs-ex02p-com\EX02P-ExIO.jar" relpath="" />
+			<fatjar.jarsource file="E:\work-svn\ex-listed\trunk\code\comm\libs\libs-ex02p-com\EX02P-ExLP.jar" relpath="" />
+		</fatjar.build>
+	</target>
+</project>

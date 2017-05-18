@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Aug 24 15:54:35 CST 2016
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=C\:\\Users\\ALLONE\\Desktop\\Listed-CSTSv3-ClientAPI1.7.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=<po|EX02P-ExDS>;<jar|D-Code-Server-DataStruct.jar>;<jar|EX02-MTP-CADTS-5.jar>;<jar|EX02-MTP-CADTSProxy-5.jar>;<jar|JEDIv7-FTS-doc.jar>;<jar|JEDIv7-FTS-IPOP.jar>;<jar|JEDIv7-Uptrade-IPOP.jar>;<jar|Annotation-1.0.0.jar>;<jar|Processor-1.0.0.jar>;<jar|jxl-2.6.jar>;<jar|EX02-MTP-CSTSv3-Json.jar>;<jar|JEDIv7-BankServerReconciliation.jar>;<jar|JEDIv7-QuoteFilterUtil.jar>;<jar|JEDIv7-ReconciliationUtil-1.0.jar>;<jar|JEDIv7-Ebank-IPOP-client.jar>;<jar|commons-beanutils-1.8.0.jar>;<jar|commons-codec-1.3.jar>;<jar|commons-collections-2.1.jar>;<jar|commons-collections-3.2.1.jar>;<jar|commons-digester-1.7.jar>;<jar|commons-fileupload-1.2.1.jar>;<jar|commons-httpclient3.1.jar>;<jar|commons-io-1.4.jar>;<jar|commons-javaflow-20060411.jar>;<jar|commons-lang-2.4.jar>;<jar|commons-logging-1.0.3.jar>;<jar|commons-net-1.4.1.jar>;<jar|commons-pool-1.4.jar>;<jar|log4j-1.2.16.jar>;<jar|mina-core-2.0.4.jar>;<jar|mina-filter-compression-2.0.4.jar>;<jar|rsslib4j-0.2.jar>;<jar|slf4j-api-1.6.3.jar>;<jar|slf4j-jdk14-1.6.3.jar>;<jar|slf4j-log4j12-1.6.3.jar>;<jar|slf4j-nop-1.6.3.jar>;<jar|vtd-xml.jar>;<jar|bcprov-jdk16-146.jar>;<jar|dom4j-1.6.1.jar>;<jar|ezmorph-1.0.6.jar>;<jar|httpclient-4.1.3.jar>;<jar|httpcore-4.1.4.jar>;<jar|jakarta-oro-2.0.8.jar>;<jar|jasperreports-3.5.3.jar>;<jar|jaxb-impl-2.0.3.jar>;<jar|json-lib-2.2.3-jdk15.jar>;<jar|jsse.jar>;<jar|junit.jar>;<jar|jzlib-1.0.7.jar>;<jar|mysql-connector-java-5.1.5-bin.jar>;<jar|poi-3.2-FINAL-20081019.jar>;<jar|tomcat-jdbc.jar>;<jar|tomcat-juli.jar>;<jar|jeval.jar>;<jar|Allone-NDS-Base-3.0.0.jar>;<jar|Allone-NLP-Base-3.0.0.jar>;<jar|EX03-NDS-Base-3.0.0.jar>;<jar|EX03-NLP-Base-3.0.0.jar>
+includes=

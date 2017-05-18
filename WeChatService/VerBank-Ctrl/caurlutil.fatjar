@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu May 24 16:39:12 CST 2012
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=VerBank-CA-URLUtil.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~ca/~client/;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~ca/~server/;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~ca/~CAErrCodeDesc.class;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~ca/~CASignException.class;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~cadts/;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~captain/;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~comm/;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~config/;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~doc/;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~monitor/;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~servlet/;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~trade/;<po|Ctrl>~allone/~MTP/~VerBank01/~Ctrl/~util/;<po|Ctrl>~CVS/;<jar|javaee.jar>;<jar|jsf-impl.jar>;<jar|jsf-api.jar>;<jar|jstl-1.2.jar>;<jar|VerBank-BasicIpOpStruct.jar>;<jar|allone-simpleLog2.jar>;<jar|CADTSProxy5.jar>;<jar|VerBank-Config-Proxy.jar>;<jar|VerBank-CommDataStruct.jar>;<jar|VerBank-TDB-IPOP.jar>;<jar|VerBank-TradeServ-IPOP.jar>;<jar|FEIBCAPIApplet.jar>;<jar|FSVAFacade.jar>
+includes=

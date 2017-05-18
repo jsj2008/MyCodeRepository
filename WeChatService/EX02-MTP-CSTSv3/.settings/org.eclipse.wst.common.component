@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="EX02-MTP-CSTSv3">
+        <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="EX02P-ExLP.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/EX02P-ExLP/EX02P-ExLP">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EX02P-ExIO.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/EX02P-ExIO/EX02P-ExIO">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EX02P-ExDS.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/EX02P-ExDS/EX02P-ExDS">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/JEDIv7-CSTSv3/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="/EX02-MTP-CSTSv3"/>
+        <property name="me-merge-utility-modules" value="true"/>
+    </wb-module>
+</project-modules>

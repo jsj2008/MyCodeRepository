@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<listener>
+		<listener-class>jedi.ex02.CSTS3.server.StartServlet</listener-class>
+	</listener>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+
+	<servlet>
+		<servlet-name>wsserver</servlet-name>
+		<servlet-class>jedi.ex02.CSTS3.server.net.web.WsApacheServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>wsserver</servlet-name>
+		<url-pattern>/websocket</url-pattern>
+	</servlet-mapping> 
+
+	<listener>
+		<listener-class>cn.allone.weixin.InitContextListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>mockSession</servlet-name>
+		<servlet-class>cn.allone.weixin.servlet.MockSessionServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>oauthResponse</servlet-name>
+		<servlet-class>cn.allone.weixin.servlet.OAuthResponseServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>entry</servlet-name>
+		<servlet-class>cn.allone.weixin.servlet.EntryServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ajaxUserInfo</servlet-name>
+		<servlet-class>cn.allone.weixin.servlet.AjaxUserInfoServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>testWeixin</servlet-name>
+		<servlet-class>cn.allone.weixin.servlet.testWeixin</servlet-class>
+	</servlet>
+
+
+	<context-param>
+		<param-name>weixinAppId</param-name>
+		<param-value>wx99948a4be794e5d0</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>weixinAppSecret</param-name>
+		<param-value>799c35c07848f7266ea4e727b76bc4a0</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>weixinUrlOfEntry</param-name>
+		<param-value>http://online.cangjinbao.com/EX02-MTP-CSTSv3/entry</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>weixinUrlOfOAuthRedirectUri</param-name>
+		<param-value>http://online.cangjinbao.com/EX02-MTP-CSTSv3/oauthResponse</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>weixinClientPageLocation</param-name>
+		<param-value>/index.html</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>weixinApiRetryFetchIntervalTimeMillis</param-name>
+		<param-value>7200000</param-value>
+	</context-param>
+
+	<servlet-mapping>
+		<servlet-name>entry</servlet-name>
+		<url-pattern>/entry</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>mockSession</servlet-name>
+		<url-pattern>/mockSession</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>oauthResponse</servlet-name>
+		<url-pattern>/oauthResponse</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ajaxUserInfo</servlet-name>
+		<url-pattern>/ajaxUserInfo</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>testWeixin</servlet-name>
+		<url-pattern>/testWeixin</url-pattern>
+	</servlet-mapping>
+</web-app>
