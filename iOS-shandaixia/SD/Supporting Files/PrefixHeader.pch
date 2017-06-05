@@ -1,0 +1,178 @@
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+
+#define percent 0.00857143
+
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define kSMainScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kSMainScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
+
+//Ext keyWord
+#define kMesssageExtWeChat @"weichat"
+#define kMesssageExtWeChat_ctrlType @"ctrlType"
+#define kMesssageExtWeChat_ctrlType_enquiry @"enquiry"
+#define kMesssageExtWeChat_ctrlType_inviteEnquiry @"inviteEnquiry"
+#define kMesssageExtWeChat_ctrlType_transferToKfHint  @"TransferToKfHint"
+#define kMesssageExtWeChat_ctrlType_transferToKf_HasTransfer @"hasTransfer"
+#define kMesssageExtWeChat_ctrlArgs @"ctrlArgs"
+#define kMesssageExtWeChat_ctrlArgs_inviteId @"inviteId"
+#define kMesssageExtWeChat_ctrlArgs_serviceSessionId @"serviceSessionId"
+#define kMesssageExtWeChat_ctrlArgs_detail @"detail"
+#define kMesssageExtWeChat_ctrlArgs_summary @"summary"
+
+#define CategoriesClickNumber @"CategoriesClickNumber"//分类按钮点击次数,0
+#define SearchClickNumber @"SearchClickNumber"//搜索按钮点击次数,0
+#define MessageClickNumber @"MessageClickNumber"//消息中心点击次数,0
+#define FudaiClickNumber @"FudaiClickNumber"//福袋点击次数,0
+#define RpClickNumber @"RpClickNumber"//攒人品点击次数,0
+#define MyorderClickNumber @"MyorderClickNumber"//我的订单点击次数,0
+#define UnpayOrderClickNumber @"UnpayOrderClickNumber"//待付款点击次数,0
+#define ComfirmOrderClickNumber @"ComfirmOrderClickNumber"//待确认点击次数,0
+#define EvaluateOrderClickNumber @"EvaluateOrderClickNumber"//待评价点击次数,0
+#define AftersaleOrderClickNumber @"AftersaleOrderClickNumber"//售后点击次数,0
+#define MyrpOrderClickNumber @"MyrpOrderClickNumber"//我的人品值点击次数,0
+#define CollectionClickNumber @"CollectionClickNumber"//我的收藏点击次数,0
+#define LotteryClickNumber @"LotteryClickNumber"//查看时时彩点击次数,0
+#define ApplicationClickNumber @"ApplicationClickNumber"//项目申报点击次数,0
+#define QuestionClickNumber @"QuestionClickNumber"//常见问题点击次数,0
+#define CustomerServiceClickNumber @"CustomerServiceClickNumber"//客服中心点击次数,0
+#define SettingClickNumber @"SettingClickNumber"//设置点击次数,0
+#define FeedbackClickNumber @"FeedbackClickNumber"//意见反馈点击次数,0
+#define AboutUsClickNumber @"AboutUsClickNumber"//关于我们点击次数,0
+#define TurntableClickNumber @"TurntableClickNumber"//转盘点击次数,0
+
+
+//工具类
+#import "UIView+YAXExtension.h"
+#import "NSString+YAXExtension.h"
+#import "UIImage+FDImage.h"
+#import "UIBarButtonItem+YAXCategory.h"
+#import "FDReminderView.h"
+#import "NSDictionary+SDDictionary.h"
+#import "FDDateFormatter.h"
+#import "SVProgressHUD.h"
+#import "OliveappLivenessDataType.h"
+#import "RealReachability.h"
+#import "Masonry.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+//友盟
+#define UmengAppkey @"57a8370b67e58e727c0034b9"
+#define WechatAppID @"wxac55f5a443126b3f"
+#define WechatSecret @"1a021f961a8a1541372771bd0bedf89b"
+#define QQAppID @"1105534237"
+#define QQAppkey @"kpRrTeGSRgRkg76b"
+#define SinaAppKey @"316902232"
+#define SinaSecret @"d044c1e7ca6e4b6ddd7a516759c418ce"
+
+#define sharedText @"http://955.cc/jvEhp"
+#define sharedRedict @"http://url.cn/2Fn9Ner"
+
+#define fudaiWeb @"https://www.gongxiantech.com/"
+
+#define SCALE (SCREENWIDTH/750.0)
+
+#define MainScreenBounds [UIScreen mainScreen].bounds
+
+#define ADSHEIGHT (SCREENHEIGHT*((240 + 128)/1334.0))
+
+#define FDUserDefaults [NSUserDefaults standardUserDefaults]
+#define FDDownLoadUrl @"downloadUrl"
+#define FDFudaiDescription @"description"
+#define FDVersion @"version"
+#define FDNewVersion @"FDNewVersion"
+#define FDPercent @"percenta"
+#define pageSize @"20"
+#define SDBlackColor FDColor(34,34,34)
+//用户账号
+#define FDUserAccount @"FDUserAccount"
+
+#define SDGusturePassword @"SDGusturePassword"
+#define SDOpenGusturePassword @"SDOpenGusturePassword"
+
+//#define SDEleSignatureSwitch @"SDEleSignatureSwitch"
+#define SDEleSignatureIsFirst @"SDEleSignatureIsFirst"
+
+
+
+//NOtification
+#define SDNotificationCenter [NSNotificationCenter defaultCenter]
+#define SDSliderMovedNotification @"SDSliderMovedNotification"
+#define SDSliderEndNotification @"SDSliderEndNotification"
+#define SDReceivedMoney @"SDReceivedMoney"
+#define SDSliderX @"SDSliderX"
+#define SDChoosenDayNotification @"SDChooseDayNotification"
+#define SDChoosenDay @"SDChooseDay"
+#define SDDetailButtonDidClickedNotification @"SDDetailButtonDidClickedNotification"
+#define SDDetailButtonDidClickedWithTag @"SDDetailButtonDidClickedWithTag"
+#define SDSubmitButtonDidClickedNitification @"SDSubmitButtonDidClickedNitification"
+#define SDLoanData @"SDLoanData"
+#define SDHeadImageChangedNotification @"SDHeadImageChangedNotification"
+#define SDLoginSuccessNotification @"SDLoginSuccessNotification"
+#define SDLogoutNotification @"SDLogoutNotification"
+#define SDUnbindBackCardSuccessNotification @"SDUnbindBackCardSuccessNotification"
+#define SDBankCardChangedNotification @"SDBankCardChangedNotification"
+#define SDRefundButtonDidClickedNitification @"SDRefundButtonDidClickedNitification"
+#define SDLendingData @"SDLendingData"
+#define SDSubmitRefundNotification @"SDSubmitRefundNotification"
+#define SDHighProveSuccessNotification @"SDHighProveSuccessNotification"
+#define SDHighProveSpeedCount @"SDHighProveSpeedCount"
+#define SDReceivedPushingNotification @"SDReceivedPushingNotification"
+#define SDUserFeedBackSuccessNotification @"SDUserFeedBackSuccessNotification"
+
+#define SDNetworkReconnectNotification @"SDNetworkReconnectNotification"
+
+#define SDSSQManualNoticifation @"SDSSQManualNoticifation"
+#define SDSSQUpdateStatus @"SDSSQUpdateStatus"
+#define SDSSQqueryStatus @"SDSSQqueryStatus"
+#define SDUpdateNewVersion @"SDUpdateNewVersion"
+
+
+
+#define FDLog(...) NSLog(__VA_ARGS__)
+#define SCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREENHEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+#pragma mark - font
+#define ZLBoldFont(x)   [UIFont boldSystemFontOfSize:(x)]
+#define ZLNormalFont(x) [UIFont systemFontOfSize:(x)]
+#define ZLItalicFont(x) [UIFont italicSystemFontOfSize:(x)]
+
+
+#ifdef DEBUG
+
+#else
+
+#define FDLog(...)
+
+
+
+#endif
+
+#define SDWhiteColor [UIColor whiteColor]
+
+#define FDDRedColor [UIColor colorWithRed:(236)/255.0 green:(28)/255.0 blue:(36)/255.0 alpha:1]
+
+#define FDColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+
+#define FDRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1]
+
+#define SDRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1]
+
+#endif
+#endif
+
+
+
+
+
+
+
