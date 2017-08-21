@@ -1,0 +1,112 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - AMapFoundation (1.4.0)
+  - AMapLocation (2.4.0):
+    - AMapFoundation (~> 1.4)
+  - AMapSearch (5.1.0):
+    - AMapFoundation (~> 1.2)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - IQKeyboardManager (3.3.7)
+  - JSONModel (1.0.2)
+  - leveldb-library (1.18.3)
+  - MBProgressHUD (0.9.2)
+  - Objective-LevelDB (2.1.5):
+    - leveldb-library (~> 1.18.2)
+  - OpenSSL (1.0.208)
+  - Reachability (3.1.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SwipeView (1.3.2)
+  - UICountingLabel (1.2.0)
+  - UMengAnalytics (4.2.4)
+  - UMengMessage (1.1.0.2)
+  - WeChat_SDK (1.7.2.1)
+  - WeiboSDK (3.1.3)
+  - XMAlipaySDK (15.1.6):
+    - OpenSSL
+  - XMIndicatorView (0.1.0)
+  - XMLocation (0.1.0):
+    - AMapLocation
+    - AMapSearch
+  - XMMegaBase (0.1.8):
+    - AFNetworking (~> 3.0)
+    - BlocksKit (~> 2.2.5)
+    - IQKeyboardManager
+    - JSONModel (~> 1.0.2)
+    - MBProgressHUD (~> 0.9)
+    - Objective-LevelDB (~> 2.1.4)
+    - Reachability (~> 3.1.1)
+    - SDWebImage (~> 3.7)
+    - SwipeView (~> 1.3.2)
+    - WeChat_SDK (~> 1.7.2.1)
+    - XMIndicatorView
+  - XMTencentOpenApiSDK (3.1.0)
+
+DEPENDENCIES:
+  - UICountingLabel (~> 1.2.0)
+  - UMengAnalytics
+  - UMengMessage
+  - WeiboSDK
+  - XMAlipaySDK
+  - XMLocation
+  - XMMegaBase
+  - XMTencentOpenApiSDK
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AMapFoundation: 458974f46a39df8407fd818ab83d2630d494c726
+  AMapLocation: 47b62b5381a66e4d0c2931b70ffde72682427896
+  AMapSearch: d4c924b929f433968669721a07b4bd57736f5f2a
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
+  JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
+  leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  Objective-LevelDB: fa075efd9d0be645aee51847cc3ee70cdadb80ce
+  OpenSSL: b187269d386b07452f56af273764ea0636dd5da8
+  Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  SwipeView: bd67cfaf7760c036438446b3ccb28a3b84fce009
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+  UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  UMengMessage: 48fac77da8a71729c3d9c40eed16151d8917d9b3
+  WeChat_SDK: ecf5879b5cabcc953c9acc2d759ade18adbff39a
+  WeiboSDK: acb067053668102cf07d01aa7604350162c2e466
+  XMAlipaySDK: fe436a427b921e8a65f5b9c6de393065d51ee8cc
+  XMIndicatorView: 2ee7ced585d44d14e469d57a75592d3579e18677
+  XMLocation: 906537289a65cbfdf5735fd71b914255a578a5c1
+  XMMegaBase: 19a5a7b9406dee4b0fe28a0d04ee83d124a8df73
+  XMTencentOpenApiSDK: 6b604f7b4a12a442138a45451867de6966bbf592
+
+PODFILE CHECKSUM: c470e2b86c926a9acbcfe955f95226f547386b63
+
+COCOAPODS: 1.2.1
